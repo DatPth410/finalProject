@@ -52,8 +52,9 @@
 							<td>{{$tour->diem_den}}</td>
 							<td><img src="img/test/{{$tour->avatar}}" style="width: 50px;"></td>
 							<td>{{$tour->sochodadat}}</td>
-							<td><button type="button" class="btn btn-primary">Sửa</button></td>
-							<td><button type="button" class="btn btn-large btn-block btn-danger">Xóa</button></td>
+							<td><a href="{{route('update-tour',$params = ['id'=> $tour->id])}}"><button type="button" class="btn btn-primary">Sửa</button></a></td>
+							<td><a href="{{route('delete-tour',$params = ['id'=> $tour->id])}}"><button type="button" class="btn btn-large btn-block btn-danger">Xóa</button></a></td>
+							
 						</tr>
 						@endforeach
 					</tbody>

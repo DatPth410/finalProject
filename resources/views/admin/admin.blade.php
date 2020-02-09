@@ -34,9 +34,9 @@
 						<div class="kjm-block-text">
 							<h2 class="kjm-pricetext">Quản lý tour</h2>
 							<a href="{{route('add-tour')}}" style="text-align: center;"><button class="btn kjm-button">Thêm</button></a>
-							<a href="#" style="text-align: center;margin-top: -18px;"><button class="btn kjm-button">Quản lý</button></a>
+							<a href="{{route('manage-tour')}}" style="text-align: center;margin-top: -18px;"><button class="btn kjm-button">Quản lý</button></a>
 						</div>
-					
+					 
 				</div>
 				<div class="kjm-hover-block">
 					

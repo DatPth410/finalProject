@@ -130,5 +130,10 @@ Route::get('admin', function(){
 Route::get('admin/add-tour', 'AdminTourController@AddTour')->name('add-tour');
 Route::post('admin/save-tour', 'AdminTourController@SaveTour')->name('save-tour');
 Route::get('admin/manage-tour', 'AdminTourController@ManageTour')->name('manage-tour');
+Route::get('admin/update-tour/{id}', 'AdminTourController@UpdateTour')->name('update-tour');
+Route::post('admin/save-update-tour/{id}', 'AdminTourController@SaveUpdateTour')->name('save-update-tour');
+Route::get('admin/delete-tour/{id}', 'AdminTourController@DeleteTour')->name('delete-tour');
+
+
 
 Route::get('admin/add-news', 'AdminNewsController@AddNews')->name('add-news');
