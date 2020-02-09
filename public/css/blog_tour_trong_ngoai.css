@@ -1,0 +1,344 @@
+*{
+  margin:0px auto;
+}
+
+#header{
+  background-color: #141e28;
+  width: 100%;
+  height: 80px;
+}
+
+.header_text{
+  color: #fff;
+  font-size: 20px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.header_text_2{
+  color: #fff;
+  font-size: 18px;
+  margin-top: 14px;
+  text-align: center; 
+}
+
+.header_hotline{
+  color: #f79321;
+  font-size: 28px;
+  margin-top: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.header_hotline:hover{
+  text-decoration: none;
+}
+
+#search{
+  background-image: url(../images/bg-search.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 510px;
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.36); 
+}
+
+#above_footer{
+  width: 100%;
+  height: 300px;
+  background-color: #0c427a;
+  margin-top: 20px;
+}
+
+.fix{
+  position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+#footer{
+  background-color: #141e28;
+  height: 450px;
+  width: 100%;  
+}
+
+#middle_bottom{
+  padding: 20px 0;
+  margin-top: 15px;
+  border-top:1px solid #4b4b4b; 
+  border-bottom:1px solid #4b4b4b; 
+}
+
+.customer_service_text{
+  color: #fff;
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+#wrap_footer{
+  min-height: 200px;
+  width: 100%;
+  margin-top: 1900px;
+}
+
+#wrap_footer2{
+  min-height: 200px;
+  width: 100%;
+  margin-top: 700px;
+}
+
+#wrap_footer3{
+  min-height: 200px;
+  width: 100%;
+  margin-top: 0px;
+}
+
+nav {
+  font-size : 18px;
+  font-family : verdana;
+}
+
+nav a {
+  color : #FFF;
+  text-decoration: none;
+}
+
+nav ul {
+  margin : 0px;
+  padding : 0px;
+}
+
+nav ul li {
+  list-style-type : none;
+  display : inline-block;
+  color : #FFF;
+  background-color : #141e28;
+  padding : 10px;
+  cursor : pointer;
+  font-size: 20px;
+  text-align: center;
+}
+
+nav ul li:hover {
+  background-color : #141e28;
+  text-decoration: none;
+}
+
+nav ul li ul{
+  position : absolute;
+  margin-top : 10px;
+  margin-left : -10px;
+  visibility : hidden;
+}
+
+nav ul li:hover ul{
+  visibility : visible;
+  text-decoration: none;
+}
+
+nav ul li ul li {
+  display : block;
+  text-align: left;
+  font-size: 17px;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+#main_content{
+  margin-top: 120px;
+}
+
+.head_bottom{
+	width: 1527px;
+	height: 88px;
+}
+
+#body{
+   margin: 0px auto;
+   height: 1190px;
+   width: 1140px;
+   font-family:Arial;
+    font-size: 16px;
+    color: #222222;
+}
+
+.imgs{
+	height: 456px;
+	width: 1140px;
+}
+.new-content{
+	height: 500px;
+	width: 405px;
+	border-bottom: 2px solid black;
+	margin-bottom: 20px;
+	position: relative;
+	float: left;
+
+	
+}
+.content h3{
+	height: 76px;
+	width: 388px;
+	position: absolute;
+	top: 200px;
+	left: 0px;
+	background-color: white;
+	padding:10px;
+	font-size: 20px;
+	color: #222222;
+
+
+}
+.views p {
+	width: 418px;
+	height: 112px;
+	font-size: 17px;
+	padding-top: 8px;
+	
+}
+.title {
+	position: absolute;
+	top: 10px;
+	left: 90px;
+	padding-left: 10px;
+}
+.news{
+	height: 100px;
+	width: 263px;
+	padding-bottom: 20px;
+	position: relative;
+}
+.list_news{
+	background-color: #fbfbfb;
+	width: 263px;
+	height: 1045px;
+}
+.header_box{
+	width: 100%;
+    height: auto;
+    float: left;
+    margin-bottom: 15px;
+    border-bottom: #000 double 3px;
+}
+.notes a{
+	border: #333333 solid 1px;
+    color: #333333;
+    font-size: 14px;
+    padding: 2px 10px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+.h1_title{
+	margin-top: 0;
+    margin-bottom: 20px;
+    font-family: Arial;
+    color: #e30050;
+}
+.info a{
+	color: #0c427a;
+}
+
+.tour_list{
+	display: table;
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid #dddddd;
+    border-left: 0;
+    position: relative;
+    margin-top: 40px;
+
+}
+.left_tour_list{
+	position: relative;
+    width: 350px;
+    display: table-cell;
+}
+
+.left_tour_list img{
+  height: 210px;
+  width: 350px;
+  float:left;
+
+}
+.mid_tour_list{
+	margin-left: 50px;
+	height: 210px;
+	width: 614px;
+	font-family: Arial;
+	position: absolute;
+	top: -5px;
+	font-size: 18px;
+}	
+.right_tour_list{
+    background: #19528f;
+    text-align: center;
+    color: #fff;
+    padding: 15px 10px;
+    margin-top: 20px;
+    width: 156px;
+    height: 162px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.a-book-tour{
+	display: inline-block;
+    background: #fff;
+    color: #df1b7c;
+    font-weight:bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 2px 20px;
+    margin-top: 5px;
+}
+.mid_tour_list p{
+	margin-bottom: 5px;
+}
+.score{
+	padding: 3px 5px;
+    border-radius: 6px;
+    background: #9fc43a;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+}
+.ribbon{
+	position: absolute;
+	height: 20px;
+	width: 118px;
+	top: 20px;
+	left: 10px;
+	background-color: #e54352;
+
+}
+
+.booking{
+	margin-top: 8px;
+    color: #e52822;
+    border: solid 1px #e52822;
+    border-radius: 2px;
+    padding: 2px 5px 3px;
+    display: inline-block;
+    margin-left: 40px;
+   
+}
+.tour_list_tn{
+	margin-top: 40px;
+	display: table;
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid #dddddd;
+   
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+   
+
+}
