@@ -64,6 +64,8 @@
 		</div>
 	</div>
 
+
+	@foreach($tour as $stt=>$tour)
 	<div class="tour_list_tn">
 		<div class="col-md-12 col-sm-12">
 			<div>
@@ -79,7 +81,7 @@
 				<div style="width: 75%;" class="col-md-9 col-sm-9">
 					<div class="col-md-8 col-sm-8">
 						<span style="font-size: 20px;">
-							<a href="#">{{$tour[0]->name}}</a>
+							<a href="#">{{$tour->name}}</a>
 						</span>
 						<br>
 						<div style="padding-top: 10px;padding-bottom: 5px;">	
@@ -88,10 +90,10 @@
 							<span style="font-size: 14px;">| 7 đánh giá</span>
 						</div>
 						<span>Mã:
-							<span style="margin-right: 15px;">T01085</span>
+							<span style="margin-right: 15px;">{{$tour->code}}</span>
 
 						</span>
-						<span class="glyphicon glyphicon-time" style="margin-right: 15px;font-size: 18px"> 3 ngày 2 đêm</span>
+						<span class="glyphicon glyphicon-time" style="margin-right: 15px;font-size: 18px"> {{$tour->length}} ngày {{$tour->length-1}} đêm</span>
 						<span>Phương tiện :</span>
 						<span class="fa fa-plane"></span>
 						<span class="fa fa-car"></span>
@@ -105,9 +107,9 @@
 					</div>
 					<div class="col-md-4 col-sm-4">
 						<div style="padding-left: 50px;padding-top: 15px;">
-							<span class="time">Khởi hành:17-1-2020</span>
+							<span class="time">Khởi hành:{{$tour->departure}}</span>
 							<br>
-							<span class="Price" style="font-size: 26px;color: #00c1de">4.990.000
+							<span class="Price" style="font-size: 26px;color: #00c1de">{{$tour->price}}
 								<span style="font-size: 15px;color: #00c1de">VNĐ</span>
 							</span>
 							<br>
@@ -120,229 +122,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="tour_list_tn">
-		<div class="col-md-12 col-sm-12">
-			<div>
-
-				<div style="width: 25%;" class="col-md-3 col-sm-3" style="position: relative;">
-					<span class="ribbon">
-						<p style="color: white;font-size: 14px;padding-left: 10px">Tour bán chạy</p>
-					</span>
-					<a href="#">
-						<img src="images/ivivu_1.jpg">
-					</a>
-				</div>
-				<div style="width: 75%;" class="col-md-9 col-sm-9">
-					<div class="col-md-8 col-sm-8">
-						<span style="font-size: 20px;">
-							<a href="#">Tour Đà Nẵng 3N2D: Hội An - Bà Nà - Cù Lao Chàm ( Tặng Vé Bà Nà Hills + Buffet)</a>
-						</span>
-						<br>
-						<div style="padding-top: 10px;padding-bottom: 5px;">	
-							<span  class="score">9.4</span>
-							<span class="cmt" style="color:#9fc43a;font-weight: bold; ">Tuyệt vời</span>
-							<span style="font-size: 14px;">| 7 đánh giá</span>
-						</div>
-						<span>Mã:
-							<span style="margin-right: 15px;">T01085</span>
-
-						</span>
-						<span class="glyphicon glyphicon-time" style="margin-right: 15px;font-size: 18px"> 3 ngày 2 đêm</span>
-						<span>Phương tiện :</span>
-						<span class="fa fa-plane"></span>
-						<span class="fa fa-car"></span>
-						<br>
-						<ul class="ul_li" style="padding-top: 10px;">
-							<li style="padding-right: 15px;">Bà Nà Hill</li>
-							<li style="padding-right: 15px">Cù Lao Chàm</li>
-							<li>Ngũ Hành Sơn</li>
-						</ul>
-
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div style="padding-left: 50px;padding-top: 15px;">
-							<span class="time">Khởi hành:17-1-2020</span>
-							<br>
-							<span class="Price" style="font-size: 26px;color: #00c1de">4.990.000
-								<span style="font-size: 15px;color: #00c1de">VNĐ</span>
-							</span>
-							<br>
-							<span class="guest" style="color: rgba(129,129,128,.85);font-size: 13px;">*Áp dụng nhóm 2 khách</span>
-						</div>
-						<div class="booking">4 khách đặt 24h qua</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<div class="tour_list_tn">
-		<div class="col-md-12 col-sm-12">
-			<div>
-
-				<div style="width: 25%;" class="col-md-3 col-sm-3" style="position: relative;">
-					<span class="ribbon">
-						<p style="color: white;font-size: 14px;padding-left: 10px">Tour bán chạy</p>
-					</span>
-					<a href="#">
-						<img src="images/ivivu_1.jpg">
-					</a>
-				</div>
-				<div style="width: 75%;" class="col-md-9 col-sm-9">
-					<div class="col-md-8 col-sm-8">
-						<span style="font-size: 20px;">
-							<a href="#">Tour Đà Nẵng 3N2D: Hội An - Bà Nà - Cù Lao Chàm ( Tặng Vé Bà Nà Hills + Buffet)</a>
-						</span>
-						<br>
-						<div style="padding-top: 10px;padding-bottom: 5px;">	
-							<span  class="score">9.4</span>
-							<span class="cmt" style="color:#9fc43a;font-weight: bold; ">Tuyệt vời</span>
-							<span style="font-size: 14px;">| 7 đánh giá</span>
-						</div>
-						<span>Mã:
-							<span style="margin-right: 15px;">T01085</span>
-
-						</span>
-						<span class="glyphicon glyphicon-time" style="margin-right: 15px;font-size: 18px"> 3 ngày 2 đêm</span>
-						<span>Phương tiện :</span>
-						<span class="fa fa-plane"></span>
-						<span class="fa fa-car"></span>
-						<br>
-						<ul class="ul_li" style="padding-top: 10px;">
-							<li style="padding-right: 15px;">Bà Nà Hill</li>
-							<li style="padding-right: 15px">Cù Lao Chàm</li>
-							<li>Ngũ Hành Sơn</li>
-						</ul>
-
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div style="padding-left: 50px;padding-top: 15px;">
-							<span class="time">Khởi hành:17-1-2020</span>
-							<br>
-							<span class="Price" style="font-size: 26px;color: #00c1de">4.990.000
-								<span style="font-size: 15px;color: #00c1de">VNĐ</span>
-							</span>
-							<br>
-							<span class="guest" style="color: rgba(129,129,128,.85);font-size: 13px;">*Áp dụng nhóm 2 khách</span>
-						</div>
-						<div class="booking">4 khách đặt 24h qua</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<div class="tour_list_tn">
-		<div class="col-md-12 col-sm-12">
-			<div>
-
-				<div style="width: 25%;" class="col-md-3 col-sm-3" style="position: relative;">
-					<span class="ribbon">
-						<p style="color: white;font-size: 14px;padding-left: 10px">Tour bán chạy</p>
-					</span>
-					<a href="#">
-						<img src="images/ivivu_1.jpg">
-					</a>
-				</div>
-				<div style="width: 75%;" class="col-md-9 col-sm-9">
-					<div class="col-md-8 col-sm-8">
-						<span style="font-size: 20px;">
-							<a href="#">Tour Đà Nẵng 3N2D: Hội An - Bà Nà - Cù Lao Chàm ( Tặng Vé Bà Nà Hills + Buffet)</a>
-						</span>
-						<br>
-						<div style="padding-top: 10px;padding-bottom: 5px;">	
-							<span  class="score">9.4</span>
-							<span class="cmt" style="color:#9fc43a;font-weight: bold; ">Tuyệt vời</span>
-							<span style="font-size: 14px;">| 7 đánh giá</span>
-						</div>
-						<span>Mã:
-							<span style="margin-right: 15px;">T01085</span>
-
-						</span>
-						<span class="glyphicon glyphicon-time" style="margin-right: 15px;font-size: 18px"> 3 ngày 2 đêm</span>
-						<span>Phương tiện :</span>
-						<span class="fa fa-plane"></span>
-						<span class="fa fa-car"></span>
-						<br>
-						<ul class="ul_li" style="padding-top: 10px;">
-							<li style="padding-right: 15px;">Bà Nà Hill</li>
-							<li style="padding-right: 15px">Cù Lao Chàm</li>
-							<li>Ngũ Hành Sơn</li>
-						</ul>
-
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div style="padding-left: 50px;padding-top: 15px;">
-							<span class="time">Khởi hành:17-1-2020</span>
-							<br>
-							<span class="Price" style="font-size: 26px;color: #00c1de">4.990.000
-								<span style="font-size: 15px;color: #00c1de">VNĐ</span>
-							</span>
-							<br>
-							<span class="guest" style="color: rgba(129,129,128,.85);font-size: 13px;">*Áp dụng nhóm 2 khách</span>
-						</div>
-						<div class="booking">4 khách đặt 24h qua</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<div class="tour_list_tn">
-		<div class="col-md-12 col-sm-12">
-			<div>
-
-				<div style="width: 25%;" class="col-md-3 col-sm-3" style="position: relative;">
-					<span class="ribbon">
-						<p style="color: white;font-size: 14px;padding-left: 10px">Tour bán chạy</p>
-					</span>
-					<a href="#">
-						<img src="images/ivivu_1.jpg">
-					</a>
-				</div>
-				<div style="width: 75%;" class="col-md-9 col-sm-9">
-					<div class="col-md-8 col-sm-8">
-						<span style="font-size: 20px;">
-							<a href="#">Tour Đà Nẵng 3N2D: Hội An - Bà Nà - Cù Lao Chàm ( Tặng Vé Bà Nà Hills + Buffet)</a>
-						</span>
-						<br>
-						<div style="padding-top: 10px;padding-bottom: 5px;">	
-							<span  class="score">9.4</span>
-							<span class="cmt" style="color:#9fc43a;font-weight: bold; ">Tuyệt vời</span>
-							<span style="font-size: 14px;">| 7 đánh giá</span>
-						</div>
-						<span>Mã:
-							<span style="margin-right: 15px;">T01085</span>
-
-						</span>
-						<span class="glyphicon glyphicon-time" style="margin-right: 15px;font-size: 18px"> 3 ngày 2 đêm</span>
-						<span>Phương tiện :</span>
-						<span class="fa fa-plane"></span>
-						<span class="fa fa-car"></span>
-						<br>
-						<ul class="ul_li" style="padding-top: 10px;">
-							<li style="padding-right: 15px;">Bà Nà Hill</li>
-							<li style="padding-right: 15px">Cù Lao Chàm</li>
-							<li>Ngũ Hành Sơn</li>
-						</ul>
-
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div style="padding-left: 50px;padding-top: 15px;">
-							<span class="time">Khởi hành:17-1-2020</span>
-							<br>
-							<span class="Price" style="font-size: 26px;color: #00c1de">4.990.000
-								<span style="font-size: 15px;color: #00c1de">VNĐ</span>
-							</span>
-							<br>
-							<span class="guest" style="color: rgba(129,129,128,.85);font-size: 13px;">*Áp dụng nhóm 2 khách</span>
-						</div>
-						<div class="booking">4 khách đặt 24h qua</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
+	@endforeach
 </div>
 @endsection

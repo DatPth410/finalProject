@@ -25,8 +25,7 @@ class testController extends Controller
 	}
 
 	public function f_get_trong(){
-		$tour = DB::table('tour_trong_nuoc')->where('id','=',1)->get();
-		return view('front-end.tour_trong_nuoc',compact('tour'));
+		return view('front-end.tour_trong_nuoc');
 	}
 
 	public function f_get_ngoai(){
