@@ -24,6 +24,7 @@
 							<th>Phương tiện</th>
 							<th>Ngày khởi hành</th>
 							<th>Giá</th>
+							<th>Khuyến mãi</th>
 							<th>Lịch trình</th>
 							<th>Số chỗ</th>
 							<th>Lưu ý</th>
@@ -45,6 +46,7 @@
 							<td>{{$tour->vehicle}}</td>
 							<td>{{$tour->departure}}</td>
 							<td>{{$tour->price}}<sup>đ</sup></td>
+							<td>{{$tour->khuyen_mai}}%</td>
 							<td>{{$tour->lich_trinh}}</td>
 							<td>{{$tour->so_cho}}</td>
 							<td>{{$tour->luu_y}}</td>

@@ -44,6 +44,8 @@ Route::get('admin/delete-tour/{id}', 'AdminTourController@DeleteTour')->name('de
 
 //Admin quản lý tin tức
 Route::get('admin/add-news', 'AdminNewsController@AddNews')->name('add-news');
+Route::post('admin/save-news', 'AdminNewsController@SaveNews')->name('save-news');
+Route::get('admin/manage-news', 'AdminNewsController@ManageNews')->name('manage-news');
 
 //Gọi vào trang tour trong nước
 Route::get('/du-lich/trong-nuoc/dbtest','Tour_Trong_Nuoc_controller@data_push');

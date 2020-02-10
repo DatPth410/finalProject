@@ -37,6 +37,12 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
+							<label>Khuyến mãi</label>
+							<input type="number" name="km" class="form-control" value="{{$tour->khuyen_mai}}">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
 							<label>Số chỗ</label>
 							<input type="number" name="socho" class="form-control" value="{{$tour->so_cho}}">
 						</div>

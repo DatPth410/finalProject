@@ -45,7 +45,7 @@
 						<div class="kjm-block-text">
 							<h2 class="kjm-pricetext">Quản lý tin tức</h2>
 							<a href="{{route('add-news')}}" style="text-align: center;"><button class="btn kjm-button">Thêm</button></a>
-							<a href="#" style="text-align: center;margin-top: -18px;"><button class="btn kjm-button">Quản lý</button></a>
+							<a href="{{route('manage-news')}}" style="text-align: center;margin-top: -18px;"><button class="btn kjm-button">Quản lý</button></a>
 						</div>
 					
 				</div>

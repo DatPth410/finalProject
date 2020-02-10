@@ -32,10 +32,10 @@
 											<!-- <h4>Thêm tin tức :</h4> -->
 										</div>
 										<div class="form-body">
-											<form action="" method="post" enctype="multipart/form-data">
+											<form action="{{route('save-news')}}" method="post" enctype="multipart/form-data">
 												<div class="form-group">
 													<label>Tiêu đề</label>
-													<input type="text" name="tieude" class="form-control" placeholder="Tên tour">
+													<input type="text" name="tieude" class="form-control" placeholder="Tiêu đề">
 												</div>
 												<div class="form-group">
 													<label>Tóm tắt</label>
@@ -49,7 +49,7 @@
 													<label>Avatar</label>
 													<input name="avatar" type="file">
 												</div>
-												<div class="form-group">
+												<!-- <div class="form-group">
 													<label>Điểm đến</label><br>
 													<select name="diemden">
 														<option value="">Select</option>
@@ -63,9 +63,9 @@
 														<option value="">Select</option>
 														
 													</select>
-												</div>
+												</div> -->
 												<button type="submit" class="btn btn-default w3ls-button">Submit</button>
-												
+												@csrf()
 											</form>
 										</div>
 									</div>

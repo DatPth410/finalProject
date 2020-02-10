@@ -28,6 +28,7 @@ class AdminTourController extends Controller
 			$tourInsert=[];
 			$tourInsert['name']=$request->get('name');
 			$tourInsert['price']=$request->get('gia');
+			$tourInsert['khuyen_mai']=$request->get('km');
 			$tourInsert['code']=$request->get('code');
 			$tourInsert['lich_trinh']=$request->get('lichtrinh');
 			$tourInsert['length']=$request->get('songay');
@@ -84,6 +85,7 @@ class AdminTourController extends Controller
 			$tourInsert['name']=$request->get('name');
 			$tourInsert['price']=$request->get('gia');
 			$tourInsert['code']=$request->get('code');
+			$tourInsert['khuyen_mai']=$request->get('km');
 			$tourInsert['lich_trinh']=$request->get('lichtrinh');
 			$tourInsert['length']=$request->get('songay');
 			$tourInsert['departure']=$request->get('ngaykhoihanh');

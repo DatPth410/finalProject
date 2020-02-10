@@ -29,6 +29,11 @@
 						<input type="number" name="gia" class="form-control" placeholder="Giá">
 					</div>
 					<div class="form-group">
+						<label>Khuyến mãi</label>
+						<input type="number" name="km" class="form-control" placeholder="Khuyến mãi">
+					</div>
+
+					<div class="form-group">
 						<label>Code tour</label>
 						<input type="text" name="code" class="form-control" placeholder="Code tour">
 					</div>
