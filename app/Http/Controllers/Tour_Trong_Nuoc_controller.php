@@ -9,6 +9,7 @@ class Tour_Trong_Nuoc_controller extends Controller
 {
     public function data_push()
     {
+
     	$tour=DB::table('tour_trong_nuoc')->get();
     	return view('front-end.tour_trong_nuoc', compact('tour'));
 	}
