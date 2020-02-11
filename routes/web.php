@@ -52,3 +52,6 @@ Route::get('admin/delete-news/{id}', 'AdminNewsController@DeleteNews')->name('de
 
 //Gọi vào trang tour trong nước
 Route::get('/du-lich/trong-nuoc/dbtest','Tour_Trong_Nuoc_controller@data_push');
+
+//trang chủ 
+Route::get('/trang-chu','HomeController@viewHome');

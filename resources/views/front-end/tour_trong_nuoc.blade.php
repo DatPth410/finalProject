@@ -160,8 +160,10 @@
                             <span>Phương tiện :
                             @if ($tour->vehicle=="Máy bay")
     							<span class="fa fa-plane"></span>
-							@else
+							@elseif($tour->vehicle=="Ô tô")
     							<span class="fa fa-car"></span>
+    						@else($tour->vehicle=="Tàu hỏa")
+    							<span class="fa fa-train"></span>
 							@endif
                             
                             <br>
