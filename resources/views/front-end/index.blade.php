@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<base href="{{asset('')}}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/myCss.css">
+</head>
+<body>
 
 @extends('master.home')
 @section('content')
@@ -95,11 +108,11 @@
 	<div id="block_2">
 		<div class="content">
 			<div class="content_title">
-				<p><img src="../../../public/images/sale-icon.jpg" id="sale-icon">Combo Tour - giảm giá mạnh</p>
+				<p><img src="images/sale-icon.jpg" id="sale-icon">Combo Tour - giảm giá mạnh</p>
 			</div>
 			
 			<div class="love">
-					<img src="../../../public/images/thung-nai-hoa-binh-1.jpg" class="fade_images">
+					<img src="images/thung-nai-hoa-binh-1.jpg" class="fade_images">
 
 				<a href="detail.php"><div class="middle">
 					<div class="text">Xem thêm</div>
@@ -111,7 +124,7 @@
 			</div>
 
 			<div class="love">
-					<img src="../../../public/images/diem-du-lich-da-lat-ly-tuong-cho-gia-dinh.jpg" class="fade_images">
+					<img src="images/diem-du-lich-da-lat-ly-tuong-cho-gia-dinh.jpg" class="fade_images">
 
 				<a href="#"><div class="middle">
 					<div class="text">Xem thêm</div>
@@ -123,7 +136,7 @@
 			</div>
 
 			<div class="love">
-					<img src="../../../public/images/Gold-Coast.jpg" class="fade_images">
+					<img src="images/Gold-Coast.jpg" class="fade_images">
 
 				<a href="#"><div class="middle">
 					<div class="text">Xem thêm</div>
@@ -154,7 +167,7 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -175,7 +188,7 @@
 
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -196,7 +209,7 @@
 
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -219,7 +232,7 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -240,7 +253,7 @@
 
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -261,7 +274,7 @@
 
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -301,7 +314,7 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -322,7 +335,7 @@
 
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -343,7 +356,7 @@
 
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -366,7 +379,7 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -387,7 +400,7 @@
 
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -408,7 +421,7 @@
 
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<a href="#"><img src="../../../public/images/Gold-Coast.jpg" alt="..."></a>
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
 						<div class="caption">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
@@ -451,7 +464,7 @@
 			<div class="row">
 				<div class="col-md-3 col-sm-6">
 					<a href="#">
-						<img src="../../../public/images/Gold-Coast.jpg" class="exp_photo">
+						<img src="images/Gold-Coast.jpg" class="exp_photo">
 					</a>
 				</div>
 
@@ -463,7 +476,7 @@
 
 				<div class="col-md-3 col-sm-6">
 					<a href="#">
-						<img src="../../../public/images/Gold-Coast.jpg" class="exp_photo">
+						<img src="images/Gold-Coast.jpg" class="exp_photo">
 					</a>
 				</div>
 
@@ -482,3 +495,5 @@
 		<!-- End kinh nghiệm du lịch -->
 
 @endsection
+</body>
+</html>
