@@ -55,7 +55,7 @@ Route::get('/trang-chu','HomeController@viewHome');
 Route::get('/khuyen-mai','HomeController@viewSale');
 
 //Tour trong nước
-// Route::get('/trong-nuoc','HomeController@viewInland');
+Route::get('/trong-nuoc','HomeController@viewInland');
 
 //Tour nước ngoài
 Route::get('/nguoc-ngoai','HomeController@viewOutland')->name('nuoc-ngoai');

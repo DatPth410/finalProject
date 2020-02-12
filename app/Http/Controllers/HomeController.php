@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     public function viewHome(){
@@ -14,13 +14,11 @@ class HomeController extends Controller
     	return view('front-end.sale');
     }
 
-   	// public function viewInland(){
-    // 	return view('front-end.tour_trong_nuoc');
-    // }    
-
-    public function viewInland(){
-    	return view('front-end.tour_nuoc_ngoai');
-    } 
+   	public function viewInland(){
+    	
+        $tour=DB::table('tour_trong_nuoc')->get();
+        return view('front-end.tour_trong_nuoc', compact('tour'));
+    }    
 
     public function viewAboutUs(){
     	return view('front-end.aboutus');
