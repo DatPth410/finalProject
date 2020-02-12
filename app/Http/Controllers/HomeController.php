@@ -27,4 +27,9 @@ class HomeController extends Controller
     public function viewExp(){
     	return view('front-end.cam_nang');
     }
+
+    public function viewOutland(){
+    	
+        return view('front-end.tour_nuoc_ngoai');
+    }
 }

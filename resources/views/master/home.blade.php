@@ -8,11 +8,11 @@
 	<base href="{{asset('')}}">
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<!-- <link rel="stylesheet" href="css/blog_tour_trong_ngoai.css"> -->
-	<!-- link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('css/blog_tour_trong_ngoai.css') }}" rel="stylesheet"> -->
-	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css">
+	{{-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/blog_tour_trong_ngoai.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css"> --}}
 </head>
-<body>
+<body>			
 		<!-- Start Header -->
 	@include('master.header')
 		<!-- End Header -->
