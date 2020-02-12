@@ -22,11 +22,6 @@ Route::group(['prefix' => 'du-lich'], function(){
 	Route::get('mien-nam', function () { echo 'MN'; });
 });
 
-	
-//Giao diện người dùng
-Route::get('du-lich', 'testController@f_get_master'); 
-Route::get('du-lich/trong-nuoc', 'testController@f_get_trong')->name('trong-nuoc'); 
-Route::get('du-lich/nuoc-ngoai', 'testController@f_get_ngoai')->name('nuoc-ngoai'); 
 
 
 //Admin
@@ -51,7 +46,7 @@ Route::post('admin/save-update-news/{id}', 'AdminNewsController@SaveUpdateNews')
 Route::get('admin/delete-news/{id}', 'AdminNewsController@DeleteNews')->name('delete-news');
 
 //Gọi vào trang tour trong nước
-Route::get('/du-lich/trong-nuoc/dbtest','Tour_Trong_Nuoc_controller@data_push');
+Route::get('trong-nuoc','Tour_Trong_Nuoc_controller@data_push')->name('trong-nuoc');
 
 //trang chủ 
 Route::get('/trang-chu','HomeController@viewHome');
@@ -63,7 +58,7 @@ Route::get('/khuyen-mai','HomeController@viewSale');
 // Route::get('/trong-nuoc','HomeController@viewInland');
 
 //Tour nước ngoài
-Route::get('/nguoc-ngoai','HomeController@viewOutland');
+Route::get('/nguoc-ngoai','HomeController@viewOutland')->name('nuoc-ngoai');
 
 //Về chúng tôi
 Route::get('/ve-chung-toi','HomeController@viewAboutUs');
