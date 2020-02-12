@@ -55,3 +55,18 @@ Route::get('/du-lich/trong-nuoc/dbtest','Tour_Trong_Nuoc_controller@data_push');
 
 //trang chủ 
 Route::get('/trang-chu','HomeController@viewHome');
+
+//Combo - Khuyến mại
+Route::get('/khuyen-mai','HomeController@viewSale');
+
+//Tour trong nước
+// Route::get('/trong-nuoc','HomeController@viewInland');
+
+//Tour nước ngoài
+Route::get('/nguoc-ngoai','HomeController@viewOutland');
+
+//Về chúng tôi
+Route::get('/ve-chung-toi','HomeController@viewAboutUs');
+
+//Cẩm nang du lịch
+Route::get('/cam_nang','HomeController@viewExp');

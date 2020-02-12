@@ -13,7 +13,7 @@
 <body>
 
 @extends('master.home')
-@section('content')
+@section('home')
 		<!-- Start search -->
 		<div id="search">
 			<div class="row">

@@ -6,11 +6,11 @@
 				</div>
 
 				<div class="col-md-1 col-sm-1">
-					<a href="index.php"><p class="header_text">Trang chủ</p></a>
+					<a href="trang-chu"><p class="header_text">Trang chủ</p></a>
 				</div>
 
 				<div class="col-md-1 col-sm-1">
-					<a href="sale.php"><p class="header_text_2">Combo - Khuyến mại</p></a>
+					<a href="khuyen-mai"><p class="header_text_2">Combo - Khuyến mại</p></a>
 				</div>
 
 				<div class="col-md-1 col-sm-1">
@@ -22,11 +22,11 @@
 				</div>
 
 				<div class="col-md-1 col-sm-1">
-					<a href="aboutus.php"><p class="header_text_2" style="margin-top: 15px;">Về chúng tôi</p></a>
+					<a href="ve-chung-toi"><p class="header_text_2" style="margin-top: 15px;">Về chúng tôi</p></a>
 				</div>
 
 				<div class="col-md-1 col-sm-1">
-					<a href="cam_nang.php"><p class="header_text">Blog</p></a>
+					<a href="cam_nang"><p class="header_text">Blog</p></a>
 				</div>
 
 				<div class="col-md-1 col-sm-1">

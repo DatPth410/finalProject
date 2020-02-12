@@ -18,9 +18,37 @@
 		<!-- End Header -->
 
 
-		<!-- Start Content -->
-	@yield('content')
-		<!-- End Content -->
+
+		<!-- Start home -->
+	@yield('home')
+		<!-- End home -->
+
+
+		<!-- Start sale -->
+	@yield('sale')
+		<!-- End sale -->
+
+
+		<!-- Start trong_nuoc -->
+	@yield('trong_nuoc')
+		<!-- End trong_nuoc -->
+
+
+		<!-- Start nguoc_ngoai -->
+	@yield('nuoc_ngoai')
+		<!-- End nguoc_ngoai -->
+
+
+		<!-- Start ve_chung_toi -->
+	@yield('ve_chung_toi')
+		<!-- End ve_chung_toi -->
+
+
+		<!-- Start cam_nang -->
+	@yield('cam_nang')
+		<!-- End cam_nang -->
+
+
 
 
 		<!-- Start footer -->
