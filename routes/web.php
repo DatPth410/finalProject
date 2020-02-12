@@ -50,9 +50,6 @@ Route::get('admin/update-news/{id}', 'AdminNewsController@UpdateNews')->name('up
 Route::post('admin/save-update-news/{id}', 'AdminNewsController@SaveUpdateNews')->name('save-update-news');
 Route::get('admin/delete-news/{id}', 'AdminNewsController@DeleteNews')->name('delete-news');
 
-//Gọi vào trang tour trong nước
-Route::get('/du-lich/trong-nuoc/dbtest','Tour_Trong_Nuoc_controller@data_push');
-
 //trang chủ 
 Route::get('/trang-chu','HomeController@viewHome');
 
@@ -60,7 +57,7 @@ Route::get('/trang-chu','HomeController@viewHome');
 Route::get('/khuyen-mai','HomeController@viewSale');
 
 //Tour trong nước
-// Route::get('/trong-nuoc','HomeController@viewInland');
+Route::get('/trong-nuoc','HomeController@viewInland');
 
 //Tour nước ngoài
 Route::get('/nguoc-ngoai','HomeController@viewOutland');
