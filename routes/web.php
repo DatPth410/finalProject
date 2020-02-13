@@ -49,19 +49,19 @@ Route::get('admin/delete-news/{id}', 'AdminNewsController@DeleteNews')->name('de
 Route::get('/trong-nuoc','Tour_Trong_Nuoc_controller@data_push')->name('trong-nuoc');
 
 //trang chủ 
-Route::get('/trang-chu','HomeController@viewHome');
+Route::get('/trang-chu','MainController@viewHome');
 
 //Combo - Khuyến mại
-Route::get('/khuyen-mai','HomeController@viewSale');
+Route::get('/khuyen-mai','MainController@viewSale');
 
 // //Tour trong nước
-// Route::get('/trong-nuoc','HomeController@viewInland');
+// Route::get('/trong-nuoc','MainController@viewInland');
 
 //Tour nước ngoài
-Route::get('/nuoc-ngoai','HomeController@viewOutland')->name('nuoc-ngoai');
+Route::get('/nuoc-ngoai','MainController@viewOutland')->name('nuoc-ngoai');
 
 //Về chúng tôi
-Route::get('/ve-chung-toi','HomeController@viewAboutUs');
+Route::get('/ve-chung-toi','MainController@viewAboutUs');
 
 //Cẩm nang du lịch
-Route::get('/cam_nang','HomeController@viewExp');
+Route::get('/cam_nang','MainController@viewExp');
