@@ -175,11 +175,13 @@ a{
 }
 .new-content{
   height: 500px;
-  width: 405px;
+  width: 408px;
   border-bottom: 2px solid black;
   margin-bottom: 20px;
   position: relative;
   float: left;
+  text-align: justify;
+
 
   
 }
@@ -197,10 +199,11 @@ a{
 
 }
 .views p {
-  width: 418px;
+  width: 407px;
   height: 112px;
   font-size: 17px;
   padding-top: 8px;
+
   
 }
 .title {

@@ -50,7 +50,7 @@
 						<p style="border-bottom: 3px solid black;"></p>
 					</div>
 					<div class="left-content">
-						<div class="col-md-6 col-sm-12">
+						<div class="col-md-12 col-sm-12">
 							<div class="new-content">
 								<a href="tin_tuc.php">
 									<div class="img">
@@ -68,7 +68,7 @@
 									font-size: 14px;
 									margin-bottom: 10px;"> 228 View
 								</span>
-								<p style="margin-bottom: 10px;">Vinpearl Quy Nhơn là một khu tổ hợp du lịch với rất nhiều hạng mục công trình. Khi ghé thăm địa điểm này bạn sẽ được tận hưởng những dịch vụ tiên tiến nhất. Khu sinh thái nghỉ dưỡng Vinpearl Quy Nhơn nằm ở địa phận Mũi Tấn thôn Hải Dang, Nhơn Hải...</p>
+								<div style="width: 100%;"><p style="margin-bottom: 10px;">Vinpearl Quy Nhơn là một khu tổ hợp du lịch với rất nhiều hạng mục công trình. Khi ghé thăm địa điểm này bạn sẽ được tận hưởng những dịch vụ tiên tiến nhất. Khu sinh thái nghỉ dưỡng Vinpearl Quy Nhơn nằm ở địa phận Mũi Tấn thôn Hải Dang, Nhơn Hải...</p></div>
 
 								<p style="padding-top: 20px;padding-bottom: 0px;">
 									<button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-thumbs-up"> Like</span><span> 0</span></button>
@@ -179,8 +179,8 @@
 	</div>
 </div>
 
-<div class="right-content">
-	<div class="col-md-6 col-sm-12">
+{{-- <div class="right-content">
+	<div class="col-md-12 col-sm-12">
 		<div style="float: left;" class="new-content">
 			<a href="#">
 				<div class="img">
@@ -307,7 +307,7 @@
 </div>
 </div>
 </div>
-</div>
+</div> --}}
 
 <div style="padding-top: 40px; padding-left: 300px;padding-bottom: 80px;" class="btn-group">
 	<button type="button" class="btn btn-default"><a href="#"></a>1</button>
