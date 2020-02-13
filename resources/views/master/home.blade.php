@@ -14,7 +14,12 @@
 </head>
 <body>			
 		<!-- Start Header -->
-	@include('master.header')
+	@auth
+                @include('master.headerUser')
+            @else
+                @include('master.header')
+            @endauth
+
 		<!-- End Header -->
 
 

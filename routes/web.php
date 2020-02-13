@@ -13,7 +13,9 @@
 
 
 
-Route::get('/', 'testController@f_welcome');
+Route::get('/', function(){
+	return redirect()->route('trang-chu');
+});
 Route::get('dat-pro', 'testController@f_hello');
 Route::get('dat-pro/{name?}','testController@f_name');
 Route::group(['prefix' => 'du-lich'], function(){
@@ -22,34 +24,42 @@ Route::group(['prefix' => 'du-lich'], function(){
 	Route::get('mien-nam', function () { echo 'MN'; });
 });
 
-
-
-//Admin
-Route::get('admin', function(){
-	return view('admin.admin');
-})->name('admin');
-
-//Admin quản lý tour
-Route::get('admin/add-tour', 'AdminTourController@AddTour')->name('add-tour');
-Route::post('admin/save-tour', 'AdminTourController@SaveTour')->name('save-tour');
-Route::get('admin/manage-tour', 'AdminTourController@ManageTour')->name('manage-tour');
-Route::get('admin/update-tour/{id}', 'AdminTourController@UpdateTour')->name('update-tour');
-Route::post('admin/save-update-tour/{id}', 'AdminTourController@SaveUpdateTour')->name('save-update-tour');
-Route::get('admin/delete-tour/{id}', 'AdminTourController@DeleteTour')->name('delete-tour');
+//Login
+Route::group(['middleware'=>['auth']], function(){
+	Route::get('/user', 'DemoController@userDemo')->name('user');
+	Route::get('/permission-denied', 'DemoController@permissionDenied')->name('nopermission');
+	Route::group(['middleware'=>['admin']], function(){
+		Route::get('/admin', 'DemoController@adminDemo')->name('admin');
+		Route::get('admin/add-tour', 'AdminTourController@AddTour')->name('add-tour');
+		Route::post('admin/save-tour', 'AdminTourController@SaveTour')->name('save-tour');
+		Route::get('admin/manage-tour', 'AdminTourController@ManageTour')->name('manage-tour');
+		Route::get('admin/update-tour/{id}', 'AdminTourController@UpdateTour')->name('update-tour');
+		Route::post('admin/save-update-tour/{id}', 'AdminTourController@SaveUpdateTour')->name('save-update-tour');
+		Route::get('admin/delete-tour/{id}', 'AdminTourController@DeleteTour')->name('delete-tour');
 
 //Admin quản lý tin tức
-Route::get('admin/add-news', 'AdminNewsController@AddNews')->name('add-news');
-Route::post('admin/save-news', 'AdminNewsController@SaveNews')->name('save-news');
-Route::get('admin/manage-news', 'AdminNewsController@ManageNews')->name('manage-news');
-Route::get('admin/update-news/{id}', 'AdminNewsController@UpdateNews')->name('update-news');
-Route::post('admin/save-update-news/{id}', 'AdminNewsController@SaveUpdateNews')->name('save-update-news');
-Route::get('admin/delete-news/{id}', 'AdminNewsController@DeleteNews')->name('delete-news');
+		Route::get('admin/add-news', 'AdminNewsController@AddNews')->name('add-news');
+		Route::post('admin/save-news', 'AdminNewsController@SaveNews')->name('save-news');
+		Route::get('admin/manage-news', 'AdminNewsController@ManageNews')->name('manage-news');
+		Route::get('admin/update-news/{id}', 'AdminNewsController@UpdateNews')->name('update-news');
+		Route::post('admin/save-update-news/{id}', 'AdminNewsController@SaveUpdateNews')->name('save-update-news');
+		Route::get('admin/delete-news/{id}', 'AdminNewsController@DeleteNews')->name('delete-news');
+	});
+});
+
+//Admin
+// Route::get('admin', function(){
+// 	return view('admin.admin');
+// })->name('admin');
+
+//Admin quản lý tour
+
 
 //Gọi vào trang tour trong nước
 Route::get('/trong-nuoc','Tour_Trong_Nuoc_controller@data_push')->name('trong-nuoc');
 
 //trang chủ 
-Route::get('/trang-chu','MainController@viewHome');
+Route::get('/trang-chu','MainController@viewHome')->name('trang-chu');
 
 //Combo - Khuyến mại
 Route::get('/khuyen-mai','MainController@viewSale');
@@ -65,3 +75,6 @@ Route::get('/ve-chung-toi','MainController@viewAboutUs');
 
 //Cẩm nang du lịch
 Route::get('/cam_nang','MainController@viewExp');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
