@@ -14,7 +14,7 @@
 
 
 Route::get('/', function(){
-	return redirect()->route('trang-chu');
+	return redirect()->route('');
 });
 Route::get('dat-pro', 'testController@f_hello');
 Route::get('dat-pro/{name?}','testController@f_name');
@@ -59,7 +59,7 @@ Route::group(['middleware'=>['auth']], function(){
 Route::get('/trong-nuoc','Tour_Trong_Nuoc_controller@data_push')->name('trong-nuoc');
 
 //trang chủ 
-Route::get('/trang-chu','MainController@viewHome')->name('trang-chu');
+Route::get('/','MainController@viewHome');
 
 //Combo - Khuyến mại
 Route::get('/khuyen-mai','MainController@viewSale');
