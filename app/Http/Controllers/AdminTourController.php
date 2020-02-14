@@ -49,7 +49,7 @@ class AdminTourController extends Controller
 			DB::table('tour_trong_nuoc')->insert(
 				$tourInsert
 			);
-			return redirect(route('add-tour'));
+			return redirect(route('manage-tour'));
 
 		}
 	}

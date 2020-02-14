@@ -14,7 +14,7 @@
 
 
 Route::get('/', function(){
-	return redirect()->route('');
+	return redirect()->route('trang-chu');
 });
 Route::get('dat-pro', 'testController@f_hello');
 Route::get('dat-pro/{name?}','testController@f_name');
