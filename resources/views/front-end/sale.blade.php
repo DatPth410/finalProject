@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Khuyến mại</title>
 	<base href="{{asset('')}}">
 	<link rel="stylesheet" type="text/css" href="css/sale.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -12,6 +12,7 @@
 <body>
 
 @extends('master.home')
+
 @section('sale')
 	<div class="week_sale">
 		<h1 class="title head1">KHUYẾN MÃI CHO BẠN</h1>

@@ -59,7 +59,7 @@ Route::group(['middleware'=>['auth']], function(){
 Route::get('/trong-nuoc','Tour_Trong_Nuoc_controller@data_push')->name('trong-nuoc');
 
 //trang chủ 
-Route::get('/','MainController@viewHome');
+Route::get('/trang-chu','MainController@viewHome')->name('trang-chu');
 
 //Combo - Khuyến mại
 Route::get('/khuyen-mai','MainController@viewSale');
