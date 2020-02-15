@@ -15,9 +15,24 @@ class MainController extends Controller
     }
 
    	public function viewInland(){
-    	
+        //$tour=DB::table('tour_trong_nuoc')->where('id',3)->get();
+        $i=0;
+        $j=0;
         $tour=DB::table('tour_trong_nuoc')->get();
-        return view('front-end.tour_trong_nuoc', compact('tour'));
+        $destination=DB::table('tbl_diemden')->get();
+        $destination_id_array=array();
+        $destination_name_array=array();
+        foreach ($destination as $key => $destination) {
+            $destination_id_array[$j]=$destination->id;
+            $destination_name_array[$j]=$destination->ten;
+            $j++;
+        }
+        return view('front-end.tour_trong_nuoc', compact('tour','destination_id_array','destination_name_array'));
+        // $diem_den=(array)$tour;
+        // $des=explode(" ", $diem_den['diem_den']);
+        //$array="Tuan bros dep trai";
+        //$des=explode(" ",$array);
+        //print_r($des);
     }    
 
     public function viewAboutUs(){

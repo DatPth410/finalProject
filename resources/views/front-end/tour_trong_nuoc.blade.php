@@ -118,11 +118,24 @@
 							@endif
                             
                             <br>
+
+                            {{-- START check điểm đến --}}
                             <ul class="ul_li" style="padding-top: 10px;">
-                            	<li style="padding-right: 15px;">Bà Nà Hill</li>
-                            	<li style="padding-right: 15px">Cù Lao Chàm</li>
-                            	<li>Ngũ Hành Sơn</li>
+                            		@php
+                            			{{$diem_den=(array)$tour;
+        								$des=explode(" ", $diem_den['diem_den']);
+        							}}
+        							@endphp
+
+        							@for($j=0;$j<count($destination_id_array);$j++)
+        								@for($i=0;$i<count($des);$i++)
+        									@if($des[$i]==$destination_id_array[$j])
+                            					<li style="padding-right: 15px">{{$destination_name_array[$j]}}</li>
+                            				@endif
+                            			@endfor
+        							@endfor
                             </ul>
+                            {{-- END check điểm đến --}}
 
 						</div>
 						<div class="col-md-4 col-sm-4">

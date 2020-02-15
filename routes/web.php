@@ -55,17 +55,14 @@ Route::group(['middleware'=>['auth']], function(){
 //Admin quản lý tour
 
 
-//Gọi vào trang tour trong nước
-Route::get('/trong-nuoc','Tour_Trong_Nuoc_controller@data_push')->name('trong-nuoc');
+//tour trong nước
+Route::get('/trong-nuoc','MainController@viewInland')->name('trong-nuoc');
 
 //trang chủ 
 Route::get('/trang-chu','MainController@viewHome')->name('trang-chu');
 
 //Combo - Khuyến mại
 Route::get('/khuyen-mai','MainController@viewSale');
-
-// //Tour trong nước
-// Route::get('/trong-nuoc','MainController@viewInland');
 
 //Tour nước ngoài
 Route::get('/nuoc-ngoai','MainController@viewOutland')->name('nuoc-ngoai');
