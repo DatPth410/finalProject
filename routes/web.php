@@ -57,6 +57,8 @@ Route::group(['middleware'=>['auth']], function(){
 
 //tour trong nước
 Route::get('/trong-nuoc','MainController@viewInland')->name('trong-nuoc');
+Route::get('/trong-nuoc/{destination?}','MainController@viewInlandwithDestination');
+
 
 //trang chủ 
 Route::get('/trang-chu','MainController@viewHome')->name('trang-chu');

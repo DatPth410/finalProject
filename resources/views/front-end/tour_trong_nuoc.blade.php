@@ -44,7 +44,7 @@
 					<p>---------------------------------------------------------</p>
 					<br>				
 					<strong style="font-size: 22px;">
-						<a href="#">Đà Nẵng</a>
+						<a href="trong_nuoc/da_nang">Đà Nẵng</a>
 						|
 						<a href="#">Hà Nội</a>
 						|
