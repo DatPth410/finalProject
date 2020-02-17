@@ -709,16 +709,20 @@ margin-top: 50px;
 
 .header_text{
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 22px;
   text-align: center;
+  font-family: mons;
+  src: url(../fonts/Montserrat-Medium.otf);
 }
 
 .header_text_2{
   color: #fff;
-  font-size: 18px;
-  margin-top: 14px;
+  font-size: 16px;
+  margin-top: 15px;
   text-align: center; 
+  font-family: mons;
+  src: url(../fonts/Montserrat-Medium.otf);
 }
 
 .header_hotline{
@@ -745,7 +749,6 @@ margin-top: 50px;
   width: 100%;
   height: 300px;
   background-color: #0c427a;
-  margin-top: 20px;
 }
 
 .fix{
@@ -777,7 +780,7 @@ margin-top: 50px;
 
 nav {
   font-size : 18px;
-  font-family : verdana;
+  
 }
 
 nav a {
@@ -797,8 +800,9 @@ nav ul li {
   background-color : #141e28;
   padding : 10px;
   cursor : pointer;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
+  margin-top : 2px;
 }
 
 nav ul li:hover {
@@ -808,7 +812,7 @@ nav ul li:hover {
 
 nav ul li ul{
   position : absolute;
-  margin-top : 10px;
+  margin-top : 12px;
   margin-left : -10px;
   visibility : hidden;
 }
@@ -830,4 +834,8 @@ a:hover{
 
 a{
   text-decoration: none;
+}
+
+.none{
+  all: none;
 }

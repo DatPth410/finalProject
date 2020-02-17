@@ -31,7 +31,7 @@
 									<input type="date" name="date" id="dateinput" class="form-control focus input-lg">
 								</div>
 
-								<div class="col-md-5" style="margin-left: -6px; ">
+								<div class="col-md-5" style="margin-left: -12px; ">
 									<select type="text" class="form-control focus input-lg">
 										<option selected="">Điểm khởi hành</option>
 										<option>2</option>
@@ -39,7 +39,7 @@
 									</select>
 								</div>
 
-								<div class="col-md-2" style="margin-left: -6px; ">
+								<div class="col-md-2" style="margin-left: -12px; ">
 									<button type="button" class="btn btn-warning btn-lg">Tìm kiếm</button>
 								</div>
 							</div>

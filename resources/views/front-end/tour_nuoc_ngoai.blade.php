@@ -38,7 +38,7 @@
 					<br>
 					<br>
 					<strong style="color: #B22222;font-size: 18px;padding-top: 30px;">
-						<span>Click vào quốc gia bạn muốn đi</br></span>
+						<span>Click vào quốc gia bạn muốn đi<br></span>
 						<span>( Hoặc gọi ngay hotline: 0969550120 )</span>
 					</strong>
 					<br>
@@ -338,7 +338,6 @@
 		</div>
 
 	</div>
-</div>
 
 @endsection
 </body>

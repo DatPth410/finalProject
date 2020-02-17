@@ -290,7 +290,7 @@
 	text-align: center;
 }
 
-.glyphicon {
+.big_wrapper .glyphicon {
 	padding-top: 10px;
 	margin-left: 45%;
     font-size: 40px;
@@ -431,24 +431,24 @@ header {
   background: #fafafa
 }
 
-header {
+.big_wrapper header {
   padding: 40px;
   min-height: 200px;
   text-align: center;
   color: rgba(0, 0, 0, .87)
 }
 
-header > * {
+.big_wrapper header > * {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto
 }
 
-header>:last-child {
+.big_wrapper header>:last-child {
   margin-bottom: 0
 }
 
-h1 {
+.big_wrapper h1 {
   margin-bottom: 0.5em;
   font-weight: inherit;
   line-height: 1.2;
@@ -456,12 +456,12 @@ h1 {
   font-size: 2.618em
 }
 
-p {
+.big_wrapper p {
   margin-bottom: 1.3em;
   line-height: 1.618
 }
 
-@media (min-width:800px) {
+.big_wrapper @media (min-width:800px) {
   h1 {
     font-size: 4.236em;
     font-weight: 300
@@ -472,7 +472,7 @@ p {
   }
 }
 
-a {
+.big_wrapper a {
   color: #e03616;
   text-decoration: none
 }
@@ -611,4 +611,8 @@ a:hover{
 
 a{
 	text-decoration: none;
+}
+
+.none{
+	all: none;
 }

@@ -13,6 +13,7 @@
 
 @extends('master.home')
 @section('trong_nuoc')
+
 <div id="body">
 	<div id="main_content">
 			<div style="padding-top: 20px;" class="navigation">
@@ -37,7 +38,7 @@
 					<br>
 					<br>
 					<strong style="color: #B22222;font-size: 18px;padding-top: 30px;">
-						<span>Click vào địa điểm bạn muốn đi</br></span>
+						<span>Click vào địa điểm bạn muốn đi<br></span>
 						<span>( Hoặc gọi ngay hotline: 0969550120 )</span>
 					</strong>
 					<br>
@@ -46,31 +47,31 @@
 					<strong style="font-size: 22px;">
 						<a href="{{route('trong-nuoc/da_nang')}}">Đà Nẵng</a>
 						|
-						<a href="#">Hà Nội</a>
+						<a href="{{-- {{route('trong-nuoc/ha_noi')}} --}}">Hà Nội</a>
 						|
-						<a href="#">Miền Tây</a>
+						<a href="{{-- {{route('trong-nuoc/mien_tay')}} --}}">Miền Tây</a>
 						|
-						<a href="#">Hạ Long</a>
+						<a href="{{-- {{route('trong-nuoc/ha_long')}} --}}">Hạ Long</a>
 						|
-						<a href="#">Nha Trang</a>
+						<a href="{{-- {{route('trong-nuoc/nha_trang')}} --}}">Nha Trang</a>
 						|
-						<a href="#">Phú Quốc</a>
+						<a href="{{-- {{route('trong-nuoc/phu_quoc')}} --}}">Phú Quốc</a>
 						|
-						<a href="#">SaPa</a>
+						<a href="{{-- {{route('trong-nuoc/sapa')}} --}}">SaPa</a>
 						|
-						<a href="#">Đà Lạt</a>
+						<a href="{{-- {{route('trong-nuoc/da_lat')}} --}}">Đà Lạt</a>
 						|
-						<a href="#">Quy Nhơn</a>
+						<a href="{{-- {{route('trong-nuoc/quy_nhon')}} --}}">Quy Nhơn</a>
 						|
-						<a href="#">Phú Yên</a>
+						<a href="{{-- {{route('trong-nuoc/phu_yen')}} --}}">Phú Yên</a>
 						|
-						<a href="#">Buôn Mê Thuột</a>
+						<a href="{{-- {{route('trong-nuoc/buon_ma_thuot')}} --}}">Buôn Mê Thuột</a>
 						|
-						<a href="#">Vũng Tàu</a>
+						<a href="{{-- {{route('trong-nuoc/vung_tau')}} --}}">Vũng Tàu</a>
 						|
-						<a href="#">Ninh Bình</a>
+						<a href="{{-- {{route('trong-nuoc/ninh_binh')}} --}}">Ninh Bình</a>
 						|
-						<a href="#">Phan Thiết</a>
+						<a href="{{-- {{route('trong-nuoc/phan_thiet')}} --}}">Phan Thiết</a>
 						|
 					</strong>
 				</div>
@@ -116,7 +117,7 @@
     						@else($tour->vehicle=="Tàu hỏa")
     							<span class="fa fa-train"></span>
 							@endif
-                            
+                            </span>
                             <br>
 
                             {{-- START check điểm đến --}}
@@ -155,9 +156,10 @@
 				</div>
 			</div>
 		</div>
+	
 		@endforeach
 		<!-- END hiển thị tour -->
-
+</div>
 @endsection
 </body>
 </html>

@@ -14,6 +14,7 @@
 @extends('master.home')
 
 @section('sale')
+<div class="big_wrapper">
 	<div class="week_sale">
 		<h1 class="title head1">KHUYẾN MÃI CHO BẠN</h1>
 		<h3 class="title head1">Số lượng có hạn</h3>
@@ -231,6 +232,7 @@
 			</ul>
 		</div>
 	</div>
+</div>
 @endsection
 </body>
 </html>
