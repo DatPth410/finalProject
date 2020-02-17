@@ -57,11 +57,13 @@ Route::group(['middleware'=>['auth']], function(){
 
 //tour trong nước
 Route::get('/trong-nuoc','MainController@viewInland')->name('trong-nuoc');
-Route::get('/trong-nuoc/da_nang','MainController@viewInlandwithDestination')->name('trong-nuoc/da_nang');
+Route::get('/trong-nuoc/da_nang','MainController@viewInlandwithDestination')->name('trong-nuoc/da_nang')->name('save-find');
 
 
 //trang chủ 
 Route::get('/trang-chu','MainController@viewHome')->name('trang-chu');
+
+Route::post('/save-search', 'SearchController@saveSearch')->name('save-find');
 
 //Combo - Khuyến mại
 Route::get('/khuyen-mai','MainController@viewSale');

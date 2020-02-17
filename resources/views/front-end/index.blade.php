@@ -9,55 +9,84 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/myCss.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$( function() {
+			var availableTags = <?php echo json_encode($data_array); ?>;
+			$( "#tags" ).autocomplete({
+				source: availableTags
+			});
+			$( "#tag" ).autocomplete({
+				source: availableTags
+			});
+		} );
+	</script>
 </head>
 <body>
 
-@extends('master.home')
+	@extends('master.home')
 
-@section('home')
-		<!-- Start search -->
-		<div id="search">
-			<div class="row">
-				<div class="col-md-offset-2 col-md-10">
-					<p style="color:#fff; margin-top: 120px;font-size: 34px;font-weight:bold;">ĐẶT TOUR DU LỊCH !</p>					
-					<p style="color:#fff; font-size: 25px;">Hơn 300 Tour du lịch hấp dẫn ở Việt Nam và trên thế giới</p>
+	@section('home')
+	<!-- Start search -->
+	<div id="search">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-10">
+				<p style="color:#fff; margin-top: 120px;font-size: 34px;font-weight:bold;">ĐẶT TOUR DU LỊCH !</p>					
+				<p style="color:#fff; font-size: 25px;">Hơn 300 Tour du lịch hấp dẫn ở Việt Nam và trên thế giới</p>
 
-					<div class="row">
-						<div class="col-md-7" style="margin-top: 20px;">
-							<input type="text" class="form-control focus input-lg" placeholder="Text input" id="search_tour">
+				<div class="row">
+					<div class="col-md-7" style="margin-top: 20px;">
+						
+						{{-- startform --}}
+						<form action="{{route('save-find')}}" method="POST" role="form">
+							@csrf
+							<div class="row" style="margin-top: 20px;">
+								<div class="col-md-6 ui-widget">
+									<label for="tags" style="color: white; font-size: 18px;">Nơi khởi hành: </label>
+									<input id="tags" name="name" class="form-control">
+								</div>
 
+								<div class="col-md-6 ui-widget">
+									<label for="tag" style="color: white; font-size: 18px;">Điểm đến: </label>
+									<input id="tag" name="arrived" class="form-control">
+								</div>
+							</div>
 							<div class="row" style="margin-top: 20px;">
 								<div class="col-md-5">
 									<input type="date" name="date" id="dateinput" class="form-control focus input-lg">
 								</div>
 
 								<div class="col-md-5" style="margin-left: -12px; ">
-									<select type="text" class="form-control focus input-lg">
-										<option selected="">Điểm khởi hành</option>
-										<option>2</option>
-										<option>3</option>
+									<select name="price" class="form-control focus input-lg">
+										<option value="0">Chọn mức giá của bạn</option>
+										<option value="1">0đ-5.000.000đ</option>
+										<option value="2">5.000.000đ-15.000.000đ</option>
+										<option value="3">Lớn hơn 15.000.000đ</option>
 									</select>
 								</div>
 
 								<div class="col-md-2" style="margin-left: -12px; ">
-									<button type="button" class="btn btn-warning btn-lg">Tìm kiếm</button>
+									<button type="submit" class="btn btn-warning btn-lg">Tìm kiếm</button>
 								</div>
 							</div>
-						</div>
-
-
-						<div class="col-md-3">
-							<p style="color:#fff; font-size: 22px;">Mua Tour Nhật Bản và Hàn Quốc để có một mùa xuân ngắm hoa anh đào cực đã với giá chỉ từ</p>
-							<p style="color:#fff; font-size: 26px;font-weight: bold;">9.000.000đ</p>
-						</div>
-
+						</form>
 					</div>
+
+
+					<div class="col-md-3">
+						<p style="color:#fff; font-size: 22px;">Mua Tour Nhật Bản và Hàn Quốc để có một mùa xuân ngắm hoa anh đào cực đã với giá chỉ từ</p>
+						<p style="color:#fff; font-size: 26px;font-weight: bold;">9.000.000đ</p>
+					</div>
+
 				</div>
 			</div>
-		</div>	
-			<!-- End search -->
+		</div>
+	</div>
+	<!-- End search -->
 
-<!-- Start Các điểm đến được yêu thích -->
+	<!-- Start Các điểm đến được yêu thích -->
 
 	<div id="block_1">
 		<div id="carousel-id" class="carousel slide" data-ride="carousel">
@@ -102,10 +131,10 @@
 			<a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 		</div>
 	</div>
-		<!-- End Các điểm đến được yêu thích -->
+	<!-- End Các điểm đến được yêu thích -->
 
 
-		<!-- Start Các Tour đang sale -->
+	<!-- Start Các Tour đang sale -->
 	<div id="block_2">
 		<div class="content">
 			<div class="content_title">
@@ -113,7 +142,7 @@
 			</div>
 			
 			<div class="love">
-					<img src="images/thung-nai-hoa-binh-1.jpg" class="fade_images">
+				<img src="images/thung-nai-hoa-binh-1.jpg" class="fade_images">
 
 				<a href="detail.php"><div class="middle">
 					<div class="text">Xem thêm</div>
@@ -125,7 +154,7 @@
 			</div>
 
 			<div class="love">
-					<img src="images/diem-du-lich-da-lat-ly-tuong-cho-gia-dinh.jpg" class="fade_images">
+				<img src="images/diem-du-lich-da-lat-ly-tuong-cho-gia-dinh.jpg" class="fade_images">
 
 				<a href="#"><div class="middle">
 					<div class="text">Xem thêm</div>
@@ -137,7 +166,7 @@
 			</div>
 
 			<div class="love">
-					<img src="images/Gold-Coast.jpg" class="fade_images">
+				<img src="images/Gold-Coast.jpg" class="fade_images">
 
 				<a href="#"><div class="middle">
 					<div class="text">Xem thêm</div>
@@ -153,10 +182,10 @@
 			</div>
 		</div>
 	</div>
-		<!-- End Các Tour đang sale -->
+	<!-- End Các Tour đang sale -->
 
 
-		<!-- Start tour trong nước -->
+	<!-- Start tour trong nước -->
 	<div id="block_3">
 		<div class="content_2">
 			<div class="content_title">
@@ -300,10 +329,10 @@
 			<a href="#"><p><span class="glyphicon glyphicon-backward" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="glyphicon glyphicon-forward" style="font-size: 15px;margin-left:10px;"></span></p></a>
 		</div>
 	</div>
-		<!-- End tour trong nước -->
+	<!-- End tour trong nước -->
 
 
-		<!-- Start tour ngoài nước -->
+	<!-- Start tour ngoài nước -->
 	<div id="block_4">
 		<div class="content_2">
 			<div class="content_title">
@@ -447,10 +476,10 @@
 			<a href="#"><p><span class="glyphicon glyphicon-backward" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="glyphicon glyphicon-forward" style="font-size: 15px;margin-left:10px;"></span></p></a>
 		</div>		
 	</div>
-		<!-- End tour ngoài nước -->
+	<!-- End tour ngoài nước -->
 
 
-		<!-- Start kinh nghiệm du lịch -->
+	<!-- Start kinh nghiệm du lịch -->
 	<div id="block_5">
 		<div class="content_3">
 			<div class="content_title">
@@ -493,8 +522,8 @@
 			</div>
 		</div>
 	</div>
-		<!-- End kinh nghiệm du lịch -->
+	<!-- End kinh nghiệm du lịch -->
 
-@endsection
+	@endsection
 </body>
 </html>

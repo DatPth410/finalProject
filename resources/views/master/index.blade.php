@@ -20,7 +20,7 @@
 								<div class="col-md-5" style="margin-left: -6px; ">
 									<select type="text" class="form-control focus input-lg">
 										<option selected="">Điểm khởi hành</option>
-										<option>2</option>
+										<option>2</option> 
 										<option>3</option>
 									</select>
 								</div>
@@ -41,6 +41,7 @@
 				</div>
 			</div>
 		</div>	
+		
 			<!-- End search -->
 
 <!-- Start Các điểm đến được yêu thích -->

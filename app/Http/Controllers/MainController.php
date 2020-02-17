@@ -7,7 +7,14 @@ use Illuminate\Support\Facades\DB;
 class MainController extends Controller
 {
     public function viewHome(){
-    	return view('front-end.index');
+        $data=DB::table('tbl_diemden')
+        ->select('ten')->get();
+        $data_array=array();
+        foreach ($data as $key => $value) {
+            $data_array[]=$value->ten;
+        }
+        $data_array1=array();
+    	return view('front-end.index',compact('data_array'));
     }
 
     public function viewSale(){
