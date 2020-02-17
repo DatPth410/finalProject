@@ -45,7 +45,7 @@
 					<p>---------------------------------------------------------</p>
 					<br>				
 					<strong style="font-size: 22px;">
-						<a href="{{route('trong-nuoc/da_nang')}}">Đà Nẵng</a>
+						<a href="trong-nuoc/da-nang">Đà Nẵng</a>
 						|
 						<a href="{{-- {{route('trong-nuoc/ha_noi')}} --}}">Hà Nội</a>
 						|

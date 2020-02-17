@@ -57,7 +57,7 @@ Route::group(['middleware'=>['auth']], function(){
 
 //tour trong nước
 Route::get('/trong-nuoc','MainController@viewInland')->name('trong-nuoc');
-Route::get('/trong-nuoc/da_nang','MainController@viewInlandwithDestination')->name('trong-nuoc/da_nang')->name('save-find');
+Route::get('/trong-nuoc/{code_diem_den?}', ['uses' =>'MainController@viewInlandwithDestination', 'as'=>'trong-nuoc/$code_diem_den']);
 
 
 //trang chủ 

@@ -43,7 +43,7 @@ class MainController extends Controller
         //print_r($des);
     }
 
-    public function viewInlandwithDestination(){
+    public function viewInlandwithDestination($code_diem_den){
         $i=0;
         $j=0;
         $tour=DB::table('tour_trong_nuoc')->get();
@@ -51,11 +51,14 @@ class MainController extends Controller
         $destination_id_array=array();
         $destination_name_array=array();
         foreach ($destination as $key => $destination) {
-            $destination_id_array[$j]=$destination->id;
-            $destination_name_array[$j]=$destination->ten;
-            $j++;
+            if ($code_diem_den==$destination->code) {
+                $destination_id_array[$j]=$destination->id;
+                $destination_name_array[$j]=$destination->ten;
+                $j++;
+            }
         }
         return view('front-end.tour_trong_nuoc', compact('tour','destination_id_array','destination_name_array'));
+        //echo $code_diem_den;
     }
 
 
