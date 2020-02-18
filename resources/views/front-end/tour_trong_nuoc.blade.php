@@ -45,33 +45,33 @@
 					<p>---------------------------------------------------------</p>
 					<br>				
 					<strong style="font-size: 22px;">
-						<a href="trong-nuoc/da-nang">Đà Nẵng</a>
+						<a href="trong-nuoc/da_nang">Đà Nẵng</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/ha_noi')}} --}}">Hà Nội</a>
+						<a href="trong-nuoc/ha_noi">Hà Nội</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/mien_tay')}} --}}">Miền Tây</a>
+						<a href="trong-nuoc/mien_tay">Miền Tây</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/ha_long')}} --}}">Hạ Long</a>
+						<a href="trong-nuoc/ha_long">Hạ Long</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/nha_trang')}} --}}">Nha Trang</a>
+						<a href="trong-nuoc/nha_trang">Nha Trang</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/phu_quoc')}} --}}">Phú Quốc</a>
+						<a href="trong-nuoc/phu_quoc">Phú Quốc</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/sapa')}} --}}">SaPa</a>
+						<a href="trong-nuoc/sapa">SaPa</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/da_lat')}} --}}">Đà Lạt</a>
+						<a href="trong-nuoc/da_lat">Đà Lạt</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/quy_nhon')}} --}}">Quy Nhơn</a>
+						<a href="trong-nuoc/quy_nhon">Quy Nhơn</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/phu_yen')}} --}}">Phú Yên</a>
+						<a href="trong-nuoc/phu_yen">Phú Yên</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/buon_ma_thuot')}} --}}">Buôn Mê Thuột</a>
+						<a href="trong-nuoc/buon_ma_thuot">Buôn Mê Thuột</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/vung_tau')}} --}}">Vũng Tàu</a>
+						<a href="trong-nuoc/vung_tau">Vũng Tàu</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/ninh_binh')}} --}}">Ninh Bình</a>
+						<a href="trong-nuoc/ninh_binh">Ninh Bình</a>
 						|
-						<a href="{{-- {{route('trong-nuoc/phan_thiet')}} --}}">Phan Thiết</a>
+						<a href="trong-nuoc/phan_thiet">Phan Thiết</a>
 						|
 					</strong>
 				</div>
@@ -80,6 +80,9 @@
 
 		<!-- START hiển thị tour -->
 		@foreach($tour as $stt=>$tour)
+
+		@for($k=0;$k<count($tour_code_id);$k++)
+			@if($tour_code_id[$k] == $tour->id)
 		<div class="tour_list_tn">
 			<div class="col-md-12 col-sm-12">
 				<div>
@@ -156,7 +159,8 @@
 				</div>
 			</div>
 		</div>
-	
+			@endif
+		@endfor
 		@endforeach
 		<!-- END hiển thị tour -->
 </div>

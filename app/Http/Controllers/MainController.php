@@ -35,30 +35,44 @@ class MainController extends Controller
             $destination_name_array[$j]=$destination->ten;
             $j++;
         }
-        return view('front-end.tour_trong_nuoc', compact('tour','destination_id_array','destination_name_array'));
-        // $diem_den=(array)$tour;
-        // $des=explode(" ", $diem_den['diem_den']);
-        //$array="Tuan bros dep trai";
-        //$des=explode(" ",$array);
-        //print_r($des);
+        $j=0;
+        foreach ($tour as $key => $tour_value) {
+            $tour_code_id[$j]=$tour_value->id;
+            $j++;
+        }
+        return view('front-end.tour_trong_nuoc', compact('tour','destination_id_array','destination_name_array','tour_code_id'));
     }
 
     public function viewInlandwithDestination($code_diem_den){
         $i=0;
         $j=0;
+        $k=0;
         $tour=DB::table('tour_trong_nuoc')->get();
         $destination=DB::table('tbl_diemden')->get();
+        $destination_code_id=$destination_code_name="";
+        $tour_code_id=array();
         $destination_id_array=array();
         $destination_name_array=array();
         foreach ($destination as $key => $destination) {
-            if ($code_diem_den==$destination->code) {
-                $destination_id_array[$j]=$destination->id;
-                $destination_name_array[$j]=$destination->ten;
-                $j++;
+            if ($code_diem_den == $destination->code) {
+                $destination_code_id=$destination->id;
+                $destination_code_name=$destination->ten;
+            }
+            $destination_id_array[$j]=$destination->id;
+            $destination_name_array[$j]=$destination->ten;
+            $j++;
+        }
+        foreach ($tour as $key => $tour_value) {
+            $diem_den=(array)$tour_value;
+            $des=explode(" ", $diem_den['diem_den']);
+            for ($i=0; $i < count($des) ; $i++) { 
+                if ($destination_code_id == $des[$i]) {
+                    $tour_code_id[$k]=$tour_value->id;
+                    $k++;
+                }
             }
         }
-        return view('front-end.tour_trong_nuoc', compact('tour','destination_id_array','destination_name_array'));
-        //echo $code_diem_den;
+        return view('front-end.tour_trong_nuoc', compact('tour','destination_id_array','destination_name_array','tour_code_id'));
     }
 
 
