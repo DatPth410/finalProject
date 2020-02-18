@@ -79,3 +79,7 @@ Route::get('/cam_nang','MainController@viewExp');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Trang chi tiết 
+Route::get('/detail', 'MainController@viewDetail');
+

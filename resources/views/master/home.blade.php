@@ -55,6 +55,11 @@
 		<!-- End cam_nang -->
 
 
+		<!-- Start chi_tiet -->
+	@yield('chi_tiet')
+		<!-- End chi_tiet -->
+
+
 
 
 		<!-- Start footer -->

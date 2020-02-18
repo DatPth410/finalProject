@@ -79,4 +79,9 @@ class MainController extends Controller
     	
         return view('front-end.tour_nuoc_ngoai');
     }
+
+    public function viewDetail(){
+        
+        return view('front-end.detail');
+    }    
 }
