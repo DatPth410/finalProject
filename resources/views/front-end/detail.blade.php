@@ -14,7 +14,7 @@
 
 @extends('master.home')
 @section('chi_tiet')
-
+	
 	<div class="container all">
 		<div  style="padding-top: 30px;" class="head_con">
 			<span class="fa fa-home" style="padding-right: 10px;"><a href="#"> Trang chủ / </a></span>
@@ -49,7 +49,7 @@
 					<h3 style="color: #003c71">Những trải nghiệm thú vị trong chương trình</h3>
 					<p>Hành trình độc đáo khám phá 2 quốc gia Đông Nam Á không thể bỏ lỡ...</p>
 					<p> <span style="font-weight: bold">-Gardens By The Bay</span>: kỳ quan nổi tiếng của Singapore với kiến trúc độc đáo và là “công trình mà người dân Singapore có thể tự hào” mỗi khi nhắc đến.</p>
-					<h3 style="color: #003c71">Chương trình tour</h3>
+					<h3 style="color: #003c71" id="ctr_tour">Chương trình tour</h3>
 					<h3>Ngày 1:TPHCM-SINGAPORE( ĂN TỐI )</h3>
 					<p> <span style="font-weight: bold">-Gardens By The Bay</span>: kỳ quan nổi tiếng của Singapore với kiến trúc độc đáo và là “công trình mà người dân Singapore có thể tự hào” mỗi khi nhắc đến.</p>
 					<br>
@@ -234,8 +234,64 @@
 			</div>
 
 				<!-- START PHẦN THANH TOÁN -->
-			<div>
-				
+			<div class="col-md-4 fix">
+				<div id="form_thanhtoan">
+					<p style="font-weight: bold; font-size: 15px;">Đặt ngay, chỉ 2 phút!! Hoặc gọi (028) 0928 0416.</p>
+					<div class="row">
+						<div class="col-md-7 margin-top-20px">
+							<label style="padding-top: 8px;" for="pickDate">Chọn ngày khởi hành:</label>
+						</div>
+
+						<div class="col-md-5 margin-top-20px">
+							<input type="date" name="date" id="pickDate" class="form-control focus">
+						</div>
+
+
+						<div class="col-md-7 margin-top-20px" style="padding-top: 8px;">
+							<span>2</span>
+							<span>Người lớn</span>
+							<span style="padding-right: 3px;">-15%</span>
+							<span style="float:right;font-size: 15px;">9.000.000</span>
+						</div>
+
+						<div class="col-md-5 margin-top-20px">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default minus_plus"><i class="fa fa-minus"></i></button>
+								<button type="button" class="btn btn-default minus_plus"><i class="fa fa-plus"></i></button>
+							</div>
+						</div>
+
+						<div class="col-md-7 margin-top-20px" style="padding-top: 8px;">
+							<span>2</span>
+							<span>Trẻ em</span>
+							<span style="padding-right: 3px;">-15%</span>
+							<span style="float:right;font-size: 15px;">9.000.000</span>
+						</div>
+
+						<div class="col-md-5 margin-top-20px">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default minus_plus"><i class="fa fa-minus"></i></button>
+								<button type="button" class="btn btn-default minus_plus"><i class="fa fa-plus"></i></button>
+							</div>
+						</div>	
+
+						<div class="col-md-6 margin-top-20px">
+							<p style="font-size: 16px;">Tổng cộng</p>
+						</div>	
+
+						<div class="col-md-6 margin-top-20px">
+							<p class="total_price">18.000.000</p>
+						</div>		
+
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-warning" style="width: 100%;">Yêu cầu đặt Tour</button>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<a href="#ctr_tour">Chương trình Tour</a>
+				</div>
 			</div>
 				<!-- END PHẦN THANH TOÁN -->
 		</div>

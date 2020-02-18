@@ -535,3 +535,20 @@ a{
 .margin-top{
   margin-top: 70px;
 }
+
+#form_thanhtoan{
+  /*background-color: grey;*/
+  min-height: 100px;
+}
+
+.margin-top-20px{
+  margin-top: 20px;
+}
+
+.minus_plus{
+  margin-left: 20px;
+}
+
+.total_price{
+  font-size: 27px;
+}
