@@ -37,7 +37,7 @@
 	@foreach($list_tour as $stt=>$tour)
 		<div class="tour_list">
 			<div class="left_tour_list">
-				<a href="img/test/{{$tour->avatar}}"><img src="images/du_lich_bali.jpg"></a>
+				<a href="img/test/{{$tour->avatar}}"><img src="img/test/{{$tour->avatar}}"></a>
 
 			</div>
 			<div class="mid_tour_list">

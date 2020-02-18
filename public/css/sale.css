@@ -62,18 +62,18 @@
 #right{
 	background-image: url('../img/5.jpg');
 	background-size: cover;
-	margin-left: 5%;
-	width: 50%;
-	height: 237.5px;
+	/*margin-left: 5%;*/
+	width: 55%;
+	height: 250px;
 }
 
 #right2{
 	background-image: url('../img/6.jpeg');
 	background-size: cover;
-	margin-top: 25px;
-	margin-left: 5%;
-	width: 50%;
-	height: 237.5px;
+	/*margin-top: 25px;*/
+	/*margin-left: 5%;*/
+	width: 55%;
+	height: 250px;
 }
 
 #sale_number{
@@ -264,8 +264,8 @@
 }
 
 .button2{
-	margin-top: 10px;
-	margin-left: 100px;
+	margin-top: -70px;
+	margin-left: -100px;
 }
 
 .option{

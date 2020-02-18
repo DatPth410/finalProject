@@ -11,6 +11,7 @@
 	{{-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/blog_tour_trong_ngoai.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css"> --}}
+
 </head>
 <body>			
 		<!-- Start Header -->
