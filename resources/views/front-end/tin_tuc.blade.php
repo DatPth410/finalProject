@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Tin tức du lịch </title>
-	<link rel="stylesheet" href="../../../public/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="../../../public/css/blog_tour_trong_ngoai.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
 		<div id="header" class="fix">
 			<div class="row">					
 				<div class="col-md-offset-1 col-md-1 col-sm-offset-1 col-sm-1">
-					<img src="../../../public/images/lo-go.png" style="width: 80px;height: 80px;">
+					<img src="images/lo-go.png" style="width: 80px;height: 80px;">
 				</div>
 
 				<div class="col-md-1 col-sm-1">
@@ -92,15 +92,15 @@
 					</div>
 					<h3 style="font-weight: bold;font-size: 22px;">Khách sạn Fusion Suites Vũng Tàu: Lựa chọn mới khi du lịch Vũng Tàu</h3>
 					<div class="anh_r">
-						<img src="../../../public/images/fusion-suites-vung-tau-ivivu-12.jpg" style="height:355px;width:650px; ">
+						<img src="images/fusion-suites-vung-tau-ivivu-12.jpg" style="height:355px;width:650px; ">
 					</div>
 					<p>Khách sạn Fusion Suite Vũng Tàu chính thức khai trương vào ngày 30/01/2020. Khách sạn tọa lạc tại số 2, đường Trương Công Định, phường 2, TP. Vũng Tàu. Fusion Suites Vũng Tàu có vị trí đắc địa nằm ngay trung tâm thành phố với 3 mặt tiền: Trương Công Định, Phan Bội Châu, Nguyễn Công Trứ, kề sát đường Hạ Long – một trong những con đường đẹp nhất Việt Nam, cách công viên và biển Bãi Trước chưa đầy 2 phút đi bộ, cách Bến Tàu cánh ngầm 500m và cách Bãi Sau khoảng 6 phút đi bằng xe ô tô.</p>
 					<div class="anh_r">
-						<img src="../../../public/images/fusion-suites-vung-tau-ivivu-13.jpg" style="height:355px;width:650px; ">
+						<img src="images/fusion-suites-vung-tau-ivivu-13.jpg" style="height:355px;width:650px; ">
 					</div>
 					<p>Khách sạn được thiết kế theo phong cách hiện đại, kiến trúc bên ngoài và nội thất đều lấy ý tưởng từ những sắc màu và phong vị biển, mang đến cho du khách một không gian thân thiện, xanh mát. Với tầm nhìn tuyệt vời hướng ra biển xanh, tại đây bạn có thể căng tràn mọi giác quan để tận hưởng trọn vẹn không gian biển mát lành cùng những trải nghiệm thư giãn lý tưởng.</p>
 					<div class="anh_r">
-						<img src="../../../public/images/fusion-suites-vung-tau-ivivu-14.jpg" style="height:355px;width:650px; ">
+						<img src="images/fusion-suites-vung-tau-ivivu-14.jpg" style="height:355px;width:650px; ">
 					</div>
 
 					<div class="around" >
@@ -115,7 +115,7 @@
 								<p style="color: white;font-size: 12px;padding-left: 10px">2N1Đ+Xe+Bữa ăn</p>
 							</span>
 							<a href="#">
-								<img src="../../../public/images/2n1d.jpg" style="height: 111px;
+								<img src="images/2n1d.jpg" style="height: 111px;
 								width: 151px">
 							</a>
 						</div>
@@ -151,7 +151,7 @@
        	 		<label class="sr-only" for="">label</label>
        	 		<input type="text" class="form-control" id="" name="search" placeholder="TÌm kiếm tin tức...">
        	 	</div>
-       	     <button type="submit" class="btn btn-danger"><a href="#"><img src="../../../public/images/i-search-mini.png"></a></button>
+       	     <button type="submit" class="btn btn-danger"><a href="#"><img src="images/i-search-mini.png"></a></button>
        	 </form>
        	</div>
 
@@ -167,7 +167,7 @@
 		    	<div class="news">
 		    			<div class="img2">
 		    			  <a href="#">
-		    			  	<img src="../../../public/images/bia-sex-show-o-thai-lan.jpg" style="padding-top: 20px;" width="80px"; height="100px">
+		    			  	<img src="images/bia-sex-show-o-thai-lan.jpg" style="padding-top: 20px;" width="80px"; height="100px">
 		    			  </a>
 		    		    </div>
 		    		    <div class="title">
@@ -180,7 +180,7 @@
 		    	<div class="news">
 		    			<div class="img2">
 		    			  <a href="#">	    				
-		    			  	<img src="../../../public/images/191_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
+		    			  	<img src="images/191_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
 		    			  </a>
 		    		    </div>
 		    		    <div class="title">
@@ -193,7 +193,7 @@
 		    	<div class="news">
 		    			<div class="img2">
 		    			  <a href="#">	    				
-		    			  	<img src="../../../public/images/191_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
+		    			  	<img src="images/191_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
 		    			  </a>
 		    		    </div>
 		    		    <div class="title">
@@ -206,7 +206,7 @@
 		    	<div class="news">
 		    			<div class="img2">
 		    			  <a href="#">	    				
-		    			  	<img src="../../../public/images/4_anh-nen.jpg" style="padding-top: 20px;" width="80px"; height="100px">
+		    			  	<img src="images/4_anh-nen.jpg" style="padding-top: 20px;" width="80px"; height="100px">
 		    			  </a>
 		    		    </div>
 		    		    <div class="title">
@@ -219,7 +219,7 @@
 		    	<div class="news">
 		    			<div class="img2">
 		    			  <a href="#">	    				
-		    			  	<img src="../../../public/images/171_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
+		    			  	<img src="images/171_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
 		    			  </a>
 		    		    </div>
 		    		    <div class="title">
@@ -232,7 +232,7 @@
 		    	<div class="news">
 		    			<div class="img2">
 		    			  <a href="#">	    				
-		    			  	<img src="../../../public/images/nuoc-ngoai-thang-2.jpg" style="padding-top: 20px;" width="80px"; height="100px">
+		    			  	<img src="images/nuoc-ngoai-thang-2.jpg" style="padding-top: 20px;" width="80px"; height="100px">
 		    			  </a>
 		    		    </div>
 		    		    <div class="title">
@@ -245,7 +245,7 @@
 		    	<div class="news">
 		    			<div class="img2">
 		    			  <a href="#">	    				
-		    			  	<img src="../../../public/images/1_phuong-hoang-co-tran-mua-dong.jpg" style="padding-top: 20px;" width="80px"; height="100px">
+		    			  	<img src="images/1_phuong-hoang-co-tran-mua-dong.jpg" style="padding-top: 20px;" width="80px"; height="100px">
 		    			  </a>
 		    		    </div>
 		    		    <div class="title">
@@ -258,7 +258,7 @@
 		    	<div class="news">
 		    			<div class="img2">
 		    			  <a href="#">	    				
-		    			  	<img src="../../../public/images/26_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
+		    			  	<img src="images/26_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
 		    			  </a>
 		    		    </div>
 		    		    <div class="title">
@@ -271,7 +271,7 @@
 		    	<div class="news">
 		    			<div class="img2">
 		    			  <a href="#">	    				
-		    			  	<img src="../../../public/images/178_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
+		    			  	<img src="images/178_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
 		    			  </a>
 		    		    </div>
 		    		    <div class="title">
@@ -284,7 +284,7 @@
 		    	<div class="news">
 		    			<div class="img2">
 		    			  <a href="#">	    				
-		    			  	<img src="../../../public/images/184_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
+		    			  	<img src="images/184_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
 		    			  </a>
 		    		    </div>
 		    		    <div class="title">
@@ -349,7 +349,7 @@
 
 		<div id="footer">
 			<div id="top_bottom" class="col-md-offset-2">
-				<img src="../../../public/images/lo-go.png" style="width: 90px;height: 90px;margin-top: 10px;">
+				<img src="images/lo-go.png" style="width: 90px;height: 90px;margin-top: 10px;">
 			</div>
 
 			<div id="middle_bottom" class="col-md-8 col-md-offset-2">

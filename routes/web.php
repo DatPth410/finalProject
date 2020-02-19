@@ -83,3 +83,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Trang chi tiết 
 Route::get('/detail', 'MainController@viewDetail');
 
+//Trang chi tiết tin tức
+Route::get('/tin_tuc', 'MainController@viewTintuc');

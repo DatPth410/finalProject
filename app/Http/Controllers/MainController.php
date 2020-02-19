@@ -98,4 +98,9 @@ class MainController extends Controller
         
         return view('front-end.detail');
     }    
+
+    public function viewTintuc(){
+        
+        return view('front-end.tin_tuc');
+    }       
 }
