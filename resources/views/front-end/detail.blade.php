@@ -5,15 +5,25 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>MẠNG BÁN TOUR DU LỊCH SỐ 1 VIỆT NAM</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	{{-- <link rel="stylesheet" href="css/bootstrap.min.css" /> --}}
 	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="js/bootstrap.min.js"></script>
+	{{-- <script src="js/bootstrap.min.js"></script> --}}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+
+	{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> --}}
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-@extends('master.home')
-@section('chi_tiet')
+	@extends('master.home')
+	@section('chi_tiet')
 	
 	<div class="container all">
 		<div  style="padding-top: 30px;" class="head_con">
@@ -26,6 +36,10 @@
 			<span  class="score">9.4</span>
 			<span class="cmt" style="color:#9fc43a;font-weight: bold; ">Tuyệt vời</span>
 			<span style="font-size: 14px;">| 7 đánh giá</span>	
+			<!-- Button trigger modal -->
+
+
+
 		</div>
 		<br>
 		<div class="row">
@@ -192,10 +206,10 @@
 								</div>
 							</div>
 
-					
-				</div>
 
-			</div>
+						</div>
+
+					</div>
 
 					<div class="tvn">
 						<h3>Tư Vấn Ngay</h3>
@@ -233,7 +247,7 @@
 				</div>
 			</div>
 
-				<!-- START PHẦN THANH TOÁN -->
+			<!-- START PHẦN THANH TOÁN -->
 			<div class="col-md-4 fix">
 				<div id="form_thanhtoan">
 					<p style="font-weight: bold; font-size: 15px;">Đặt ngay, chỉ 2 phút!! Hoặc gọi (028) 0928 0416.</p>
@@ -284,7 +298,7 @@
 						</div>		
 
 						<div class="col-md-12">
-							<button type="submit" class="btn btn-warning" style="width: 100%;">Yêu cầu đặt Tour</button>
+							<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#MODALX" style="width: 100%;">Yêu cầu đặt Tour</button>
 						</div>
 					</div>
 				</div>
@@ -293,110 +307,166 @@
 					<a href="#ctr_tour">Chương trình Tour</a>
 				</div>
 			</div>
-				<!-- END PHẦN THANH TOÁN -->
+			<!-- END PHẦN THANH TOÁN -->
 		</div>
 
 
-				<!-- START TOUR LIÊN QUAN -->
-				<div class="tlq_title">
-					<a href="#"><p style="margin-left: 20px;font-size: 19px;padding-top: 10px;">Xem thêm các tour liên quan<span class="glyphicon glyphicon-chevron-right" style="font-size: 16px;"></span></p></a>
+		<!-- START TOUR LIÊN QUAN -->
+		<div class="tlq_title">
+			<a href="#"><p style="margin-left: 20px;font-size: 19px;padding-top: 10px;">Xem thêm các tour liên quan<span class="glyphicon glyphicon-chevron-right" style="font-size: 16px;"></span></p></a>
 
-					<div class="row tlq">
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail first_t">
-								<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
+			<div class="row tlq">
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail first_t">
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
-								<div class="caption">
-									<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-									<p>...</p>
-									<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+						<div class="caption">
+							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
+							<p>...</p>
+							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
-									<br>
-									<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+							<br>
+							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
 
-									<div class="price_tour">
-										<p>12.000.000</p>
-									</div>
-								</div>
-
-
+							<div class="price_tour">
+								<p>12.000.000</p>
 							</div>
 						</div>
 
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail">
-								<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
-								<div class="caption">
-									<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-									<p>...</p>
-									<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+					</div>
+				</div>
 
-									<br>
-									<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
-									<div class="price_tour">
-										<p>12.000.000</p>
-									</div>
-								</div>
+						<div class="caption">
+							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
+							<p>...</p>
+							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
+							<br>
+							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
 
+							<div class="price_tour">
+								<p>12.000.000</p>
 							</div>
 						</div>
 
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail">
-								<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
-								<div class="caption">
-									<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-									<p>...</p>
-									<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+					</div>
+				</div>
 
-									<br>
-									<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
 
-									<div class="price_tour">
-										<p>12.000.000</p>
-									</div>
-								</div>
+						<div class="caption">
+							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
+							<p>...</p>
+							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+
+							<br>
+							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+
+							<div class="price_tour">
+								<p>12.000.000</p>
+							</div>
+						</div>
 
 
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!-- END TOUR LIÊN QUAN -->
+
+
+		<!-- START TOUR VỪA XEM -->
+		<div class="tlq_title1">
+			<a href="#"><p style="margin-left: 20px;font-size: 19px;padding-top: 10px;">Xem thêm các tour bạn vừa xem<span class="glyphicon glyphicon-chevron-right" style="font-size: 16px;"></span></p></a>
+
+			<div class="row tlq">
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail first_t">
+						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
+
+						<div class="caption">
+							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
+							<p>...</p>
+							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+
+							<br>
+							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+
+							<div class="price_tour">
+								<p>12.000.000</p>
 							</div>
 						</div>
 					</div>
-				</div>	
-				<!-- END TOUR LIÊN QUAN -->
-
-
-				<!-- START TOUR VỪA XEM -->
-				<div class="tlq_title1">
-					<a href="#"><p style="margin-left: 20px;font-size: 19px;padding-top: 10px;">Xem thêm các tour bạn vừa xem<span class="glyphicon glyphicon-chevron-right" style="font-size: 16px;"></span></p></a>
-
-					<div class="row tlq">
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail first_t">
-								<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
-
-								<div class="caption">
-									<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-									<p>...</p>
-									<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-									<br>
-									<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-									<div class="price_tour">
-										<p>12.000.000</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>	
-				<!-- END TOUR VỪA XEM -->				
+				</div>
+			</div>
+		</div>	
+		<!-- END TOUR VỪA XEM -->				
 	</div>
-@endsection
+
+	<div class="modal fade in" id="MODALX" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Xác nhận đặt tour</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="POST" role="form">       
+						<div class="form-group">
+							<label for="">Họ và tên</label>
+							<input type="text" class="form-control" id="" placeholder="Họ và tên">
+						</div>
+
+						<div class="form-group">
+							<label for="">Số điện thoại</label>
+							<input type="text" class="form-control" id="" placeholder="Số điện thoại">
+						</div>
+
+						<div class="form-group">
+							<label for="">Email</label>
+							<input type="text" class="form-control" id="" placeholder="Email">
+						</div>
+
+						<div class="form-group">
+							<label for="">Hình thức thanh toán</label>
+							<select name="" id="input" class="form-control">
+								<option value="">Thanh toán trực tuyến</option>
+								<option value="">Thanh toán tại chi nhánh</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="">Số tài khoản</label>
+							<p>(Chỉ bắt buộc khi bạn chọn thanh toán trực tuyến, nếu bỏ trống sẽ mặc định là thanh toán tại chi nhánh)</p>
+							<input type="text" class="form-control" id="" placeholder="Số tài khoản">
+						</div>
+
+
+						<div class="form-group">
+							<label for="">Yêu cầu khác</label>
+							<input type="text" class="form-control" id="" placeholder="Yêu cầu khác">
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Xác nhận</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	@endsection
 
 </body>
 </html>
