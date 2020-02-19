@@ -38,10 +38,10 @@
 							@if (Route::has('login'))
 							<div class="top-right links">
 
-								<li><a href = "{{ route('login') }}">Đăng nhập</a></li>
+								<li><a style="font-size: 16px;" href = "{{ route('login') }}">Đăng nhập</a></li>
 
 								@if (Route::has('register'))
-								<li><a href = "{{ route('register') }}">Đăng kí</li>
+								<li><a style="font-size: 16px;" href = "{{ route('register') }}">Đăng kí</li>
 								@endif
 								
 							</div>
@@ -55,8 +55,8 @@
 			</div>
 
 			<div class="col-md-2 col-sm-2">
-				<a href="#" class="header_hotline glyphicon glyphicon-earphone"><p style="float: right;margin-left: 22px; letter-spacing: 2px; font-size: 30px;">0928 0416</p></a>
-				<p style="font-size: 15px;margin-top: -4px;color: #fff;text-align: center;">Hỗ trợ dịch vụ 24/24</p>
+				<a href="#" class="header_hotline glyphicon glyphicon-earphone none"><p  style="float: right;margin-left: 22px; letter-spacing: 2px; font-size: 30px;">0928 0416</p></a>
+				<p style="font-size: 15px;margin-top: -4px;color: #fff;text-align: center;" >Hỗ trợ dịch vụ 24/24</p>
 			</div>
 		</div>
 	</div>

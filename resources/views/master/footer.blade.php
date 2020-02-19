@@ -1,5 +1,4 @@
 
-		<div id="wrap_footer">
 		<div id="above_footer">
 			<h1 style="text-align: center;color: #fff;padding-top: 20px;">Chọn DPV, chọn sự Uy Tín, nhanh gọn và đảm bảo</h1>
 			<h3 style="text-align: center;color: #85afdb;">Travel Agency đem đến cho bạn những trải nghiệm tuyệt vời nhất!</h3>
@@ -39,4 +38,3 @@
 				<p style="text-align: center; font-size: 22px;margin-top: 20px;">Copyright - Empowered by DPV</p>
 			</div>
 		</div>
-	</div>

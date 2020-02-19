@@ -10,6 +10,7 @@
 <body>
 @extends('master.home')
 @section('ve_chung_toi')
+<div class="big_wrapper">
 	<div id="block3">
 		<div class="block3-ava block3-float">
 			<img src="img/logo.png" style="width: 100%;">
@@ -141,7 +142,7 @@
 			</div>
 		</div>
 	</div>
-
+</div>
 @endsection
 </body>
 </html>

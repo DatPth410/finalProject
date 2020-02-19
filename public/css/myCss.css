@@ -1,5 +1,11 @@
+@font-face {
+  font-family: mons;
+  src: url(../fonts/Montserrat-Medium.otf);
+}
+
 *{
 	margin:0px auto;
+	font-family: mons;
 }
 
 #header{
@@ -10,16 +16,20 @@
 
 .header_text{
 	color: #fff;
-	font-size: 20px;
+	font-size: 18px;
 	margin-top: 22px;
 	text-align: center;
+	font-family: mons;
+  src: url(../fonts/Montserrat-Medium.otf);
 }
 
 .header_text_2{
 	color: #fff;
-	font-size: 18px;
-	margin-top: 14px;
+	font-size: 16px;
+	margin-top: 15px;
 	text-align: center;	
+	font-family: mons;
+  src: url(../fonts/Montserrat-Medium.otf);
 }
 
 .header_hotline{
@@ -64,7 +74,7 @@
 
 #middle_bottom{
 	padding: 20px 0;
-	margin-top: 15px;
+	/*margin-top: 15px;*/
 	border-top:1px solid #4b4b4b; 
 	border-bottom:1px solid #4b4b4b; 
 }
@@ -77,7 +87,7 @@
 
 nav {
 	font-size : 18px;
-	font-family : verdana;
+	
 }
 
 nav a {
@@ -97,8 +107,9 @@ nav ul li {
 	background-color : #141e28;
 	padding : 10px;
 	cursor : pointer;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
+	margin-top : 2px;
 }
 
 nav ul li:hover {
@@ -108,7 +119,7 @@ nav ul li:hover {
 
 nav ul li ul{
 	position : absolute;
-	margin-top : 10px;
+	margin-top : 12px;
 	margin-left : -10px;
 	visibility : hidden;
 }
@@ -251,13 +262,15 @@ a{
 
 .tour_text{
 	margin-left: 20px;
-	font-family: Time new romans;
+	font-family: mons;
+  src: url(../fonts/Montserrat-Medium.otf);
 }
 
 .tour_text_tiny{
 	margin-left: 10px;
 	font-size: 20px; 
-	font-family: Time new romans;
+	font-family: mons;
+  src: url(../fonts/Montserrat-Medium.otf);
 }
 
 .price_tour{	
@@ -316,7 +329,8 @@ a{
 
 .below_content_title p{
 	font-size: 22px;
-	font-family: Time new romans;
+	font-family: mons;
+  src: url(../fonts/Montserrat-Medium.otf);
 	margin-top: 5px;
 }
 
@@ -340,6 +354,7 @@ a{
 
 .exp_below_title{
 	margin-left: 28px;
-	font-family: Time new romans;
+	font-family: mons;
+  src: url(../fonts/Montserrat-Medium.otf);
 	font-size: 18px;
 }

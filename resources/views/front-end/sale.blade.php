@@ -7,15 +7,16 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="js/sale.js"></script>
+	{{-- <script type="text/javascript" src="js/sale.js"></script> --}}
 </head>
 <body>
 
 @extends('master.home')
 
 @section('sale')
+<div class="big_wrapper">
 	<div class="week_sale">
-		<h1 class="title head1">KHUYẾN MÃI CHO BẠN</h1>
+		<h1 class="title head1" style="margin-top: 90px;">KHUYẾN MÃI CHO BẠN</h1>
 		<h3 class="title head1">Số lượng có hạn</h3>
 		<br>
 		<div class="float_week_sale" id="left">
@@ -123,7 +124,7 @@
 				<p>Đã có vé máy bay khứ hồi</p>
 				<p>Khởi hành: 13.01.2020</p>
 				<div class="button2">
-					<button type="button" class="btn btn-danger">Detail</button>
+					<button type="button" class="btn btn-danger" >Detail</button>
 				</div>
 
 			</div>
@@ -219,8 +220,8 @@
 			</div>
 		</div>
 
-		<div class="text-center">
-			<ul class="pagination">
+		
+			<ul class="pagination" style="margin-left: 43%;">
 				<li><a href="#">&laquo;</a></li>
 				<li><a href="#">1</a></li>
 				<li><a href="#">2</a></li>
@@ -229,8 +230,9 @@
 				<li><a href="#">5</a></li>
 				<li><a href="#">&raquo;</a></li>
 			</ul>
-		</div>
+		
 	</div>
+</div>
 @endsection
 </body>
 </html>

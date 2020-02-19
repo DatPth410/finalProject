@@ -6,11 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>DPV Travel Agency @yield('title')</title>
 	<base href="{{asset('')}}">
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	{{-- <link rel="stylesheet" href="css/bootstrap.min.css" /> --}}
 	<!-- <link rel="stylesheet" href="css/blog_tour_trong_ngoai.css"> -->
 	{{-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/blog_tour_trong_ngoai.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css"> --}}
+
 </head>
 <body>			
 		<!-- Start Header -->
@@ -52,6 +53,11 @@
 		<!-- Start cam_nang -->
 	@yield('cam_nang')
 		<!-- End cam_nang -->
+
+
+		<!-- Start chi_tiet -->
+	@yield('chi_tiet')
+		<!-- End chi_tiet -->
 
 
 

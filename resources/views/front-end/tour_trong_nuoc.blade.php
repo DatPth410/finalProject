@@ -5,14 +5,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Du lịch trong nước | Tour trong nước </title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css">
+	<link rel="stylesheet" href="{{asset('css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{asset('css/blog_tour_trong_ngoai.css') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
 @extends('master.home')
 @section('trong_nuoc')
+
 <div id="body">
 	<div id="main_content">
 			<div style="padding-top: 20px;" class="navigation">
@@ -37,40 +38,40 @@
 					<br>
 					<br>
 					<strong style="color: #B22222;font-size: 18px;padding-top: 30px;">
-						<span>Click vào địa điểm bạn muốn đi</br></span>
+						<span>Click vào địa điểm bạn muốn đi<br></span>
 						<span>( Hoặc gọi ngay hotline: 0969550120 )</span>
 					</strong>
 					<br>
 					<p>---------------------------------------------------------</p>
 					<br>				
 					<strong style="font-size: 22px;">
-						<a href="#">Đà Nẵng</a>
+						<a href="trong-nuoc/da_nang">Đà Nẵng</a>
 						|
-						<a href="#">Hà Nội</a>
+						<a href="trong-nuoc/ha_noi">Hà Nội</a>
 						|
-						<a href="#">Miền Tây</a>
+						<a href="trong-nuoc/mien_tay">Miền Tây</a>
 						|
-						<a href="#">Hạ Long</a>
+						<a href="trong-nuoc/ha_long">Hạ Long</a>
 						|
-						<a href="#">Nha Trang</a>
+						<a href="trong-nuoc/nha_trang">Nha Trang</a>
 						|
-						<a href="#">Phú Quốc</a>
+						<a href="trong-nuoc/phu_quoc">Phú Quốc</a>
 						|
-						<a href="#">SaPa</a>
+						<a href="trong-nuoc/sapa">SaPa</a>
 						|
-						<a href="#">Đà Lạt</a>
+						<a href="trong-nuoc/da_lat">Đà Lạt</a>
 						|
-						<a href="#">Quy Nhơn</a>
+						<a href="trong-nuoc/quy_nhon">Quy Nhơn</a>
 						|
-						<a href="#">Phú Yên</a>
+						<a href="trong-nuoc/phu_yen">Phú Yên</a>
 						|
-						<a href="#">Buôn Mê Thuột</a>
+						<a href="trong-nuoc/buon_ma_thuot">Buôn Mê Thuột</a>
 						|
-						<a href="#">Vũng Tàu</a>
+						<a href="trong-nuoc/vung_tau">Vũng Tàu</a>
 						|
-						<a href="#">Ninh Bình</a>
+						<a href="trong-nuoc/ninh_binh">Ninh Bình</a>
 						|
-						<a href="#">Phan Thiết</a>
+						<a href="trong-nuoc/phan_thiet">Phan Thiết</a>
 						|
 					</strong>
 				</div>
@@ -79,6 +80,9 @@
 
 		<!-- START hiển thị tour -->
 		@foreach($tour as $stt=>$tour)
+
+		@for($k=0;$k<count($tour_code_id);$k++)
+			@if($tour_code_id[$k] == $tour->id)
 		<div class="tour_list_tn">
 			<div class="col-md-12 col-sm-12">
 				<div>
@@ -116,13 +120,26 @@
     						@else($tour->vehicle=="Tàu hỏa")
     							<span class="fa fa-train"></span>
 							@endif
-                            
+                            </span>
                             <br>
+
+                            {{-- START check điểm đến --}}
                             <ul class="ul_li" style="padding-top: 10px;">
-                            	<li style="padding-right: 15px;">Bà Nà Hill</li>
-                            	<li style="padding-right: 15px">Cù Lao Chàm</li>
-                            	<li>Ngũ Hành Sơn</li>
+                            		@php
+                            			{{$diem_den=(array)$tour;
+        								$des=explode(" ", $diem_den['diem_den']);
+        							}}
+        							@endphp
+
+        							@for($j=0;$j<count($destination_id_array);$j++)
+        								@for($i=0;$i<count($des);$i++)
+        									@if($des[$i]==$destination_id_array[$j])
+                            					<li style="padding-right: 15px">{{$destination_name_array[$j]}}</li>
+                            				@endif
+                            			@endfor
+        							@endfor
                             </ul>
+                            {{-- END check điểm đến --}}
 
 						</div>
 						<div class="col-md-4 col-sm-4">
@@ -146,9 +163,15 @@
 						{{$tour->links()}};
 					</div>
 		</div>
+<<<<<<< HEAD
 	
+=======
+			@endif
+		@endfor
+		@endforeach
+>>>>>>> 57ee19dec76d26e86a77ae9c8cc70328e1f9a8dc
 		<!-- END hiển thị tour -->
-
+</div>
 @endsection
 </body>
 </html>

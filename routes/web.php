@@ -55,17 +55,18 @@ Route::group(['middleware'=>['auth']], function(){
 //Admin quản lý tour
 
 
-//Gọi vào trang tour trong nước
-Route::get('/trong-nuoc','Tour_Trong_Nuoc_controller@data_push')->name('trong-nuoc');
+//tour trong nước
+Route::get('/trong-nuoc','MainController@viewInland')->name('trong-nuoc');
+Route::get('/trong-nuoc/{code_diem_den?}', ['uses' =>'MainController@viewInlandwithDestination', 'as'=>'trong-nuoc/$code_diem_den']);
+
 
 //trang chủ 
 Route::get('/trang-chu','MainController@viewHome')->name('trang-chu');
 
+Route::post('/save-search', 'SearchController@saveSearch')->name('save-find');
+
 //Combo - Khuyến mại
 Route::get('/khuyen-mai','MainController@viewSale');
-
-// //Tour trong nước
-// Route::get('/trong-nuoc','MainController@viewInland');
 
 //Tour nước ngoài
 Route::get('/nuoc-ngoai','MainController@viewOutland')->name('nuoc-ngoai');
@@ -79,4 +80,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< HEAD
 
+=======
+//Trang chi tiết 
+Route::get('/detail', 'MainController@viewDetail');
+
+//Trang chi tiết tin tức
+Route::get('/tin_tuc', 'MainController@viewTintuc');
+>>>>>>> 57ee19dec76d26e86a77ae9c8cc70328e1f9a8dc
