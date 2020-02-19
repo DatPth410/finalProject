@@ -35,4 +35,5 @@ class MainController extends Controller
     	
         return view('front-end.tour_nuoc_ngoai');
     }
+
 }

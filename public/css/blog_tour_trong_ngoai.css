@@ -525,3 +525,58 @@ a{
 .margin-top{
   margin-top: 70px;
 }
+.backtotop{
+   position: fixed;
+   width: 50px;
+   height: 50px;
+   background: #FACC2E;
+   bottom: 40px;
+   right: 40px;
+   text-align: center;
+   
+   font-size:22px;
+   line-height: 50px;
+   border-radius: 4px;
+
+}
+.backtotop:hover{
+  background-color: #333;
+  color: white;
+}
+.backtotop:active{
+  background-color: #555;
+  color: white;
+}
+.folder a{
+    border: 1px solid #ddd;
+    display: block;
+    float: left;
+    padding: 2px 6px;
+    color: #aaa;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+.icons{
+    border: 1px solid #ddd;
+    display: block;
+    float: left;
+    padding: 2px 6px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    color: #666;
+}
+.tags a{
+    border: 1px solid #ddd;
+    display: block;
+    float: left;
+    padding: 2px 6px;
+    color: #aaa;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+.binh_luan{
+  margin-top: 80px;
+}

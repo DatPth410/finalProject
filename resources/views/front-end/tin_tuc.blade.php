@@ -102,6 +102,13 @@
 					<div class="anh_r">
 						<img src="../../../public/images/fusion-suites-vung-tau-ivivu-14.jpg" style="height:355px;width:650px; ">
 					</div>
+						<div class="content_box"><span class="fa fa-plus-circle"></span>
+						<strong>
+						 Hướng dẫn cách đặt khách sạn này:<br></strong>
+							- Gọi<strong> 1900 1870<br></strong>
+							- Đặt online <strong><a href="#">TẠI ĐÂY</a>
+						 </strong>
+					</div>
 
 					<div class="around" >
 						<div class="promotion">
@@ -138,9 +145,51 @@
 						</div>
 					</div>
 					<br>
+						<div class="content_box" style="font-weight: bold;font-size: 16px;"><span class="fa fa-plus-circle"></span>
+						<strong>
+						  Xem thêm bài viết:<br><br></strong>
+						  <a href="#">2N1Đ ở khách sạn Mercure Vũng Tàu + Xe đưa đón + Tặng voucher ăn uống + Cocktail chỉ 1.450.000 đồng/khách</a><br><br>
+						  <a href="#">Ghim ngay top 5 quán cafe Vũng Tàu decor xinh xắn dịp Tết Âm Lịch</a><br><br>
+						  <a href="#">2N1Đ ở khách sạn ibis Styles Vũng Tàu + xe đưa đón + ăn sáng chỉ 1.099.000 đồng/khách</a>
+					</div>
+					<strong style="font-size: 30px;">***</strong><br><br>
+					<strong >Tham khảo: <a href="#">Cẩm nang du lịch DVP.com</a></strong>
+					<br><br>
+					<p style="border-bottom: 4px solid"></p>
 
 				</div>
+				<br>
+				<br>
 
+
+			</div>
+				<div class="folder">
+				<span class="icons"><i class="fa fa-folder"></i></span>
+				<a href="#">DU LỊCH VIỆT NAM</a>
+				<a href="#">Du lịch Vũng Tàu</a>
+				<a href="#">Khuyến mại</a>
+				<a href="#">Nổi bật</a>
+				<a href="#">Nổi bật 2</a>
+				<a href="#">Điểm đến</a>
+			</div>
+			<br>
+			<br>
+			<div class="tags">
+				<span class="icons"><i class="fa fa-tags"></i></span>
+				<a href="#">Du lịch Vũng Tàu</a>
+				<a href="#">Du lịch Vũng Tàu</a>
+				<a href="#">Du lịch Vũng Tàu</a>
+				<a href="#">Du lịch Vũng Tàu</a>
+				<a href="#">Du lịch Vũng Tàu</a>
+				<a href="#">Du lịch Vũng Tàu</a>
+				<a href="#">Du lịch Vũng Tàu</a>
+				<a href="#">Du lịch Vũng Tàu</a>
+				<a href="#">Du lịch Vũng Tàu</a>
+
+			</div>
+			<div class="binh_luan">
+				
+				<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/" data-width="800" data-numposts="4"></div>
 			</div>
 		</div>
 		<div class="col-md-3">

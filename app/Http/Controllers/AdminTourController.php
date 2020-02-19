@@ -114,4 +114,5 @@ class AdminTourController extends Controller
             ->delete();
         return redirect(route('manage-tour'));
     }
+   
 }

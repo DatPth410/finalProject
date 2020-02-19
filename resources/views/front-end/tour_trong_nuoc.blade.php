@@ -141,8 +141,12 @@
 
 				</div>
 			</div>
+			@endforeach
+			<div class="page navigation">
+						{{$tour->links()}};
+					</div>
 		</div>
-		@endforeach
+	
 		<!-- END hiển thị tour -->
 
 @endsection
