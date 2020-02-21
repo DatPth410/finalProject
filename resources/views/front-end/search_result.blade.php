@@ -34,6 +34,13 @@
 					
 				@endphp
 			</h2>
+			@if (count($list_tour)==0)
+				{{-- expr --}}
+				@php
+					echo "Không có kết quả nào cho chuyến đi mà bạn đang tìm kiếm."
+				@endphp
+
+			@endif
 	@foreach($list_tour as $stt=>$tour)
 		<div class="tour_list">
 			<div class="left_tour_list">

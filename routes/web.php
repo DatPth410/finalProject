@@ -66,7 +66,7 @@ Route::get('/trang-chu','MainController@viewHome')->name('trang-chu');
 Route::post('/save-search', 'SearchController@saveSearch')->name('save-find');
 
 //Combo - Khuyến mại
-Route::get('/khuyen-mai','SaleController@viewSale');
+Route::get('/khuyen-mai','SaleController@viewSale')->name('khuyen-mai');
 
 //Tour nước ngoài
 Route::get('/nuoc-ngoai','MainController@viewOutland')->name('nuoc-ngoai');
@@ -75,7 +75,7 @@ Route::get('/nuoc-ngoai','MainController@viewOutland')->name('nuoc-ngoai');
 Route::get('/ve-chung-toi','MainController@viewAboutUs');
 
 //Cẩm nang du lịch
-Route::get('/cam_nang','MainController@viewExp');
+Route::get('/cam_nang','MainController@viewExp')->name('cam-nang');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -14,7 +14,23 @@ class MainController extends Controller
             $data_array[]=$value->ten;
         }
         $data_array1=array();
-    	return view('front-end.index',compact('data_array'));
+
+        $sale_tour=DB::table('tour_trong_nuoc')
+        ->orderBy('khuyen_mai','desc')
+        ->limit(3)
+        ->get();
+
+        $six_tours=DB::table('tour_trong_nuoc')
+        ->inRandomOrder()
+        ->limit(6)
+        ->get();
+
+        $four_news=DB::table('tbl_news')
+        ->where('id','!=',1)
+        ->limit(2)
+        ->get();
+
+    	return view('front-end.index',compact('data_array','sale_tour','six_tours','four_news'));
     }
 
     
