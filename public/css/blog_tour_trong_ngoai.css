@@ -535,7 +535,7 @@ a{
 .margin-top{
   margin-top: 70px;
 }
-<<<<<<< HEAD
+
 .backtotop{
    position: fixed;
    width: 50px;
@@ -591,7 +591,6 @@ a{
 .binh_luan{
   margin-top: 80px;
 }
-=======
 
 #form_thanhtoan{
   /*background-color: grey;*/
@@ -610,4 +609,15 @@ a{
   font-size: 27px;
 }
 
->>>>>>> 57ee19dec76d26e86a77ae9c8cc70328e1f9a8dc
+.sale_box{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  color: white;
+  background-color: #c41f1f;
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}

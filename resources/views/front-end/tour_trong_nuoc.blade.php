@@ -91,14 +91,14 @@
 						<span class="ribbon">
 						<p style="color: white;font-size: 14px;padding-left: 10px">Tour bán chạy</p>
 					</span>
-						<a href="#">
+						<a href="{{ route('detail',$tour->id) }}">
 							<img src="img/test/{{$tour->avatar}}" style="width: 280px;">
 						</a>
 					</div>
 					<div style="width: 75%;" class="col-md-9 col-sm-9">
 						<div class="col-md-8 col-sm-8">
 							<span style="font-size: 20px;">
-								<a href="#">{{$tour->name}}</a>
+								<a href="{{ route('detail',$tour->id) }}">{{$tour->name}}</a>
 							</span>
 							<br>
 							<div style="padding-top: 10px;padding-bottom: 5px;">	
@@ -158,18 +158,10 @@
 
 				</div>
 			</div>
-			@endforeach
-			<div class="page navigation">
-						{{$tour->links()}};
-					</div>
 		</div>
-<<<<<<< HEAD
-	
-=======
 			@endif
 		@endfor
 		@endforeach
->>>>>>> 57ee19dec76d26e86a77ae9c8cc70328e1f9a8dc
 		<!-- END hiển thị tour -->
 </div>
 @endsection

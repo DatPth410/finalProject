@@ -17,9 +17,7 @@ class MainController extends Controller
     	return view('front-end.index',compact('data_array'));
     }
 
-    public function viewSale(){
-    	return view('front-end.sale');
-    }
+    
 
     //START controller tour trong nuoc
 
@@ -94,16 +92,16 @@ class MainController extends Controller
         return view('front-end.tour_nuoc_ngoai');
     }
 
-<<<<<<< HEAD
-=======
-    public function viewDetail(){
-        
-        return view('front-end.detail');
-    }    
-
     public function viewTintuc(){
         
         return view('front-end.tin_tuc');
+    }
+
+    public function tourDetail($id){
+        $detail = DB::table('tour_trong_nuoc')
+            ->where('id','=',$id)
+            ->first();
+        return view('front-end.detail',compact('detail'));
     }       
->>>>>>> 57ee19dec76d26e86a77ae9c8cc70328e1f9a8dc
+
 }

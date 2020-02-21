@@ -6,13 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>MẠNG BÁN TOUR DU LỊCH SỐ 1 VIỆT NAM</title>
 	{{-- <link rel="stylesheet" href="css/bootstrap.min.css" /> --}}
-	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/blog_tour_trong_ngoai.css') }}">
+	{{-- <link rel="stylesheet" href="css/blog_tour_trong_ngoai.css"> --}}
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	{{-- <script src="js/bootstrap.min.js"></script> --}}
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	{{-- <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="{{ asset('jquery-3.4.1.min.js') }}"></script> --}}
 
-	{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> --}}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 	<!-- Popper JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -30,7 +32,7 @@
 			<span class="fa fa-home" style="padding-right: 10px;"><a href="#"> Trang chủ / </a></span>
 			<span style="padding-right: 10px;"><a href="#"> Malaysia /</a></span>
 			<span><a href="#"> Tour Singapore 5N4D :Singapore-Malaysia (Deal)</a></span>
-			<h1 style="color:#003c71;font-weight: bold;">Tour Singapore 5N4D : Singapore - Malaysia (Deal)</h1>
+			<h1 style="color:#003c71;font-weight: bold;">Tour {{$detail->name}} {{$detail->length}} ngày {{$detail->length-1}} đêm</h1>
 		</div>
 		<div style="padding-top: 10px;padding-bottom: 5px;">	
 			<span  class="score">9.4</span>
@@ -45,16 +47,16 @@
 		<div class="row">
 			<div class="col-md-8 col-sm-12">
 				<div class="ima">
-					<img style="width: 700px;height: 390px;" src="images/sing_5n4d.jpg">
+					<img style="width: 700px;height: 390px;" src="img/test/{{$detail->avatar}}">
 					<br>
 					<br>
 					<span  style="margin-right: 30px;padding-top: 20px;"><i class="glyphicon glyphicon-map-marker"></i> Hồ Chí Minh</span>
-					<span style="margin-right: 30px;"><i class="glyphicon glyphicon-time"></i> 5 ngày 4 đêm</span>
+					<span style="margin-right: 30px;"><i class="glyphicon glyphicon-time"></i>{{$detail->name}} {{$detail->length}} ngày {{$detail->length-1}} đêm</span>
 					<span>Phương tiện :</span>
 					<span class="fa fa-plane"></span>
-					<span class="fa fa-car"></span>
-					<span style="padding-left:100px" >Mã Tour:</span>
-					<span style="color: #00c1de">TO767</span>
+					<span class="fa fa-car"></span><br/>
+					<span style="padding-left:100px" >Mã Tour:{{$detail->code}}</span>
+					<span style="color: #00c1de">{{$detail->code}}</span>
 				</div>
 				<div class="thong_tin" style="background-color: white">
 					<h3 style="color: #003c71;">LIÊN TUYẾN SING-MÃ:HÀNH TRÌNH XUYÊN Á LÍ TƯỞNG</h3>
@@ -64,21 +66,15 @@
 					<p>Hành trình độc đáo khám phá 2 quốc gia Đông Nam Á không thể bỏ lỡ...</p>
 					<p> <span style="font-weight: bold">-Gardens By The Bay</span>: kỳ quan nổi tiếng của Singapore với kiến trúc độc đáo và là “công trình mà người dân Singapore có thể tự hào” mỗi khi nhắc đến.</p>
 					<h3 style="color: #003c71" id="ctr_tour">Chương trình tour</h3>
-					<h3>Ngày 1:TPHCM-SINGAPORE( ĂN TỐI )</h3>
-					<p> <span style="font-weight: bold">-Gardens By The Bay</span>: kỳ quan nổi tiếng của Singapore với kiến trúc độc đáo và là “công trình mà người dân Singapore có thể tự hào” mỗi khi nhắc đến.</p>
-					<br>
-					<img src="images/garden-bay.jpg">
-					<i style="padding-left: 300px;">Garden By The Bay</i>
-					<h3>Ngày 2:SINGAPORE – SENTOSA - MALACCA (ĂN SÁNG, TRƯA, TỐI)</h3>
-					<p><span style="font-weight: bold">-Gardens By The Bay</span>: kỳ quan nổi tiếng của Singapore với kiến trúc độc đáo và là “công trình mà người dân Singapore có thể tự hào” mỗi khi nhắc đến.</p>
+					{{$detail->lich_trinh}}
 					<br>
 
-					<img src="images/cv-merlion.jpg">
+					
 
 
 				</div>
 				<div class="calendar">
-					<h3 style="color: #003c71">Lịch khởi hành</h3>
+					<h3 style="color: #003c71">Lịch khởi hành: {{$detail->departure}}</h3>
 
 
 
