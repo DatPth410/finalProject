@@ -18,12 +18,7 @@ class SearchController extends Controller
 				$name=$request->name;
 			}
 
-			if (is_null($request->arrived)) {
-    			# code...
-				$arrived="%";
-			}else{
-				$arrived=$request->arrived;
-			}
+			
 
 			$price=$request->price;
 			if ($price==1) {
@@ -42,19 +37,38 @@ class SearchController extends Controller
 				$max=100000000;
 			}
 
-			$list_diemden=DB::table('tbl_diemden')
+			if (is_null($request->arrived)) {
+    			# code...
+				$arrived="%";
+				$id_diemden=null;
+			}else{
+				$arrived=$request->arrived;
+				$list_diemden=DB::table('tbl_diemden')
 			->where('ten','like',$arrived)
 			->get();
+			
 			foreach ($list_diemden as $key => $value) {
 			# code...
 				$id_diemden=$value->id;
+
 			}
-			$list_tour_diemden=DB::table('tour_trong_nuoc')
-			->where('diem_den','like','%'.strval($id_diemden).'%')
-			->get();
+			}
+
+			
+			// $list_tour_diemden=DB::table('tour_trong_nuoc')
+			// ->where('diem_den','like','%'.strval($id_diemden).'%')
+			// ->get();
 
 			if (is_null($request->date)) {
     			# code...
+    			if (is_null($id_diemden)) {
+    				# code...
+    				$list_tour=DB::table('tour_trong_nuoc')
+				->where('noi_khoi_hanh','like',$name)
+				->where('price','>',$min)
+				->where('price','<',$max)
+				->get();
+    			}
 				$list_tour=DB::table('tour_trong_nuoc')
 				->where('diem_den','like','%'.strval($id_diemden).'%')
 				->where('noi_khoi_hanh','like',$name)
@@ -63,6 +77,15 @@ class SearchController extends Controller
 				->get();
 			}else{
 				$time=$request->date;
+				if (is_null($id_diemden)) {
+    				# code...
+    				$list_tour=DB::table('tour_trong_nuoc')
+				->where('noi_khoi_hanh','like',$name)
+				->where('price','>',$min)
+				->where('price','<',$max)
+				->where('departure','=',$time)
+				->get();
+    			}
 				$list_tour=DB::table('tour_trong_nuoc')
 				->where('diem_den','like','%'.strval($id_diemden).'%')
 				->where('noi_khoi_hanh','like',$name)
@@ -72,7 +95,7 @@ class SearchController extends Controller
 				->get();
 			}
 		}
-		return view('front-end.search_result',compact('list_tour','name','arrived','price'));
+		return view('front-end.search_result',compact('list_tour','name','arrived','price','id_diemden'));
 	}
 }
 

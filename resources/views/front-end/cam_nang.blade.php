@@ -54,7 +54,7 @@
 						<div class="col-md-12 col-sm-12">
 							@foreach($exp as $stt=>$exp)
 							<div class="new-content">
-								<a href="tin_tuc.php">
+								<a href="tin_tuc?id={{$exp->id}}">
 									<div class="img">
 										<img src="img/test/{{$exp->avatar}}" style="width: 400px;height: 280px">
 									</div>

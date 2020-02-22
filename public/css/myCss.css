@@ -358,3 +358,16 @@ a{
   src: url(../fonts/Montserrat-Medium.otf);
 	font-size: 18px;
 }
+
+.sale_box{
+	 position: absolute;
+  height:47px;
+  width: 47px;
+  color: white;
+  background-color: #c41f1f;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+}

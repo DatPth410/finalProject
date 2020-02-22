@@ -44,6 +44,9 @@ Route::group(['middleware'=>['auth']], function(){
 		Route::get('admin/update-news/{id}', 'AdminNewsController@UpdateNews')->name('update-news');
 		Route::post('admin/save-update-news/{id}', 'AdminNewsController@SaveUpdateNews')->name('save-update-news');
 		Route::get('admin/delete-news/{id}', 'AdminNewsController@DeleteNews')->name('delete-news');
+
+		//Admin quản lý liên hệ
+		Route::get('admin/manage-contact', 'AdminContactTourController@ManageContact')->name('manage-contact');
 	});
 });
 
@@ -66,7 +69,7 @@ Route::get('/trang-chu','MainController@viewHome')->name('trang-chu');
 Route::post('/save-search', 'SearchController@saveSearch')->name('save-find');
 
 //Combo - Khuyến mại
-Route::get('/khuyen-mai','SaleController@viewSale');
+Route::get('/khuyen-mai','SaleController@viewSale')->name('khuyen-mai');
 
 //Tour nước ngoài
 Route::get('/nuoc-ngoai','MainController@viewOutland')->name('nuoc-ngoai');
@@ -75,8 +78,12 @@ Route::get('/nuoc-ngoai','MainController@viewOutland')->name('nuoc-ngoai');
 Route::get('/ve-chung-toi','MainController@viewAboutUs');
 
 //Cẩm nang du lịch
-Route::get('/cam_nang','MainController@viewExp');
+Route::get('/cam_nang','MainController@viewExp')->name('cam-nang');
 Auth::routes();
+
+
+
+//END cam nang du lich
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -88,5 +95,10 @@ Route::get('/detail', 'MainController@viewDetail');
 Route::get('/chi-tiet/{id}', 'MainController@tourDetail')->name('detail');
 
 //Trang chi tiết tin tức
-Route::get('/tin_tuc', 'MainController@viewTintuc');
+Route::get('/tin_tuc', [
+    'as' => 'getTintucTheoID', 
+    'uses' => 'MainController@viewTintuc'
+]);
+
+Route::post('save-contact', 'MainController@saveContact')->name('save-contact');
 

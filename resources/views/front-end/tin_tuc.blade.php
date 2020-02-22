@@ -62,7 +62,6 @@
 			</div>
 		</div>
 			<!-- End Header -->	
-
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
 	<div class="container margin-top">
@@ -70,38 +69,22 @@
 			<div style="padding-top: 20px;" class="head_contain">
 				<span class="t_d" ><a href="#"> Cẩm nang du lịch ></a></span>
 				<span class="t_d" ><a href="#"> DU LỊCH VIỆT NAM ></a></span>
-				<span class="t_d" ><a href="#"> Du lịch Vũng Tàu ></a></span>
-				<span class="t_d" ><a href="#"> Khách sạn Fusion Suites Vũng Tàu: Lựa chọn mới khi du lịch Vũng Tàu </a></span>
+				<span class="t_d" ><a href="#"> {{$news->title}} </a></span>
 
-				<h3 style="font-weight: bold;font-size: 26px;">Khách sạn Fusion Suites Vũng Tàu: Lựa chọn mới khi du lịch Vũng Tàu</h3>
+				<h3 style="font-weight: bold;font-size: 26px;">{{$news->title}}</h3>
 				<br>
 				<div class="time_date">
 					<p style="font-size:13px; margin-bottom:8px; ">
-						<span style="color: #666666;margin-right:10px;">10:03 05/02/2020
-						</span>
-						<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
 
+						<span style="color: #666666;margin-right:10px;">{{$news->ngay_dang}}
+						</span>
+						<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true" style="padding-left: 15px;"></div>
+						
 					</p>
 				</div>
 				<br>
 				<div class="entry_content">
-					<strong>Thêm một lựa chọn dành cho du khách khi đi du lịch Vũng Tàu, Fusion Suites Vũng Tàu là cái tên rất mới với nhiều dịch vụ và tiện ích không ngờ. Khách sạn sở hữu đến 10 bể bơi vô cực trên cao, spa miễn phí, ăn sáng bất cứ lúc nào và mang đến trải nghiệm di chuyển trượt cầu thang xoắn ốc vô cùng thú vị.</strong>
-					<br>
-					<div class="content_box"><span class="fa fa-plus-circle"></span>
-						<strong> Xem thêm: <a href="#" >Du lịch Vũng Tàu</a></strong>
-					</div>
-					<h3 style="font-weight: bold;font-size: 22px;">Khách sạn Fusion Suites Vũng Tàu: Lựa chọn mới khi du lịch Vũng Tàu</h3>
-					<div class="anh_r">
-						<img src="images/fusion-suites-vung-tau-ivivu-12.jpg" style="height:355px;width:650px; ">
-					</div>
-					<p>Khách sạn Fusion Suite Vũng Tàu chính thức khai trương vào ngày 30/01/2020. Khách sạn tọa lạc tại số 2, đường Trương Công Định, phường 2, TP. Vũng Tàu. Fusion Suites Vũng Tàu có vị trí đắc địa nằm ngay trung tâm thành phố với 3 mặt tiền: Trương Công Định, Phan Bội Châu, Nguyễn Công Trứ, kề sát đường Hạ Long – một trong những con đường đẹp nhất Việt Nam, cách công viên và biển Bãi Trước chưa đầy 2 phút đi bộ, cách Bến Tàu cánh ngầm 500m và cách Bãi Sau khoảng 6 phút đi bằng xe ô tô.</p>
-					<div class="anh_r">
-						<img src="images/fusion-suites-vung-tau-ivivu-13.jpg" style="height:355px;width:650px; ">
-					</div>
-					<p>Khách sạn được thiết kế theo phong cách hiện đại, kiến trúc bên ngoài và nội thất đều lấy ý tưởng từ những sắc màu và phong vị biển, mang đến cho du khách một không gian thân thiện, xanh mát. Với tầm nhìn tuyệt vời hướng ra biển xanh, tại đây bạn có thể căng tràn mọi giác quan để tận hưởng trọn vẹn không gian biển mát lành cùng những trải nghiệm thư giãn lý tưởng.</p>
-					<div class="anh_r">
-						<img src="images/fusion-suites-vung-tau-ivivu-14.jpg" style="height:355px;width:650px; ">
-					</div>
+					{!!html_entity_decode($news->noi_dung)!!}
 						<div class="content_box"><span class="fa fa-plus-circle"></span>
 						<strong>
 						 Hướng dẫn cách đặt khách sạn này:<br></strong>

@@ -30,6 +30,7 @@
 
 	@section('home')
 	<!-- Start search -->
+	
 	<div id="search">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-10">
@@ -140,45 +141,27 @@
 			<div class="content_title">
 				<p><img src="images/sale-icon.jpg" id="sale-icon">Combo Tour - giảm giá mạnh</p>
 			</div>
+			@foreach ($sale_tour as $element=>$tour)
+				{{-- expr --}}
 			
 			<div class="love">
-				<img src="images/thung-nai-hoa-binh-1.jpg" class="fade_images">
 
-				<a href="detail.php"><div class="middle">
+				<img src="img/test/{{$tour->avatar}}" class="fade_images">
+
+				<a href="{{ route('detail',$tour->id) }}"><div class="middle">
 					<div class="text">Xem thêm</div>
 				</div></a>
 
 				<div class="content_bottom">
-					<p class="text_bottom">Thung Nai - Ninh Bình</p>
+					<div class="sale_box">{{$tour->khuyen_mai}}%</div>
+					<p class="text_bottom" style="padding-left: 35px;">{{$tour->name}}</p>
 				</div>
 			</div>
-
-			<div class="love">
-				<img src="images/diem-du-lich-da-lat-ly-tuong-cho-gia-dinh.jpg" class="fade_images">
-
-				<a href="#"><div class="middle">
-					<div class="text">Xem thêm</div>
-				</div></a>
-
-				<div class="content_bottom">
-					<p class="text_bottom">Đà Lạt</p>
-				</div>
-			</div>
-
-			<div class="love">
-				<img src="images/Gold-Coast.jpg" class="fade_images">
-
-				<a href="#"><div class="middle">
-					<div class="text">Xem thêm</div>
-				</div></a>
-
-				<div class="content_bottom">
-					<p class="text_bottom">Đà Nẵng</p>
-				</div>
-			</div>
+			@endforeach
+			
 
 			<div class="see_all">
-				<a href="#"><p>Xem tất cả <span class="glyphicon glyphicon-chevron-right"></span></p></a>
+				<a href="{{ route('khuyen-mai') }}"><p>Xem tất cả <span class="glyphicon glyphicon-chevron-right"></span></p></a>
 			</div>
 		</div>
 	</div>
@@ -195,138 +178,39 @@
 
 		<div class="tour_content">
 			<div class="row">
-				<div class="col-sm-6 col-md-4">
+				@foreach ($six_tours as $element=>$tour)
+					{{-- expr --}}
+				
+				<div class="col-sm-6 col-md-4" >
 					<div class="thumbnail">
-						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
+						<a href="{{ route('detail',$tour->id) }}"><img src="img/test/{{$tour->avatar}}" style="height: 200px;"></a>
 
-						<div class="caption">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
+						<div class="caption" style="height: 200px;">
+							<h3>{{$tour->name}}</h3>
 							<p>...</p>
-							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">{{$tour->length}} ngày {{$tour->length-1}} đêm</span></p>
 
 							<br>
-							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">{{$tour->departure}}</span></p>
 
 							<div class="price_tour">
-								<p>12.000.000</p>
+								<p>{{number_format($tour->price)}}</p>
 							</div>
 						</div>
 
 						
 					</div>
 				</div>
+				@endforeach
 
-				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
-
-						<div class="caption">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
-							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
-
-						<div class="caption">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
-							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
+				
 			</div>
 
-			<div class="row">
-				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
-
-						<div class="caption">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
-							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
-
-						<div class="caption">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
-							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
-
-						<div class="caption">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
-							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-			</div>
+			
 		</div>
 
 		<div class="see_all_2">
-			<a href="#"><p><span class="glyphicon glyphicon-backward" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="glyphicon glyphicon-forward" style="font-size: 15px;margin-left:10px;"></span></p></a>
+			<a href="{{ route('trong-nuoc') }}"><p><span class="glyphicon glyphicon-backward" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="glyphicon glyphicon-forward" style="font-size: 15px;margin-left:10px;"></span></p></a>
 		</div>
 	</div>
 	<!-- End tour trong nước -->
@@ -492,33 +376,26 @@
 
 		<div class="exp_content">
 			<div class="row">
-				<div class="col-md-3 col-sm-6">
+				@foreach ($four_news as $element=>$news)
+					{{-- expr --}}
+					<div class="col-md-3 col-sm-6">
 					<a href="#">
-						<img src="images/Gold-Coast.jpg" class="exp_photo">
+						<img src="img/test/{{$news->avatar}}" class="exp_photo">
 					</a>
 				</div>
 
 				<div class="col-md-3 col-sm-6">
-					<a href="#"><p class="exp_title">Khu du lịch ....</p></a>
+					<a href="#"><p class="exp_title">{{$news->title}}</p></a>
 					<br>
-					<p class="exp_below_title">Chỗ này rất tuyệt vời</p>
+					<p class="exp_below_title">{{$news->title}}</p>
 				</div>
+				@endforeach
+				
 
-				<div class="col-md-3 col-sm-6">
-					<a href="#">
-						<img src="images/Gold-Coast.jpg" class="exp_photo">
-					</a>
-				</div>
-
-				<div class="col-md-3 col-sm-6">
-					<a href="#"><p class="exp_title">Khu du lịch ....</p></a>
-					<br>
-					<p class="exp_below_title">Chỗ này rất tuyệt vời</p>
-				</div>									
-			</div>
+				
 
 			<div class="see_all_2">
-				<a href="#"><p><span class="glyphicon glyphicon-backward" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="glyphicon glyphicon-forward" style="font-size: 15px;margin-left:10px;"></span></p></a>
+				<a href="{{ route('cam-nang') }}"><p><span class="glyphicon glyphicon-backward" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="glyphicon glyphicon-forward" style="font-size: 15px;margin-left:10px;"></span></p></a>
 			</div>
 		</div>
 	</div>

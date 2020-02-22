@@ -18,6 +18,7 @@
 			<h3>Kết quả tìm kiếm cho chuyến đi:</h3>
 			<h2>
 				@php
+					
 					if ($name!="%") echo "Khởi hành từ ".$name."<br/>";
 					if ($arrived!="%") echo "Đi tới ".$arrived."<br/>";
 					if ($price!="0"){
@@ -34,6 +35,13 @@
 					
 				@endphp
 			</h2>
+			@if (count($list_tour)==0)
+				{{-- expr --}}
+				@php
+					echo "Không có kết quả nào cho chuyến đi mà bạn đang tìm kiếm."
+				@endphp
+
+			@endif
 	@foreach($list_tour as $stt=>$tour)
 		<div class="tour_list">
 			<div class="left_tour_list">
