@@ -78,8 +78,8 @@
 				<div class="time_date">
 					<p style="font-size:13px; margin-bottom:8px; ">
 						<span style="color: #666666;margin-right:10px;">10:03 05/02/2020
-							<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
 						</span>
+						<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
 
 					</p>
 				</div>
@@ -200,7 +200,7 @@
        	 		<label class="sr-only" for="">label</label>
        	 		<input type="text" class="form-control" id="" name="search" placeholder="TÌm kiếm tin tức...">
        	 	</div>
-       	     <button type="submit" class="btn btn-danger"><a href="#"><img src="images/i-search-mini.png"></a></button>
+       	     <button type="submit" class="btn btn-danger" style="float: right"><a href="#"><img src="images/i-search-mini.png"></a></button>
        	 </form>
        	</div>
 

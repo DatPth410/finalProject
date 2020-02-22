@@ -9,11 +9,12 @@
 	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css">
 </head>
 <body>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
 	<div class="container">
 @extends('master.home')
 @section('cam_nang')
-
-
+         
 			<div id="main_content">
 				<div style="margin-bottom: 20px;" class="t_c">
 					<span><a href="#">Trang chủ  > </a></span>
@@ -55,26 +56,25 @@
 							<div class="new-content">
 								<a href="tin_tuc.php">
 									<div class="img">
-										<img src="img/test/{{$exp->avatar}}" style="width: 100px;">
+										<img src="img/test/{{$exp->avatar}}" style="width: 400px;height: 280px">
 									</div>
 
 									<div class="content">
 										<h3>{{$exp->title}}</h3>
 									</div>
 								</a>
-								<div style="padding-top: 20px" class="views">
+								<div style="padding-top: 10px" class="views">
 									<span style="padding-right: 20px;color: #999999;font-size: 14px;margin-bottom: 10px;" class="glyphicon glyphicon-calendar"> {{$exp->ngay_dang}}
 									</span>
 									<span class="glyphicon glyphicon-eye-open" style="color: #999999;
 									font-size: 14px;
 									margin-bottom: 10px;"> 228 View
-								</span>
+								    </span>
 								<p style="margin-bottom: 10px;">{{$exp->tom_tat}}</p>
 
-								<p style="padding-top: 20px;padding-bottom: 0px;">
-									<button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-thumbs-up"> Like</span><span> 0</span></button>
-									<button type="button" class="btn btn-primary btn-sm">Share</button>
-								</p>
+								<span class="like_share">
+								 <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+								</span>
 							</div>
 						</div>
 						@endforeach
