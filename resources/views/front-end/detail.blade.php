@@ -213,18 +213,20 @@
 
 						<div class="row">
 							<div class="col-md-6">
-								<form role="form">
+								<form role="form" enctype="multipart/form-data" method="POST" action="{{ route('save-contact') }}">
+									@csrf
 									<div class="form-group">
 										<label for="">Họ tên</label>
-										<input class="form-control" id="">
+										<input class="form-control" id="" required placeholder="Nhập tên của bạn" name="name">
 									</div>
 									<div class="form-group">
 										<label for="">Điện thoại</label>
-										<input type="" class="form-control" id="">
+										<input type="number" class="form-control" id="" required placeholder="Nhập số điện thoại của bạn" name="phone">
+
 									</div>
 									<div class="form-group">
 										<label for="">Nội dung</label>
-										<textarea class="form-control" rows="3"></textarea>
+										<textarea class="form-control" rows="3" placeholder="Bạn có thắc mắc gì nhỉ?" name="question"></textarea>
 									</div>
 									<button type="submit" class="btn btn-warning" style="width: 100%;">Đăng kí tư vấn</button>
 								</form>

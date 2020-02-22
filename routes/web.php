@@ -44,6 +44,9 @@ Route::group(['middleware'=>['auth']], function(){
 		Route::get('admin/update-news/{id}', 'AdminNewsController@UpdateNews')->name('update-news');
 		Route::post('admin/save-update-news/{id}', 'AdminNewsController@SaveUpdateNews')->name('save-update-news');
 		Route::get('admin/delete-news/{id}', 'AdminNewsController@DeleteNews')->name('delete-news');
+
+		//Admin quản lý liên hệ
+		Route::get('admin/manage-contact', 'AdminContactTourController@ManageContact')->name('manage-contact');
 	});
 });
 
@@ -89,4 +92,6 @@ Route::get('/chi-tiet/{id}', 'MainController@tourDetail')->name('detail');
 
 //Trang chi tiết tin tức
 Route::get('/tin_tuc', 'MainController@viewTintuc');
+
+Route::post('save-contact', 'MainController@saveContact')->name('save-contact');
 

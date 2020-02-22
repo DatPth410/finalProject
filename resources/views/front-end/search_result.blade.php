@@ -18,6 +18,7 @@
 			<h3>Kết quả tìm kiếm cho chuyến đi:</h3>
 			<h2>
 				@php
+					
 					if ($name!="%") echo "Khởi hành từ ".$name."<br/>";
 					if ($arrived!="%") echo "Đi tới ".$arrived."<br/>";
 					if ($price!="0"){

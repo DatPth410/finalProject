@@ -30,14 +30,14 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-    	return view('front-end.index',compact('data_array','sale_tour','six_tours','four_news'));
+        return view('front-end.index',compact('data_array','sale_tour','six_tours','four_news'));
     }
 
     
 
     //START controller tour trong nuoc
 
-   	public function viewInland(){
+    public function viewInland(){
         $i=0;
         $j=0;
         $tour=DB::table('tour_trong_nuoc')->get();
@@ -99,7 +99,7 @@ class MainController extends Controller
     public function viewExp(){
         $exp = DB::table('tbl_news')->get();
         //print_r($exp);
-    	return view('front-end.cam_nang',compact('exp'));
+        return view('front-end.cam_nang',compact('exp'));
         //return view('front-end.cam_nang');
     }
 
@@ -109,15 +109,33 @@ class MainController extends Controller
     }
 
     public function viewTintuc(){
-        
+
         return view('front-end.tin_tuc');
     }
 
     public function tourDetail($id){
         $detail = DB::table('tour_trong_nuoc')
-            ->where('id','=',$id)
-            ->first();
+        ->where('id','=',$id)
+        ->first();
         return view('front-end.detail',compact('detail'));
     }       
 
+    public function saveContact(Request $request){
+        if ($request->isMethod('post')) {
+            # code...
+            echo "ok";
+            $contactInsert=[];
+            $contactInsert['name'] = $request->get('name');
+            $contactInsert['phone'] = $request->get('phone');
+            if (is_null($request->get('question'))) {
+                # code...
+                $question="Không có câu hỏi";
+            }else{
+                $question = $request->get('question');
+            }
+            $contactInsert['question'] = $question;
+            DB::table('tbl_lienhe')->insert($contactInsert);       
+        }
+        return redirect()->route('trang-chu');
+    }
 }
