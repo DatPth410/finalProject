@@ -108,9 +108,12 @@ class MainController extends Controller
         return view('front-end.tour_nuoc_ngoai');
     }
 
-    public function viewTintuc(){
-
-        return view('front-end.tin_tuc');
+    public function viewTintuc(Request $request){
+        $id=$request->query('id');
+        $news=DB::table('tbl_news')
+        ->where('id',$id)
+        ->first();
+        return view('front-end.tin_tuc',compact('news'));
     }
 
     public function tourDetail($id){

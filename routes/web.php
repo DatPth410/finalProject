@@ -81,6 +81,10 @@ Route::get('/ve-chung-toi','MainController@viewAboutUs');
 Route::get('/cam_nang','MainController@viewExp')->name('cam-nang');
 Auth::routes();
 
+
+
+//END cam nang du lich
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -91,7 +95,10 @@ Route::get('/detail', 'MainController@viewDetail');
 Route::get('/chi-tiet/{id}', 'MainController@tourDetail')->name('detail');
 
 //Trang chi tiết tin tức
-Route::get('/tin_tuc', 'MainController@viewTintuc');
+Route::get('/tin_tuc', [
+    'as' => 'getTintucTheoID', 
+    'uses' => 'MainController@viewTintuc'
+]);
 
 Route::post('save-contact', 'MainController@saveContact')->name('save-contact');
 
