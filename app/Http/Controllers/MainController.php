@@ -121,6 +121,7 @@ class MainController extends Controller
         ->where('id','=',$id)
         ->first();
         return view('front-end.detail',compact('detail'));
+        
     }       
 
     public function saveContact(Request $request){

@@ -31,7 +31,7 @@
 		<div  style="padding-top: 30px;" class="head_con">
 			<span class="fa fa-home" style="padding-right: 10px;"><a href="#"> Trang chủ / </a></span>
 			<span style="padding-right: 10px;"><a href="#"> Malaysia /</a></span>
-			<span><a href="#"> Tour Singapore 5N4D :Singapore-Malaysia (Deal)</a></span>
+			<span><a href="#"> Tour {{$detail->name}} {{$detail->length}} ngày {{$detail->length-1}} đêm</a></span>
 			<h1 style="color:#003c71;font-weight: bold;">Tour {{$detail->name}} {{$detail->length}} ngày {{$detail->length-1}} đêm</h1>
 		</div>
 		<div style="padding-top: 10px;padding-bottom: 5px;">	
@@ -55,7 +55,7 @@
 					<span>Phương tiện :</span>
 					<span class="fa fa-plane"></span>
 					<span class="fa fa-car"></span><br/>
-					<span style="padding-left:100px" >Mã Tour:{{$detail->code}}</span>
+					<span style="padding-left:100px" >Mã Tour:</span>
 					<span style="color: #00c1de">{{$detail->code}}</span>
 				</div>
 				<div class="thong_tin" style="background-color: white">
@@ -254,15 +254,21 @@
 							<label style="padding-top: 8px;" for="pickDate">Chọn ngày khởi hành:</label>
 						</div>
 
+						{{-- Chọn ngày đi --}}
 						<div class="col-md-5 margin-top-20px">
 							<input type="date" name="date" id="pickDate" class="form-control focus">
 						</div>
 
-
+						{{-- Chọn số ngày --}}
+						@php{{
+							$adult_number=2;
+							$discount=15;
+						}}
+						@endphp
 						<div class="col-md-7 margin-top-20px" style="padding-top: 8px;">
-							<span>2</span>
+							@php{{echo $adult_number;}} @endphp
 							<span>Người lớn</span>
-							<span style="padding-right: 3px;">-15%</span>
+							<span style="padding-right: 3px;">-@php{{echo $discount;}} @endphp%</span>
 							<span style="float:right;font-size: 15px;">9.000.000</span>
 						</div>
 
