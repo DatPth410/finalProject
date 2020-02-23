@@ -1,7 +1,7 @@
 
 <div id="header" class="fix">
 	<div class="row">					
-		<div class="col-md-offset-1 col-md-1 col-sm-offset-1 col-sm-1">
+		<div class="offset-md-1 col-md-1 col-sm-offset-1 col-sm-1">
 			<img src="images/lo-go.png" style="width: 80px;height: 80px;">
 		</div>
 
@@ -55,8 +55,8 @@
 			</div>
 
 			<div class="col-md-2 col-sm-2">
-				<a href="#" class="header_hotline glyphicon glyphicon-earphone none"><p  style="float: right;margin-left: 22px; letter-spacing: 2px; font-size: 30px;">0928 0416</p></a>
-				<p style="font-size: 15px;margin-top: -4px;color: #fff;text-align: center;" >Hỗ trợ dịch vụ 24/24</p>
+				<a href="#" class="header_hotline  none"><p class="fa fa-phone" style="padding-top: 14px;"> 0928 0416</p></a>
+			<p style="color: #fff;margin-top: -12px;">Hỗ trợ dịch vụ 24/24</p>
 			</div>
 		</div>
 	</div>
