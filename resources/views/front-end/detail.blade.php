@@ -260,15 +260,15 @@
 						</div>
 
 						{{-- Chọn số ngày --}}
-						@php{{
+						@php
 							$adult_number=2;
 							$discount=15;
-						}}
+						
 						@endphp
 						<div class="col-md-7 margin-top-20px" style="padding-top: 8px;">
-							@php{{echo $adult_number;}} @endphp
+							@php echo $adult_number; @endphp
 							<span>Người lớn</span>
-							<span style="padding-right: 3px;">-@php{{echo $discount;}} @endphp%</span>
+							<span style="padding-right: 3px;">-@php echo $discount; @endphp%</span>
 							<span style="float:right;font-size: 15px;">9.000.000</span>
 						</div>
 
