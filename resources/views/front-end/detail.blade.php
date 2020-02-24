@@ -1,3 +1,23 @@
+{{-- <script>
+		$(document).ready(function(){
+
+
+			$(".button_minus").click(function(){
+				var adult_number =parseInt(2);
+				var children_number =parseInt(2);
+				adult_number= adult_number-1;
+
+				})
+				
+
+		
+		})
+			
+
+
+	</script> --}}
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -260,22 +280,22 @@
 						</div>
 
 						{{-- Chọn số ngày --}}
-						@php{{
+						@php
 							$adult_number=2;
+							$children_number=2;
 							$discount=15;
-						}}
 						@endphp
 						<div class="col-md-7 margin-top-20px" style="padding-top: 8px;">
-							@php{{echo $adult_number;}} @endphp
+							@php echo $adult_number;@endphp
 							<span>Người lớn</span>
-							<span style="padding-right: 3px;">-@php{{echo $discount;}} @endphp%</span>
-							<span style="float:right;font-size: 15px;">9.000.000</span>
+							<span style="padding-right: 3px;">-@php echo $discount; @endphp%</span>
+							<span style="float:right;font-size: 15px;">@php echo $detail->price*$adult_number; @endphp</span>
 						</div>
 
 						<div class="col-md-5 margin-top-20px">
 							<div class="btn-group">
-								<button type="button" class="btn btn-default minus_plus"><i class="fa fa-minus"></i></button>
-								<button type="button" class="btn btn-default minus_plus"><i class="fa fa-plus"></i></button>
+								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_minus"><i class="fa fa-minus"></i></button>
+								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_plus"><i class="fa fa-plus"></i></button>
 							</div>
 						</div>
 
@@ -283,13 +303,13 @@
 							<span>2</span>
 							<span>Trẻ em</span>
 							<span style="padding-right: 3px;">-15%</span>
-							<span style="float:right;font-size: 15px;">9.000.000</span>
+							<span style="float:right;font-size: 15px;">@php echo $detail->price*$adult_number; @endphp</span>
 						</div>
 
 						<div class="col-md-5 margin-top-20px">
 							<div class="btn-group">
-								<button type="button" class="btn btn-default minus_plus"><i class="fa fa-minus"></i></button>
-								<button type="button" class="btn btn-default minus_plus"><i class="fa fa-plus"></i></button>
+								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_minus"><i class="fa fa-minus"></i></button>
+								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_plus"><i class="fa fa-plus"></i></button>
 							</div>
 						</div>	
 
@@ -298,7 +318,7 @@
 						</div>	
 
 						<div class="col-md-6 margin-top-20px">
-							<p class="total_price">18.000.000</p>
+							<p class="total_price">@php echo $detail->price*$adult_number+$detail->price*$children_number; @endphp</p>
 						</div>		
 
 						<div class="col-md-12">
@@ -425,46 +445,49 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="" method="POST" role="form">       
+					<form action="store" method="POST" role="form">   
+						@csrf    
+						<input type="hidden" name="id_tour" value="{{$detail->id}}">
+						<input type="hidden" name="time" value="{{$detail->departure}}">
 						<div class="form-group">
 							<label for="">Họ và tên</label>
-							<input type="text" class="form-control" id="" placeholder="Họ và tên">
+							<input type="text" class="form-control" id="" name="name" placeholder="Họ và tên">
 						</div>
 
 						<div class="form-group">
 							<label for="">Số điện thoại</label>
-							<input type="text" class="form-control" id="" placeholder="Số điện thoại">
+							<input type="text" class="form-control" id="" name="phone" placeholder="Số điện thoại">
 						</div>
 
 						<div class="form-group">
 							<label for="">Email</label>
-							<input type="text" class="form-control" id="" placeholder="Email">
+							<input type="text" class="form-control" id="" name="email" placeholder="Email">
 						</div>
 
 						<div class="form-group">
 							<label for="">Hình thức thanh toán</label>
-							<select name="" id="input" class="form-control">
-								<option value="">Thanh toán trực tuyến</option>
-								<option value="">Thanh toán tại chi nhánh</option>
+							<select name="pay" id="input" class="form-control">
+								<option value="1">Thanh toán trực tuyến</option>
+								<option value="2">Thanh toán tại chi nhánh</option>
 							</select>
 						</div>
 
 						<div class="form-group">
 							<label for="">Số tài khoản</label>
 							<p>(Chỉ bắt buộc khi bạn chọn thanh toán trực tuyến, nếu bỏ trống sẽ mặc định là thanh toán tại chi nhánh)</p>
-							<input type="text" class="form-control" id="" placeholder="Số tài khoản">
+							<input type="text" class="form-control" id="" name="bank" placeholder="Số tài khoản">
 						</div>
 
 
 						<div class="form-group">
 							<label for="">Yêu cầu khác</label>
-							<input type="text" class="form-control" id="" placeholder="Yêu cầu khác">
+							<input type="text" class="form-control" id="" name="note" placeholder="Yêu cầu khác">
 						</div>
 
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Xác nhận</button>
+						<button type="reset"  class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Xác nhận</button>
 					</form>
 				</div>
 			</div>
