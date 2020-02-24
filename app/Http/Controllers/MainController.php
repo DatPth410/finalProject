@@ -121,6 +121,7 @@ class MainController extends Controller
         ->where('id','=',$id)
         ->first();
         return view('front-end.detail',compact('detail'));
+        
     }       
 
     public function saveContact(Request $request){
@@ -141,4 +142,13 @@ class MainController extends Controller
         }
         return redirect()->route('trang-chu');
     }
+
+    public function testNews(){
+        $exp = DB::table('tbl_news')->get();
+        $exp_time = DB::table('tbl_news')
+        ->orderBy('ngay_dang', 'desc')
+        ->limit(6)
+        ->get();
+        return view('front-end.cam_nang1',compact('exp','exp_time'));
+    }    
 }

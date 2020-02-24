@@ -6,12 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>DPV Travel Agency @yield('title')</title>
 	<base href="{{asset('')}}">
-	{{-- <link rel="stylesheet" href="css/bootstrap.min.css" /> --}}
-	<!-- <link rel="stylesheet" href="css/blog_tour_trong_ngoai.css"> -->
-	{{-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('css/blog_tour_trong_ngoai.css') }}" rel="stylesheet">
-	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css"> --}}
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>	
+
+	<link rel="stylesheet" type="text/css" href="css/myCss.css">
 </head>
 <body>			
 		<!-- Start Header -->

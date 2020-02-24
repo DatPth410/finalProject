@@ -5,11 +5,11 @@
 		</div>
 
 		<div id="footer">
-			<div id="top_bottom" class="col-md-offset-2">
+			<div id="top_bottom" class="offset-md-2">
 				<img src="images/lo-go.png" style="width: 90px;height: 90px;margin-top: 10px;">
 			</div>
 
-			<div id="middle_bottom" class="col-md-8 col-md-offset-2">
+			<div id="middle_bottom" class="col-md-8 offset-md-2">
 				<div class="row">
 					<div class="col-md-3">
 						<p style="font-size: 20px;text-align: center;">GÓC KHÁCH HÀNG</p>
@@ -34,7 +34,7 @@
 				</div>
 			</div>
 
-			<div id="bottom_bottom" class="col-md-offset-2 col-md-8">
+			<div id="bottom_bottom" class="offset-md-2 col-md-8">
 				<p style="text-align: center; font-size: 22px;margin-top: 20px;">Copyright - Empowered by DPV</p>
 			</div>
 		</div>
