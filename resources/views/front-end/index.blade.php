@@ -32,7 +32,6 @@
 
 	@section('home')
 	<!-- Start search -->
-	
 	<div id="search">
 		<div class="row"  style="margin-top: -100px;" >
 			<div class="col-md-offset-2 col-md-10">
@@ -169,23 +168,20 @@
 					{{-- expr --}}
 				
 				<div class="col-sm-6 col-md-4" >
-					<div class="card" style="width: 18rem;">
-						<a href="{{ route('detail',$tour->id) }}"><img src="img/test/{{$tour->avatar}}" style="height: 200px;"></a>
+					<div class="card" style="width: 20rem;height: 26rem;">
+						<a href="{{ route('detail',$tour->id) }}"><img src="img/test/{{$tour->avatar}}" class="img-thumbnail img-fluid card-img-top" style="width: 100%; height: 200px;"></a>
 
 						<div class="card-body">
-							<h3>{{$tour->name}}</h3>
-							<p>...</p>
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">{{$tour->length}} ngày {{$tour->length-1}} đêm</span></p>
+							<h5 class="card-title">{{$tour->name}}</h5>
+							<p class="fa fa-clock-o card-text"><span class="tour_text_tiny">{{$tour->length}} ngày {{$tour->length-1}} đêm</span></p>
 
 							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">{{$tour->departure}}</span></p>
+							<p class="fa fa-calendar card-text"><span class="tour_text_tiny">{{$tour->departure}}</span></p>
 
-							<div class="price_tour">
+							<div class="price_tour card-text">
 								<p>{{number_format($tour->price)}}</p>
 							</div>
 						</div>
-
-						
 					</div>
 				</div>
 				@endforeach
@@ -364,8 +360,8 @@
 		<div class="exp_content">
 			<div class="row">
 				@foreach ($four_news as $element=>$news)
-					{{-- expr --}}
-					<div class="col-md-3 col-sm-6">
+				{{-- expr --}}
+				<div class="col-md-3 col-sm-6">
 					<a href="#">
 						<img src="img/test/{{$news->avatar}}" class="exp_photo">
 					</a>
@@ -377,15 +373,16 @@
 					<p class="exp_below_title">{{$news->title}}</p>
 				</div>
 				@endforeach
-				
+
 
 				
 
-			<div class="see_all_2">
-				<a href="{{ route('cam-nang') }}"><p><span class="fa fa-chevron-left" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="fa fa-chevron-right" style="font-size: 15px;margin-left:10px;"></span></p></a>
+				<div class="see_all_2">
+					<a href="{{ route('cam-nang') }}"><p><span class="fa fa-chevron-left" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="fa fa-chevron-right" style="font-size: 15px;margin-left:10px;"></span></p></a>
+				</div>
 			</div>
 		</div>
-	</div>
+	</div>	
 	<!-- End kinh nghiệm du lịch -->
 
 	@endsection
