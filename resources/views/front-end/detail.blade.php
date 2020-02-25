@@ -101,7 +101,7 @@
 				</div>
 				<div class="dich_vu">
 					<h3 style="color: #003c71">Dịch vụ đi kèm</h3>
-					<div class="tour_row">
+					<div class="row">
 						<div class="col-md-4 beside_service">
 							<a href="#"><span><i class="fa fa-check text-blue"></i> Bảo hiểm</span></a>
 						</div>
@@ -253,7 +253,7 @@
 							</div>
 
 							<div class="col-md-6">
-								<img src="images/irene.jpg" alt="..." class="img-circle" style="width: 200px;height: 200px;margin-left: 72px;">
+								<img src="images/irene.jpg" alt="..." class="rounded-circle" style="width: 200px;height: 200px;margin-left: 72px;">
 								<div style="text-align: center;">
 									<p style="font-size: 18px;margin-top: 10px;">Tư vấn ngay? Gọi tổng đài</p>
 									<a href="#"><p class="header_hotline glyphicon glyphicon-earphone" style="letter-spacing: 2px; font-size: 20px;margin-top: -8px;">0928 0416</p></a>
@@ -266,10 +266,10 @@
 			</div>
 
 			<!-- START PHẦN THANH TOÁN -->
-			<div class="col-md-4 fix">
+			<div class="col-md-4 ">
 				<div id="form_thanhtoan">
 					<p style="font-weight: bold; font-size: 15px;">Đặt ngay, chỉ 2 phút!! Hoặc gọi (028) 0928 0416.</p>
-					<div class="row">
+					<div class="row no-gutters">
 						<div class="col-md-7 margin-top-20px">
 							<label style="padding-top: 8px;" for="pickDate">Chọn ngày khởi hành:</label>
 						</div>
@@ -286,37 +286,37 @@
 							$discount=15;
 
 						@endphp
-						<div class="col-md-7 margin-top-20px" style="padding-top: 8px;">
+						<div class="col-md-8 margin-top-20px" style="padding-top: 8px;">
 							@php echo $adult_number;@endphp
 							<span>Người lớn</span>
 							<span style="padding-right: 3px;">-@php echo $discount; @endphp%</span>
 							<span style="float:right;font-size: 15px;">@php echo $detail->price*$adult_number; @endphp</span>
-
-						<div class="col-md-7 margin-top-20px" style="padding-top: 8px;">
+						</div>	
+						{{-- <div class="col-md-7 margin-top-20px" style="padding-top: 8px;">
 							@php echo $adult_number; @endphp
 							<span>Người lớn</span>
 							<span style="padding-right: 3px;">-@php echo $discount; @endphp%</span>
 							<span style="float:right;font-size: 15px;">9.000.000</span>
-						</div>
+						</div> --}}
 
-						<div class="col-md-5 margin-top-20px">
-							<div class="btn-group">
-								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_minus"><i class="fa fa-minus"></i></button>
-								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_plus"><i class="fa fa-plus"></i></button>
+						<div class="col-md-4 margin-top-20px">
+							<div class="btn-group float-right">
+								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_minus btn-block"><i class="fa fa-minus"></i></button>
+								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_plus btn-block"><i class="fa fa-plus"></i></button>
 							</div>
 						</div>
 
-						<div class="col-md-7 margin-top-20px" style="padding-top: 8px;">
+						<div class="col-md-8 margin-top-20px" style="padding-top: 8px;">
 							<span>2</span>
 							<span>Trẻ em</span>
 							<span style="padding-right: 3px;">-15%</span>
 							<span style="float:right;font-size: 15px;">@php echo $detail->price*$adult_number; @endphp</span>
 						</div>
 
-						<div class="col-md-5 margin-top-20px">
-							<div class="btn-group">
-								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_minus"><i class="fa fa-minus"></i></button>
-								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_plus"><i class="fa fa-plus"></i></button>
+						<div class="col-md-4 margin-top-20px">
+							<div class="btn-group float-right">
+								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_minus btn-block"><i class="fa fa-minus"></i></button>
+								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_plus btn-block"><i class="fa fa-plus"></i></button>
 							</div>
 						</div>	
 
@@ -348,65 +348,65 @@
 
 			<div class="row tlq">
 				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail first_t">
-						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
+					<div class="card" style="width: 18rem;">
+						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
 
-						<div class="caption">
+						<div class="card-body">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
-							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+							
+							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
 							<br>
-							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
 
 							<div class="price_tour">
 								<p>12.000.000</p>
 							</div>
 						</div>
 
-
+						
 					</div>
 				</div>
 
 				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
+					<div class="card" style="width: 18rem;">
+						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
 
-						<div class="caption">
+						<div class="card-body">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
-							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+							
+							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
 							<br>
-							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
 
 							<div class="price_tour">
 								<p>12.000.000</p>
 							</div>
 						</div>
 
-
+						
 					</div>
 				</div>
 
 				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
+					<div class="card" style="width: 18rem;">
+						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
 
-						<div class="caption">
+						<div class="card-body">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
-							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+							
+							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
 							<br>
-							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
 
 							<div class="price_tour">
 								<p>12.000.000</p>
 							</div>
 						</div>
 
-
+						
 					</div>
 				</div>
 			</div>
@@ -420,21 +420,23 @@
 
 			<div class="row tlq">
 				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail first_t">
-						<a href="#"><img src="images/Gold-Coast.jpg" alt="..."></a>
+					<div class="card" style="width: 18rem;">
+						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
 
-						<div class="caption">
+						<div class="card-body">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
-							<p class="glyphicon glyphicon-time"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+							
+							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
 							<br>
-							<p class="glyphicon glyphicon-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
 
 							<div class="price_tour">
 								<p>12.000.000</p>
 							</div>
 						</div>
+
+						
 					</div>
 				</div>
 			</div>

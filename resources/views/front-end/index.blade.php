@@ -215,7 +215,7 @@
 
 						<div class="card-body">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
+							
 							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
 							<br>
@@ -236,7 +236,7 @@
 
 						<div class="card-body">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
+							
 							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
 							<br>
@@ -257,7 +257,7 @@
 
 						<div class="card-body">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
+							
 							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
 							<br>
@@ -280,7 +280,7 @@
 
 						<div class="card-body">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
+							
 							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
 							<br>
@@ -301,7 +301,7 @@
 
 						<div class="card-body">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
+							
 							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
 							<br>
@@ -322,7 +322,7 @@
 
 						<div class="card-body">
 							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							<p>...</p>
+							
 							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
 
 							<br>
