@@ -105,3 +105,6 @@ Route::get('/tin_tuc', [
 
 Route::post('save-contact', 'MainController@saveContact')->name('save-contact');
 
+//Đặt tour
+Route::post('store', 'MainController@storeBookingtour');
+

@@ -310,9 +310,9 @@ a{
   src: url(../fonts/Montserrat-Medium.otf);
 }
 
-.tour_text_tiny{
+.tour_text_tiny{/*
 	margin-left: 10px;
-	font-size: 20px; 
+	font-size: 20px; */
 	font-family: mons;
   src: url(../fonts/Montserrat-Medium.otf);
 }
@@ -322,6 +322,7 @@ a{
 }
 
 .price_tour p{
+	margin-top: 20px;
 	font-size: 25px;
 	color: red;
 }
@@ -414,4 +415,20 @@ a{
     justify-content: center;
     border-radius: 50%;
 
+}
+
+/*.card {
+	margin: 0 0 0 0 !important;
+}
+
+.card-text {
+	margin: 0 0 0 0 !important;
+}
+
+.card-title {
+	margin: 0 0 0 0 !important;
+}*/
+
+.card-body {
+	margin: 0 0 0 0 !important;
 }
