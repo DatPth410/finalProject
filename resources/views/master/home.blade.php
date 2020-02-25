@@ -56,7 +56,7 @@
 
 
 		<!-- Start cam_nang -->
-	@yield('cam_nang')
+	@yield('cam_nang1')
 		<!-- End cam_nang -->
 
 

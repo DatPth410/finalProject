@@ -26,7 +26,7 @@
 		</div>
 
 		<div class="col-md-1 col-sm-1">
-			<a href="cam_nang"><p class="header_text">Blog</p></a>
+			<a href="cam-nang"><p class="header_text">Blog</p></a>
 		</div>
 
 		<div class="col-md-1 col-sm-1">

@@ -24,7 +24,7 @@
 
 			
 
-			<div class="content">
+			<div class="content1">
 
 				<div class="h1_title">
 					<h1>Tour Nước Ngoài</h1>
@@ -330,15 +330,14 @@
 			</div>
 		</div>
 
-		<div style="padding-left: 400px;padding-top:50px;padding-bottom: 80px;" class="btn-group">
-			<button type="button" class="btn btn-default"><a href="#"></a>1</button>
-			<button type="button" class="btn btn-default"><a href="#">2</a></button>
-			<button type="button" class="btn btn-default"><a href="#">3</a></button>
-			<button type="button" class="btn btn-default"><a href="#">4</a></button>
-			<button type="button" class="btn btn-default"><a href="#">5</a></button>
-			<button type="button" class="btn btn-default"><a href="#">></a></button>
-			<button type="button" class="btn btn-default"><a href="#">Last</a></button>
-		</div>
+		<div style="width: 250px;height: 40px;margin-bottom: 50px;margin-left: 450px" class="btn-group">
+				<button type="button" class="btn btn-outline-primary">1</button>
+				<button type="button" class="btn btn-outline-primary">2</button>
+				<button type="button" class="btn btn-outline-primary">3</button>
+				<button type="button" class="btn btn-outline-primary">4</button>
+				<button type="button" class="btn btn-outline-primary">></button>
+				<button type="button" class="btn btn-outline-primary">last</button>
+			</div>
 
 	</div>
 

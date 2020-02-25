@@ -97,9 +97,9 @@ class MainController extends Controller
     } 
 
     public function viewExp(){
-        $exp = DB::table('tbl_news')->get();
+        $exp = DB::table('tbl_news')->limit(6)->get();
         //print_r($exp);
-        return view('front-end.cam_nang',compact('exp'));
+        return view('front-end.cam_nang1',compact('exp'));
         //return view('front-end.cam_nang');
     }
 

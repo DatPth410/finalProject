@@ -22,7 +22,7 @@
 				<span><a href="#">Tour trong nước</a></span>
 			</div>
 
-			<div class="content">
+			<div class="content1">
 				<div class="h1_title">
 					<h1>Tour trong nước</h1>
 				</div>

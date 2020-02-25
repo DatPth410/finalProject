@@ -78,7 +78,7 @@ Route::get('/nuoc-ngoai','MainController@viewOutland')->name('nuoc-ngoai');
 Route::get('/ve-chung-toi','MainController@viewAboutUs');
 
 //Cẩm nang du lịch
-Route::get('/cam_nang','MainController@viewExp')->name('cam-nang');
+Route::get('/cam-nang','MainController@viewExp')->name('cam-nang');
 Auth::routes();
 
 
