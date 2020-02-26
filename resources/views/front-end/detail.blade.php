@@ -1,23 +1,3 @@
-{{-- <script>
-		$(document).ready(function(){
-
-
-			$(".button_minus").click(function(){
-				var adult_number =parseInt(2);
-				var children_number =parseInt(2);
-				adult_number= adult_number-1;
-
-				})
-				
-
-		
-		})
-			
-
-
-	</script> --}}
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +22,86 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
+<script>
+	function checkName(){
+				var name = document.getElementById("name").value;
+				var check_error_name = document.getElementById("noti_name");
+				var regexName = /^[^\d+]*[\d+]{0}[^\d+]*$/;
+
+				if (name == "" || name == null) {
+					check_error_name.innerHTML = "Họ tên không được để trống!";
+				}else if (!regexName.test(name)){
+					check_error_name.innerHTML = "Họ tên không hợp lệ!";
+				}else{
+					check_error_name.innerHTML = "";
+					return name;
+				}
+
+	};
+
+	function checkPhone(){
+				var phone = document.getElementById("phone").value;
+				var check_error_phone = document.getElementById("noti_phone");
+				var regexphone = /^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;
+
+				if (phone == "" || phone == null) {
+					check_error_phone.innerHTML = "Số điện thoại không được để trống!";
+				}else if (!regexphone.test(phone)){
+					check_error_phone.innerHTML = "Số điện thoại không hợp lệ!";
+				}else{
+					check_error_phone.innerHTML = "";
+					return phone;
+				}
+
+	};
+
+	function checkEmail(){
+				var email = document.getElementById("email").value;
+				var check_error_email = document.getElementById("noti_email");
+				var regexEmail = /\b[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}\b/i;
+
+				if (email == ""){
+					check_error_email.innerHTML = "Email không được để trống!";
+				}else if(!regexEmail.test(email)){
+					check_error_email.innerHTML = "Email không hợp lệ!";
+				}else{
+					check_error_email.innerHTML = "";
+					return email;
+				}
+	};
+
+  	function checkBank(){
+			var bank = document.getElementsById("bank").value;
+  			var check_error_bank= document.getElementById("noti_bank");
+  			if(document.getElementById("pay").value==1 && bank == ""){
+    		check_error_bank.innerHTML="Vui lòng điền số tài khoản!";
+    			return 0;
+    		}else if (document.getElementById("pay").value==2 && bank != ""){
+    			bank = "";
+    			return 1;
+    		}else{
+    			return 1;
+    		}
+
+  	};
+
+
+    function validate(){
+				if (checkName() && checkPhone() && checkEmail() && checkBank())
+				{	
+					return true;
+            	}
+            		else
+            	{
+            	alert("Dữ liệu không được để trống!");
+            	return false;
+            	} 
+
+            	return false;
+
+    };
+
+	</script>
 <body>
 
 	@extends('master.home')
@@ -454,43 +514,43 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="store" method="POST" role="form">   
+					<form action="store" method="POST" role="form" onsubmit="return validate();">   
 						@csrf    
 						<input type="hidden" name="id_tour" value="{{$detail->id}}">
 						<input type="hidden" name="time" value="{{$detail->departure}}">
 						<div class="form-group">
-							<label for="">Họ và tên</label>
-							<input type="text" class="form-control" id="" name="name" placeholder="Họ và tên">
+							<label for="">Họ và tên(*)<span id="noti_name" class="noti"></span></label>
+							<input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" onblur="checkName();if (this.value=='') {this.focus();}">
 						</div>
 
 						<div class="form-group">
-							<label for="">Số điện thoại</label>
-							<input type="text" class="form-control" id="" name="phone" placeholder="Số điện thoại">
+							<label for="">Số điện thoại(*)<span id="noti_phone" class="noti"></span></label>
+							<input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" onblur="checkPhone();if (this.value=='') {this.focus();}">
 						</div>
 
 						<div class="form-group">
-							<label for="">Email</label>
-							<input type="text" class="form-control" id="" name="email" placeholder="Email">
+							<label for="">Email(*)<span id="noti_email" class="noti"></span></label>
+							<input type="text" class="form-control" id="email" name="email" placeholder="Email" onblur="checkEmail();if (this.value=='') {this.focus();}">
 						</div>
 
 						<div class="form-group">
-							<label for="">Hình thức thanh toán</label>
-							<select name="pay" id="input" class="form-control">
+							<label for="">Hình thức thanh toán(*)</label>
+							<select name="pay" id="pay" class="form-control">
 								<option value="1">Thanh toán trực tuyến</option>
 								<option value="2">Thanh toán tại chi nhánh</option>
 							</select>
 						</div>
 
 						<div class="form-group">
-							<label for="">Số tài khoản</label>
+							<label for="">Số tài khoản<span id="noti_bank" class="noti"></span></label>
 							<p>(Chỉ bắt buộc khi bạn chọn thanh toán trực tuyến, nếu bỏ trống sẽ mặc định là thanh toán tại chi nhánh)</p>
-							<input type="text" class="form-control" id="" name="bank" placeholder="Số tài khoản">
+							<input type="text" class="form-control" id="bank" name="bank" placeholder="Số tài khoản..." onblur="checkBank();if (this.value=='') {this.focus();}">
 						</div>
 
 
 						<div class="form-group">
 							<label for="">Yêu cầu khác</label>
-							<input type="text" class="form-control" id="" name="note" placeholder="Yêu cầu khác">
+							<input type="text" class="form-control" id="" name="note" placeholder="Yêu cầu khác...">
 						</div>
 
 					</div>
