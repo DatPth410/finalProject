@@ -25,9 +25,6 @@
 			});
 		} );
 	</script>
-	
-		
-	
 </head>
 <body>
 
@@ -36,7 +33,7 @@
 	@section('home')
 	<!-- Start search -->
 	<div id="search">
-		<div class="row"  style="margin-top: -100px;" >
+		<div class="row" >
 			<div class="col-md-offset-2 col-md-10">
 				<p style="color:#fff; margin-top: 120px;font-size: 28px;font-weight:bold;">ĐẶT TOUR DU LỊCH !</p>					
 				<p style="color:#fff; font-size: 22px;">Hơn 300 Tour du lịch hấp dẫn ở Việt Nam và trên thế giới</p>
@@ -88,31 +85,36 @@
 	<!-- Start slider -->
 
 	<div id="block_1">
-		<div id="carouselExampleIndicators" class="carousel slide background-carousel" data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img class="d-block  img-item" src="img/1.jpg" alt="First slide">
-					<div class="carousel-caption d-none d-md-block">
-						<h5>My Caption Title (1st Image)</h5>
-						<p>The whole caption will only show up if the screen is at least medium size.</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img class="d-block  img-item" src="img/10.jpeg" alt="Second slide">
-				</div>
-				<div class="carousel-item">
-					<img class="d-block  img-item" src="img/5.jpg" alt="Third slide">
-				</div>
-			</div>
-
-		</div>
-
-		
+        <div class="container-fluid px-0">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner bg-info" role="listbox">
+            <div class="carousel-item active">
+                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/21.jpg'); background-position: center center;background-size: cover;">
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/10.jpeg'); background-position: center center;background-size: cover;">
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/20.jpeg'); background-position: center center;background-size: cover;">
+                    
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+    </div>
 
 
 	</div>
@@ -126,7 +128,7 @@
 				<p><img src="images/sale-icon.jpg" id="sale-icon">Combo Tour - giảm giá mạnh</p>
 			</div>
 			@foreach ($sale_tour as $element=>$tour)
-			{{-- expr --}}
+				{{-- expr --}}
 			
 			<div class="love">
 
@@ -163,7 +165,7 @@
 		<div class="tour_content">
 			<div class="row">
 				@foreach ($six_tours as $element=>$tour)
-				{{-- expr --}}
+					{{-- expr --}}
 				
 				<div class="col-sm-6 col-md-4" >
 					<div class="card" style="width: 20rem;height: 26rem;">

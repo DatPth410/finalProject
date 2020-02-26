@@ -30,7 +30,34 @@ class MainController extends Controller
         ->limit(2)
         ->get();
 
-        return view('front-end.index',compact('data_array','sale_tour','six_tours','four_news'));
+        return view('front-end.index1',compact('data_array','sale_tour','six_tours','four_news'));
+    }
+
+    public function viewTest(){
+        $data=DB::table('tbl_diemden')
+        ->select('ten')->get();
+        $data_array=array();
+        foreach ($data as $key => $value) {
+            $data_array[]=$value->ten;
+        }
+        $data_array1=array();
+
+        $sale_tour=DB::table('tour_trong_nuoc')
+        ->orderBy('khuyen_mai','desc')
+        ->limit(3)
+        ->get();
+
+        $six_tours=DB::table('tour_trong_nuoc')
+        ->inRandomOrder()
+        ->limit(6)
+        ->get();
+
+        $four_news=DB::table('tbl_news')
+        ->where('id','!=',1)
+        ->limit(2)
+        ->get();
+
+        return view('front-end.index1',compact('data_array','sale_tour','six_tours','four_news'));
     }
 
     
@@ -120,7 +147,12 @@ class MainController extends Controller
         $detail = DB::table('tour_trong_nuoc')
         ->where('id','=',$id)
         ->first();
-        return view('front-end.detail',compact('detail'));
+
+        $random_tour=DB::table('tour_trong_nuoc')
+        ->inRandomOrder()
+        ->limit(3)
+        ->get();
+        return view('front-end.detail',compact('detail','random_tour'));
         
     }       
 

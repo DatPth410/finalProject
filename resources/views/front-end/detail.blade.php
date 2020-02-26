@@ -22,84 +22,176 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
+<script> 
+							$(document).ready(function() { 
+								
+								var adult_num=2;
+								var adult_price={{$detail->price}};
+								var adult_total=adult_num*adult_price;
+
+								var child_num=2;
+								var child_price={{$detail->price}};
+								var child_total=child_num*child_price;
+
+								var total = adult_total + child_total;
+	
+								$("#minus_adult").click(function(){
+									adult_num--;
+									
+									if(adult_num<0){
+										adult_num=0;
+										adult_total=0;										
+									}
+									adult_total=adult_num*adult_price;
+									total = adult_total + child_total;
+									var output=parseInt(adult_total).toLocaleString()
+									$("#lon").text(adult_num);
+									$("#lon_price").text(output);
+									var output1=parseInt(total).toLocaleString();
+									$(".total_price").text(output1);
+									$("#adult").text(adult_num);
+								$("#child").text(child_num);
+								$("#sum").text(output1);
+								});
+								$("#plus_adult").click(function(){
+									adult_num++;
+									adult_total=adult_num*adult_price;
+									total = adult_total + child_total;
+									var output=parseInt(adult_total).toLocaleString()
+									$("#lon").text(adult_num);
+									$("#lon_price").text(output);
+									var output1=parseInt(total).toLocaleString();
+									$(".total_price").text(output1);
+									$("#adult").text(adult_num);
+								$("#child").text(child_num);
+								$("#sum").text(output1);
+								});
+								var output=parseInt(adult_total).toLocaleString();
+								$("#lon").text(adult_num);
+								$("#lon_price").text(output);
+					
+								$("#minus_child").click(function(){
+									child_num--;
+									
+									if(child_num<0){
+										child_num=0;
+										child_total=0;										
+									}
+									child_total=child_num*child_price;
+									total = adult_total + child_total;
+									var output=parseInt(child_total).toLocaleString()
+									$("#be").text(child_num);
+									$("#be_price").text(output);
+									var output1=parseInt(total).toLocaleString();
+									$(".total_price").text(output1);
+									$("#adult").text(adult_num);
+								$("#child").text(child_num);
+								$("#sum").text(output1);
+								});
+								$("#plus_child").click(function(){
+									child_num++;
+									child_total=child_num*child_price;
+									total = adult_total + child_total;
+									var output=parseInt(child_total).toLocaleString()
+									$("#be").text(child_num);
+									$("#be_price").text(output);
+									var output1=parseInt(total).toLocaleString();
+									$(".total_price").text(output1);
+									$("#adult").text(adult_num);
+								$("#child").text(child_num);
+								$("#sum").text(output1);
+								});
+								var output=parseInt(child_total).toLocaleString();
+								$("#be").text(child_num);
+								$("#be_price").text(output);
+
+								var output1=parseInt(total).toLocaleString();
+								$(".total_price").text(output1);
+								$("#adult").text(adult_num);
+								$("#child").text(child_num);
+								$("#sum").text(output1);
+								
+
+							}); 
+						</script> 
 <script>
 	function checkName(){
-				var name = document.getElementById("name").value;
-				var check_error_name = document.getElementById("noti_name");
-				var regexName = /^[^\d+]*[\d+]{0}[^\d+]*$/;
+		var name = document.getElementById("name").value;
+		var check_error_name = document.getElementById("noti_name");
+		var regexName = /^[^\d+]*[\d+]{0}[^\d+]*$/;
 
-				if (name == "" || name == null) {
-					check_error_name.innerHTML = "Họ tên không được để trống!";
-				}else if (!regexName.test(name)){
-					check_error_name.innerHTML = "Họ tên không hợp lệ!";
-				}else{
-					check_error_name.innerHTML = "";
-					return name;
-				}
+		if (name == "" || name == null) {
+			check_error_name.innerHTML = "Họ tên không được để trống!";
+		}else if (!regexName.test(name)){
+			check_error_name.innerHTML = "Họ tên không hợp lệ!";
+		}else{
+			check_error_name.innerHTML = "";
+			return name;
+		}
 
 	};
 
 	function checkPhone(){
-				var phone = document.getElementById("phone").value;
-				var check_error_phone = document.getElementById("noti_phone");
-				var regexphone = /^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;
+		var phone = document.getElementById("phone").value;
+		var check_error_phone = document.getElementById("noti_phone");
+		var regexphone = /^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;
 
-				if (phone == "" || phone == null) {
-					check_error_phone.innerHTML = "Số điện thoại không được để trống!";
-				}else if (!regexphone.test(phone)){
-					check_error_phone.innerHTML = "Số điện thoại không hợp lệ!";
-				}else{
-					check_error_phone.innerHTML = "";
-					return phone;
-				}
+		if (phone == "" || phone == null) {
+			check_error_phone.innerHTML = "Số điện thoại không được để trống!";
+		}else if (!regexphone.test(phone)){
+			check_error_phone.innerHTML = "Số điện thoại không hợp lệ!";
+		}else{
+			check_error_phone.innerHTML = "";
+			return phone;
+		}
 
 	};
 
 	function checkEmail(){
-				var email = document.getElementById("email").value;
-				var check_error_email = document.getElementById("noti_email");
-				var regexEmail = /\b[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}\b/i;
+		var email = document.getElementById("email").value;
+		var check_error_email = document.getElementById("noti_email");
+		var regexEmail = /\b[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}\b/i;
 
-				if (email == ""){
-					check_error_email.innerHTML = "Email không được để trống!";
-				}else if(!regexEmail.test(email)){
-					check_error_email.innerHTML = "Email không hợp lệ!";
-				}else{
-					check_error_email.innerHTML = "";
-					return email;
-				}
+		if (email == ""){
+			check_error_email.innerHTML = "Email không được để trống!";
+		}else if(!regexEmail.test(email)){
+			check_error_email.innerHTML = "Email không hợp lệ!";
+		}else{
+			check_error_email.innerHTML = "";
+			return email;
+		}
 	};
 
-  	function checkBank(){
-			var bank = document.getElementsById("bank").value;
-  			var check_error_bank= document.getElementById("noti_bank");
-  			if(document.getElementById("pay").value==1 && bank == ""){
-    			check_error_bank.innerHTML="Vui lòng điền số tài khoản!";
-    			return 0;
-    		}else{
-    			check_error_bank.innerHTML="";
-    			return bank;
-    		}
+	function checkBank(){
+		var bank = document.getElementsById("bank").value;
+		var check_error_bank= document.getElementById("noti_bank");
+		if(document.getElementById("pay").value==1 && bank == ""){
+			check_error_bank.innerHTML="Vui lòng điền số tài khoản!";
+			return 0;
+		}else{
+			check_error_bank.innerHTML="";
+			return bank;
+		}
 
-  	};
+	};
 
 
-    function validate(){
-				if (checkName() && checkPhone() && checkEmail() && checkBank())
-				{	
-					return true;
-            	}
-            		else
-            	{
-            	alert("Dữ liệu không được để trống!");
-            	return false;
-            	} 
+	function validate(){
+		if (checkName() && checkPhone() && checkEmail() && checkBank())
+		{	
+			return true;
+		}
+		else
+		{
+			alert("Dữ liệu không được để trống!");
+			return false;
+		} 
 
-            	return false;
+		return false;
 
-    };
+	};
 
-	</script>
+</script>
 <body>
 
 	@extends('master.home')
@@ -328,27 +420,21 @@
 				<div id="form_thanhtoan">
 					<p style="font-weight: bold; font-size: 15px;">Đặt ngay, chỉ 2 phút!! Hoặc gọi (028) 0928 0416.</p>
 					<div class="row no-gutters">
-						<div class="col-md-7 margin-top-20px">
-							<label style="padding-top: 8px;" for="pickDate">Chọn ngày khởi hành:</label>
-						</div>
+						
+						{{-- @php
+						$adult_number=2;
+						$children_number=2;
+						$discount=15;
 
-						{{-- Chọn ngày đi --}}
-						<div class="col-md-5 margin-top-20px">
-							<input type="date" name="date" id="pickDate" class="form-control focus">
-						</div>
-
-						{{-- Chọn số ngày --}}
-						@php
-							$adult_number=2;
-							$children_number=2;
-							$discount=15;
-
-						@endphp
+						@endphp --}}
+						
 						<div class="col-md-8 margin-top-20px" style="padding-top: 8px;">
-							@php echo $adult_number;@endphp
+							<span id="lon"></span>
 							<span>Người lớn</span>
-							<span style="padding-right: 3px;">-@php echo $discount; @endphp%</span>
-							<span style="float:right;font-size: 15px;">@php echo $detail->price*$adult_number; @endphp</span>
+							{{-- <span style="padding-right: 3px;">-@php echo $discount; @endphp%</span> --}}
+							<span style="float:right;font-size: 15px; color: #ffc107;" id="lon_price"></span>
+
+
 						</div>	
 						{{-- <div class="col-md-7 margin-top-20px" style="padding-top: 8px;">
 							@php echo $adult_number; @endphp
@@ -356,25 +442,31 @@
 							<span style="padding-right: 3px;">-@php echo $discount; @endphp%</span>
 							<span style="float:right;font-size: 15px;">9.000.000</span>
 						</div> --}}
-
+						
 						<div class="col-md-4 margin-top-20px">
 							<div class="btn-group float-right">
-								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_minus btn-block"><i class="fa fa-minus"></i></button>
-								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_plus btn-block"><i class="fa fa-plus"></i></button>
+								<button type="button" id="minus_adult" class="btn btn-default minus_plus" onclick="" class="button_minus btn-block"><i class="fa fa-minus"></i></button>
+								<button type="button" id="plus_adult" class="btn btn-default minus_plus" onclick="" class="button_plus btn-block"><i class="fa fa-plus"></i></button>
 							</div>
 						</div>
 
 						<div class="col-md-8 margin-top-20px" style="padding-top: 8px;">
-							<span>2</span>
+
+							<span id="be"></span>
+							<span>Trẻ em</span>
+							{{-- <span style="padding-right: 3px;">-@php echo $discount; @endphp%</span> --}}
+							<span style="float:right;font-size: 15px; color: #ffc107;" id="be_price"></span>
+
+							{{-- <span>2</span>
 							<span>Trẻ em</span>
 							<span style="padding-right: 3px;">-15%</span>
-							<span style="float:right;font-size: 15px;">@php echo $detail->price*$adult_number; @endphp</span>
+							<span style="float:right;font-size: 15px;">@php echo $detail->price*$adult_number; @endphp</span> --}}
 						</div>
 
 						<div class="col-md-4 margin-top-20px">
 							<div class="btn-group float-right">
-								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_minus btn-block"><i class="fa fa-minus"></i></button>
-								<button type="button" class="btn btn-default minus_plus" onclick="" class="button_plus btn-block"><i class="fa fa-plus"></i></button>
+								<button type="button" id="minus_child" class="btn btn-default minus_plus" onclick="" class="button_minus btn-block"><i class="fa fa-minus"></i></button>
+								<button type="button" id="plus_child" class="btn btn-default minus_plus" onclick="" class="button_plus btn-block"><i class="fa fa-plus"></i></button>
 							</div>
 						</div>	
 
@@ -383,7 +475,8 @@
 						</div>	
 
 						<div class="col-md-6 margin-top-20px">
-							<p class="total_price">@php echo $detail->price*$adult_number+$detail->price*$children_number; @endphp</p>
+							{{-- <p class="total_price">@php echo $detail->price*$adult_number+$detail->price*$children_number; @endphp</p> --}}
+							<p ><span class="total_price" style="color: #ffc107;"></span>VND</p>
 						</div>		
 
 						<div class="col-md-12">
@@ -405,75 +498,37 @@
 			<a href="#"><p style="margin-left: 20px;font-size: 19px;padding-top: 10px;">Xem thêm các tour liên quan<span class="glyphicon glyphicon-chevron-right" style="font-size: 16px;"></span></p></a>
 
 			<div class="row tlq">
+				@foreach ($random_tour as $element=>$tour)
+				{{-- expr --}}
 				<div class="col-sm-6 col-md-4">
 					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
+						<a href="#"><img src="img/test/{{$tour->avatar}}" class="card-img-top" alt="..."></a>
 
 						<div class="card-body">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
+							<h3>{{$tour->name}}</h3>
 							
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
+							<p class="fa fa-clock-o"><span class="tour_text_tiny">{{$tour->length}} ngày {{$tour->length - 1}} đêm</span></p>
 
 							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
+							<p class="fa fa-calendar"><span class="tour_text_tiny">{{$tour->departure}}</span></p>
 
 							<div class="price_tour">
-								<p>12.000.000</p>
+								<p>{{$tour->price}}</p>
 							</div>
 						</div>
 
 						
 					</div>
 				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
-
-						<div class="card-body">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
-
-						<div class="card-body">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
+				@endforeach
+				
 			</div>
 		</div>	
 		<!-- END TOUR LIÊN QUAN -->
 
 
 		<!-- START TOUR VỪA XEM -->
-		<div class="tlq_title1">
+		{{-- <div class="tlq_title1">
 			<a href="#"><p style="margin-left: 20px;font-size: 19px;padding-top: 10px;">Xem thêm các tour bạn vừa xem<span class="glyphicon glyphicon-chevron-right" style="font-size: 16px;"></span></p></a>
 
 			<div class="row tlq">
@@ -498,53 +553,78 @@
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div> --}}	
 		<!-- END TOUR VỪA XEM -->				
 	</div>
 
-	<div class="modal fade in" id="MODALX" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+	<div class="modal fade bd-example-modal-lg" id="MODALX" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Xác nhận đặt tour</h5>
+					<h3 class="modal-title" id="exampleModalLabel">XÁC NHẬN ĐẶT TOUR</h3>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6">
+							<p>Tour: <span style="font-size: 20px; color: #ffc107;">{{$detail->name}}</span></p>
+							<p>Ngày xuất phát: <span style="font-size: 20px; color: #ffc107;">{{$detail->departure}}</span></p>
+						</div>
+
+						<div class="col-md-6">
+							<p><span id="adult" style="font-size: 20px; color: #ffc107;"></span> người lớn <span id="child" style="font-size: 20px; color: #ffc107;"></span> trẻ con</p>
+							<p><span id="sum" style="font-size: 22px; color: #ffc107;"></span> VND</p>
+						</div>
+					</div>
+					<br/>
+					<br/>
 					<form action="store" method="POST" role="form" onsubmit="return validate();">   
 						@csrf    
 						<input type="hidden" name="id_tour" value="{{$detail->id}}">
 						<input type="hidden" name="time" value="{{$detail->departure}}">
-						<div class="form-group">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
 							<label for="">Họ và tên(*)<span id="noti_name" class="noti"></span></label>
 							<input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" onblur="checkName();if (this.value=='') {this.focus();}">
 						</div>
+							</div>
 
-						<div class="form-group">
+							<div class="col-md-4">
+								<div class="form-group">
 							<label for="">Số điện thoại(*)<span id="noti_phone" class="noti"></span></label>
 							<input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" onblur="checkPhone();if (this.value=='') {this.focus();}">
 						</div>
+							</div>
 
-						<div class="form-group">
+							<div class="col-md-4">
+								<div class="form-group">
 							<label for="">Email(*)<span id="noti_email" class="noti"></span></label>
 							<input type="text" class="form-control" id="email" name="email" placeholder="Email" onblur="checkEmail();if (this.value=='') {this.focus();}">
 						</div>
+							</div>
+						</div>
 
-						<div class="form-group">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
 							<label for="">Hình thức thanh toán(*)</label>
 							<select name="pay" id="pay" class="form-control">
-								<option value="1">Thanh toán trực tuyến</option>
-								<option value="2">Thanh toán tại chi nhánh</option>
+								<option value="1">Trực tuyến</option>
+								<option value="2">Tại chi nhánh</option>
 							</select>
 						</div>
+							</div>
 
-						<div class="form-group">
-							<label for="">Số tài khoản<span id="noti_bank" class="noti"></span></label>
-							<p>(Chỉ bắt buộc khi bạn chọn thanh toán trực tuyến, nếu bỏ trống sẽ mặc định là thanh toán tại chi nhánh)</p>
-							<input type="text" class="form-control" id="bank" name="bank" placeholder="Số tài khoản..." onblur="checkBank();if (this.value=='') {this.focus();}">
+							<div class="col-md-8">
+								<div class="form-group">
+							<label for="">Số tài khoản (Bắt buộc với thanh toán trực tuyến)<span id="noti_bank" class="noti"></span></label>
+							<input type="text" class="form-control" id="bank" name="bank" placeholder="Bỏ trống sẽ mặc định thanh toán tại chi nhánh" onblur="checkBank();if (this.value=='') {this.focus();}">
 						</div>
-
+							</div>
+						</div>
 
 						<div class="form-group">
 							<label for="">Yêu cầu khác</label>
@@ -554,7 +634,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="reset"  class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-primary">Xác nhận</button>
+						<button type="submit" class="btn btn-warning">Xác nhận</button>
 					</form>
 				</div>
 			</div>
