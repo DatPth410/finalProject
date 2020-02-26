@@ -154,17 +154,13 @@ class MainController extends Controller
             $detailBooking['bank'] = $request->get('bank');
             $detailBooking['note'] = $request->get('note');
             $detailBooking['id_tour'] = $request->get('id_tour');
-            if (is_null($request->get('bank'))) {
-                $pay=2;
-            }else{
-                $pay=1;
-            }
-            $detailBooking['pay'] = $pay;
+            $detailBooking['pay'] = $request->get('pay');
             $detailBooking['id_status'] = 1;
             $detailBooking['id_user'] = 1;
             $detailBooking['time'] = $request->get('time');
             DB::table('tbl_detail_booking')->insert($detailBooking);       
         }
         return redirect()->route('trang-chu');
+        //print_r($request->all());
     }
 }

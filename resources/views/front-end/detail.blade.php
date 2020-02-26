@@ -74,13 +74,11 @@
 			var bank = document.getElementsById("bank").value;
   			var check_error_bank= document.getElementById("noti_bank");
   			if(document.getElementById("pay").value==1 && bank == ""){
-    		check_error_bank.innerHTML="Vui lòng điền số tài khoản!";
+    			check_error_bank.innerHTML="Vui lòng điền số tài khoản!";
     			return 0;
-    		}else if (document.getElementById("pay").value==2 && bank != ""){
-    			bank = "";
-    			return 1;
     		}else{
-    			return 1;
+    			check_error_bank.innerHTML="";
+    			return bank;
     		}
 
   	};
