@@ -630,3 +630,7 @@ a{
 .float-right{
   float: right;
 }
+
+.noti{
+  color: red;
+}
