@@ -111,7 +111,9 @@
 		$("#child").text(child_num);
 		$("#sum").text(output1);
 		
-
+		$("#form_adult").val(adult_num);
+		$("#form_child").val(child_num);
+		$("#form_price").val(total);
 	}); 
 </script> 
 <script>
@@ -481,6 +483,8 @@
 
 						<div class="col-md-12">
 							<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#MODALX" style="width: 100%;">Yêu cầu đặt Tour</button>
+							{{-- <a href="{{ route('send-mail') }}"><button>Send mail</button></a> --}}
+							
 						</div>
 					</div>
 				</div>
@@ -524,37 +528,7 @@
 				
 			</div>
 		</div>	
-		<!-- END TOUR LIÊN QUAN -->
-
-
-		<!-- START TOUR VỪA XEM -->
-		{{-- <div class="tlq_title1">
-			<a href="#"><p style="margin-left: 20px;font-size: 19px;padding-top: 10px;">Xem thêm các tour bạn vừa xem<span class="glyphicon glyphicon-chevron-right" style="font-size: 16px;"></span></p></a>
-
-			<div class="row tlq">
-				<div class="col-sm-6 col-md-4">
-					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
-
-						<div class="card-body">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-			</div>
-		</div> --}}	
-		<!-- END TOUR VỪA XEM -->				
+		<!-- END TOUR LIÊN QUAN -->	
 	</div>
 
 	<div class="modal fade bd-example-modal-lg" id="MODALX" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -584,6 +558,9 @@
 						@csrf    
 						<input type="hidden" name="id_tour" value="{{$detail->id}}">
 						<input type="hidden" name="time" value="{{$detail->departure}}">
+						<input type="hidden" name="adult" id="form_adult" value="{{$detail->departure}}">
+						<input type="hidden" name="child" id="form_child" value="{{$detail->departure}}">
+						<input type="hidden" name="total_price" id="form_price" value="{{$detail->departure}}">
 						<div class="row">
 							<div class="col-md-4">
 								<div class="form-group">
@@ -635,6 +612,8 @@
 					<div class="modal-footer">
 						<button type="reset"  class="btn btn-secondary" data-dismiss="modal">Close</button>
 						<button type="submit" class="btn btn-warning">Xác nhận</button>
+
+
 					</form>
 				</div>
 			</div>

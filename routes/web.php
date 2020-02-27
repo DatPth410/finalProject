@@ -109,3 +109,9 @@ Route::post('save-contact', 'MainController@saveContact')->name('save-contact');
 //Đặt tour
 Route::post('store', 'MainController@storeBookingtour');
 
+//send mail
+//Route::get('send-mail','MailController@mailsend')->name('send-mail'); 
+Route::get('mail', function() {
+    //
+    return view('front-end.mail_content');
+});

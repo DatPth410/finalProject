@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use \App\Mail\SendMail;
+use Mail;
 class MainController extends Controller
 {
     public function viewHome(){
@@ -201,7 +203,38 @@ class MainController extends Controller
             $detailBooking['time'] = $request->get('time');
             DB::table('tbl_detail_booking')->insert($detailBooking);       
         }
+        $detail = DB::table('tour_trong_nuoc')
+        ->where('id','=',$request->get('id_tour'))
+        ->first();
+        // $details = [
+        //     'title' => 'Title: Mail from DPV',
+        //     'body' => 'Body: Xác nhận đơn hàng!',
+        //     'gia' => $request->get('total_price')
+        // ];
+
+        // \Mail::to('datpth0410@gmail.com')->send(new SendMail($details));
+
+
+        $details = array(
+            'title' => 'Xác nhận đặt hàng',
+            'body' => 'abc',
+            'name' => $request->get('name'),
+            'tour' => $detail->name,
+            'adult' => $request->get('adult'),
+            'child' => $request->get('child'),
+            'gia' => $request->get('total_price'),
+            'length' => $detail->length,
+            'vehicle' => $detail->vehicle,
+            'departure' => $detail->departure,
+
+        );
+        Mail::send('front-end.mail_content', $details, function ($message) {
+            $message->to('datpth0410@gmail.com', 'Dat Pham');
+            $message->subject('Xác nhận đặt hàng');
+        });
         return redirect()->route('trang-chu');
         //print_r($request->all());
+
+        //return redirect()->action("MailController@mailsend", [$request]);
     }
 }
