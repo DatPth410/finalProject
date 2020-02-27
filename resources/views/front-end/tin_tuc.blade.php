@@ -96,22 +96,22 @@
 					<div class="around" >
 						<div class="promotion">
 							<div class="col-sm-12 col-md-12 ">
-								[ĐỘC QUYỀN] Trọn gói 2N1Đ + Xe đưa đón + Bữa ăn 
-								<span>từ 1.499.000  VND / Khách</span>
+								[ĐỘC QUYỀN] Trọn gói {{$tour->length}}N{{$tour->length-1}}Đ + Xe đưa đón + Bữa ăn 
+								<span>từ {{number_format($tour->price)}}  VND / Khách</span>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-3" style="position: relative;padding-top: 7px;">
 							<span class="v_ribbon">
-								<p style="color: white;font-size: 12px;padding-left: 10px">2N1Đ+Xe+Bữa ăn</p>
+								<p style="color: white;font-size: 12px;padding-left: 10px">{{$tour->length}}N{{$tour->length-1}}Đ+Bữa ăn</p>
 							</span>
-							<a href="#">
-								<img src="images/2n1d.jpg" style="height: 111px;
+							<a href="{{ route('detail',$tour->id) }}">
+								<img src="img/test/{{$tour->avatar}}" style="height: 111px;
 								width: 151px">
 							</a>
 						</div>
 						<div class="col-md-9 col-sm-9">
 							<div class="t_b">
-								<h4 style="font-size: 16px;font-weight: bold"><a href="#"> Melia Hồ Tràm Beach Resort | 2N1Đ+Xe+Bữa ăn</a> </h4>
+								<h4 style="font-size: 16px;font-weight: bold"><a href="#"> {{$tour->name}}</a> </h4>
 								<span style="font-size: 12px">Đường Bờ biển, Ấp Hồ Tràm, Xã Phước Thuận, Huyện Xuyên Mộc, Tỉnh Bà Rịa - Vũng Tàu</span>
 								<div style="padding-top: 5px;padding-bottom: 5px;">	
 									<span  class="score">9.4</span>
@@ -120,9 +120,9 @@
 								</div>
 							</div>
 							<div class="right">
-								<span class="price_num">1.499.000 VNĐ</span>
+								<span class="price_num">{{number_format($tour->price)}} VNĐ</span>
 								<div class="c_t">
-									<a href="#"><button type="button" class="btn btn-warning">Chi tiết</button></a>
+									<a href="{{ route('detail',$tour->id) }}"><button type="button" class="btn btn-warning">Chi tiết</button></a>
 								</div>
 							</div>
 						</div>
@@ -131,9 +131,13 @@
 						<div class="content_box" style="font-weight: bold;font-size: 16px;"><span class="fa fa-plus-circle"></span>
 						<strong>
 						  Xem thêm bài viết:<br><br></strong>
-						  <a href="#">2N1Đ ở khách sạn Mercure Vũng Tàu + Xe đưa đón + Tặng voucher ăn uống + Cocktail chỉ 1.450.000 đồng/khách</a><br><br>
+						  @foreach ($lienquan as $element=>$news)
+						  	{{-- expr --}}
+						  	 <a href="tin_tuc?id={{$news->id}}">{{$news->title}}</a><br><br>
+						  @endforeach
+						  {{-- <a href="#">2N1Đ ở khách sạn Mercure Vũng Tàu + Xe đưa đón + Tặng voucher ăn uống + Cocktail chỉ 1.450.000 đồng/khách</a><br><br>
 						  <a href="#">Ghim ngay top 5 quán cafe Vũng Tàu decor xinh xắn dịp Tết Âm Lịch</a><br><br>
-						  <a href="#">2N1Đ ở khách sạn ibis Styles Vũng Tàu + xe đưa đón + ăn sáng chỉ 1.099.000 đồng/khách</a>
+						  <a href="#">2N1Đ ở khách sạn ibis Styles Vũng Tàu + xe đưa đón + ăn sáng chỉ 1.099.000 đồng/khách</a> --}}
 					</div>
 					<strong style="font-size: 30px;">***</strong><br><br>
 					<strong >Tham khảo: <a href="#">Cẩm nang du lịch DVP.com</a></strong>

@@ -140,7 +140,16 @@ class MainController extends Controller
         $news=DB::table('tbl_news')
         ->where('id',$id)
         ->first();
-        return view('front-end.tin_tuc',compact('news'));
+
+        $lienquan=DB::table('tbl_news')
+        ->inRandomOrder()
+        ->limit(3)
+        ->get();
+
+        $tour=DB::table('tour_trong_nuoc')
+        ->inRandomOrder()
+        ->first();
+        return view('front-end.tin_tuc',compact('news','lienquan','tour'));
     }
 
     public function tourDetail($id){

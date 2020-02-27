@@ -90,17 +90,17 @@
         <div class="carousel-inner bg-info" role="listbox">
             <div class="carousel-item active">
                 <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/21.jpg'); background-position: center center;background-size: cover;">
-                    
+                    <h1 style="margin-top: -70px; color: white;">ONE</h1>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/10.jpeg'); background-position: center center;background-size: cover;">
-                    
+                    <h1 style="margin-top: -70px; color: white;">TWO</h1>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/20.jpeg'); background-position: center center;background-size: cover;">
-                    
+                    <h1 style="margin-top: -70px; color: white;">THREE</h1>
                 </div>
             </div>
         </div>

@@ -23,97 +23,97 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <script> 
-							$(document).ready(function() { 
-								
-								var adult_num=2;
-								var adult_price={{$detail->price}};
-								var adult_total=adult_num*adult_price;
+	$(document).ready(function() { 
+		
+		var adult_num=2;
+		var adult_price={{$detail->price}};
+		var adult_total=adult_num*adult_price;
 
-								var child_num=2;
-								var child_price={{$detail->price}};
-								var child_total=child_num*child_price;
+		var child_num=2;
+		var child_price={{$detail->price}};
+		var child_total=child_num*child_price;
 
-								var total = adult_total + child_total;
-	
-								$("#minus_adult").click(function(){
-									adult_num--;
-									
-									if(adult_num<0){
-										adult_num=0;
-										adult_total=0;										
-									}
-									adult_total=adult_num*adult_price;
-									total = adult_total + child_total;
-									var output=parseInt(adult_total).toLocaleString()
-									$("#lon").text(adult_num);
-									$("#lon_price").text(output);
-									var output1=parseInt(total).toLocaleString();
-									$(".total_price").text(output1);
-									$("#adult").text(adult_num);
-								$("#child").text(child_num);
-								$("#sum").text(output1);
-								});
-								$("#plus_adult").click(function(){
-									adult_num++;
-									adult_total=adult_num*adult_price;
-									total = adult_total + child_total;
-									var output=parseInt(adult_total).toLocaleString()
-									$("#lon").text(adult_num);
-									$("#lon_price").text(output);
-									var output1=parseInt(total).toLocaleString();
-									$(".total_price").text(output1);
-									$("#adult").text(adult_num);
-								$("#child").text(child_num);
-								$("#sum").text(output1);
-								});
-								var output=parseInt(adult_total).toLocaleString();
-								$("#lon").text(adult_num);
-								$("#lon_price").text(output);
-					
-								$("#minus_child").click(function(){
-									child_num--;
-									
-									if(child_num<0){
-										child_num=0;
-										child_total=0;										
-									}
-									child_total=child_num*child_price;
-									total = adult_total + child_total;
-									var output=parseInt(child_total).toLocaleString()
-									$("#be").text(child_num);
-									$("#be_price").text(output);
-									var output1=parseInt(total).toLocaleString();
-									$(".total_price").text(output1);
-									$("#adult").text(adult_num);
-								$("#child").text(child_num);
-								$("#sum").text(output1);
-								});
-								$("#plus_child").click(function(){
-									child_num++;
-									child_total=child_num*child_price;
-									total = adult_total + child_total;
-									var output=parseInt(child_total).toLocaleString()
-									$("#be").text(child_num);
-									$("#be_price").text(output);
-									var output1=parseInt(total).toLocaleString();
-									$(".total_price").text(output1);
-									$("#adult").text(adult_num);
-								$("#child").text(child_num);
-								$("#sum").text(output1);
-								});
-								var output=parseInt(child_total).toLocaleString();
-								$("#be").text(child_num);
-								$("#be_price").text(output);
+		var total = adult_total + child_total;
+		
+		$("#minus_adult").click(function(){
+			adult_num--;
+			
+			if(adult_num<0){
+				adult_num=0;
+				adult_total=0;										
+			}
+			adult_total=adult_num*adult_price;
+			total = adult_total + child_total;
+			var output=parseInt(adult_total).toLocaleString()
+			$("#lon").text(adult_num);
+			$("#lon_price").text(output);
+			var output1=parseInt(total).toLocaleString();
+			$(".total_price").text(output1);
+			$("#adult").text(adult_num);
+			$("#child").text(child_num);
+			$("#sum").text(output1);
+		});
+		$("#plus_adult").click(function(){
+			adult_num++;
+			adult_total=adult_num*adult_price;
+			total = adult_total + child_total;
+			var output=parseInt(adult_total).toLocaleString()
+			$("#lon").text(adult_num);
+			$("#lon_price").text(output);
+			var output1=parseInt(total).toLocaleString();
+			$(".total_price").text(output1);
+			$("#adult").text(adult_num);
+			$("#child").text(child_num);
+			$("#sum").text(output1);
+		});
+		var output=parseInt(adult_total).toLocaleString();
+		$("#lon").text(adult_num);
+		$("#lon_price").text(output);
+		
+		$("#minus_child").click(function(){
+			child_num--;
+			
+			if(child_num<0){
+				child_num=0;
+				child_total=0;										
+			}
+			child_total=child_num*child_price;
+			total = adult_total + child_total;
+			var output=parseInt(child_total).toLocaleString()
+			$("#be").text(child_num);
+			$("#be_price").text(output);
+			var output1=parseInt(total).toLocaleString();
+			$(".total_price").text(output1);
+			$("#adult").text(adult_num);
+			$("#child").text(child_num);
+			$("#sum").text(output1);
+		});
+		$("#plus_child").click(function(){
+			child_num++;
+			child_total=child_num*child_price;
+			total = adult_total + child_total;
+			var output=parseInt(child_total).toLocaleString()
+			$("#be").text(child_num);
+			$("#be_price").text(output);
+			var output1=parseInt(total).toLocaleString();
+			$(".total_price").text(output1);
+			$("#adult").text(adult_num);
+			$("#child").text(child_num);
+			$("#sum").text(output1);
+		});
+		var output=parseInt(child_total).toLocaleString();
+		$("#be").text(child_num);
+		$("#be_price").text(output);
 
-								var output1=parseInt(total).toLocaleString();
-								$(".total_price").text(output1);
-								$("#adult").text(adult_num);
-								$("#child").text(child_num);
-								$("#sum").text(output1);
-								
+		var output1=parseInt(total).toLocaleString();
+		$(".total_price").text(output1);
+		$("#adult").text(adult_num);
+		$("#child").text(child_num);
+		$("#sum").text(output1);
+		
 
-							}); 
-						</script> 
+	}); 
+</script> 
 <script>
 	function checkName(){
 		var name = document.getElementById("name").value;
@@ -502,7 +502,7 @@
 				{{-- expr --}}
 				<div class="col-sm-6 col-md-4">
 					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="img/test/{{$tour->avatar}}" class="card-img-top" alt="..."></a>
+						<a href="{{ route('detail',$tour->id) }}"><img src="img/test/{{$tour->avatar}}" class="card-img-top" alt="..."></a>
 
 						<div class="card-body">
 							<h3>{{$tour->name}}</h3>
@@ -587,42 +587,42 @@
 						<div class="row">
 							<div class="col-md-4">
 								<div class="form-group">
-							<label for="">Họ và tên(*)<span id="noti_name" class="noti"></span></label>
-							<input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" onblur="checkName();if (this.value=='') {this.focus();}">
-						</div>
+									<label for="">Họ và tên(*)<span id="noti_name" class="noti"></span></label>
+									<input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" onblur="checkName();if (this.value=='') {this.focus();}">
+								</div>
 							</div>
 
 							<div class="col-md-4">
 								<div class="form-group">
-							<label for="">Số điện thoại(*)<span id="noti_phone" class="noti"></span></label>
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" onblur="checkPhone();if (this.value=='') {this.focus();}">
-						</div>
+									<label for="">Số điện thoại(*)<span id="noti_phone" class="noti"></span></label>
+									<input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" onblur="checkPhone();if (this.value=='') {this.focus();}">
+								</div>
 							</div>
 
 							<div class="col-md-4">
 								<div class="form-group">
-							<label for="">Email(*)<span id="noti_email" class="noti"></span></label>
-							<input type="text" class="form-control" id="email" name="email" placeholder="Email" onblur="checkEmail();if (this.value=='') {this.focus();}">
-						</div>
+									<label for="">Email(*)<span id="noti_email" class="noti"></span></label>
+									<input type="text" class="form-control" id="email" name="email" placeholder="Email" onblur="checkEmail();if (this.value=='') {this.focus();}">
+								</div>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-md-4">
 								<div class="form-group">
-							<label for="">Hình thức thanh toán(*)</label>
-							<select name="pay" id="pay" class="form-control">
-								<option value="1">Trực tuyến</option>
-								<option value="2">Tại chi nhánh</option>
-							</select>
-						</div>
+									<label for="">Hình thức thanh toán(*)</label>
+									<select name="pay" id="pay" class="form-control">
+										<option value="1">Trực tuyến</option>
+										<option value="2">Tại chi nhánh</option>
+									</select>
+								</div>
 							</div>
 
 							<div class="col-md-8">
 								<div class="form-group">
-							<label for="">Số tài khoản (Bắt buộc với thanh toán trực tuyến)<span id="noti_bank" class="noti"></span></label>
-							<input type="text" class="form-control" id="bank" name="bank" placeholder="Bỏ trống sẽ mặc định thanh toán tại chi nhánh" onblur="checkBank();if (this.value=='') {this.focus();}">
-						</div>
+									<label for="">Số tài khoản (Bắt buộc với thanh toán trực tuyến)<span id="noti_bank" class="noti"></span></label>
+									<input type="text" class="form-control" id="bank" name="bank" placeholder="Bỏ trống sẽ mặc định thanh toán tại chi nhánh" onblur="checkBank();if (this.value=='') {this.focus();}">
+								</div>
 							</div>
 						</div>
 
