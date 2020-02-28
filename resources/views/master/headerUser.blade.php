@@ -59,7 +59,7 @@
 								@php
 							}else{
 								@endphp
-								<a href="{{ route('admin') }}">
+								<a href="{{ route('user-manage-tour') }}">
 									{{ __('Quản lý tour đã đặt') }}
 								</a>
 								@php
