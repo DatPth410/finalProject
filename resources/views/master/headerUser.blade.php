@@ -57,6 +57,12 @@
 									{{ __('Quản lý') }}
 								</a>
 								@php
+							}else{
+								@endphp
+								<a href="{{ route('admin') }}">
+									{{ __('Quản lý tour đã đặt') }}
+								</a>
+								@php
 							}
 							@endphp
 							

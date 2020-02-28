@@ -55,7 +55,7 @@
 						</div>
 						<div class="kjm-block-text">
 							<h2 class="kjm-pricetext">Booking</h2>
-							<button class="btn kjm-button">Quản lý</button>
+							<a href="{{route('manage-booking')}}" style="text-align: center;margin-top: -18px;"><button class="btn kjm-button">Quản lý</button></a>
 						</div>
 					
 				</div>
@@ -65,7 +65,7 @@
 						</div>
 						<div class="kjm-block-text">
 							<h2 class="kjm-pricetext">Quản lý liên hệ</h2>
-							<button class="btn kjm-button">Quản lý</button>
+							<a href="{{route('manage-contact')}}" style="text-align: center;margin-top: -18px;"><button class="btn kjm-button">Quản lý</button></a>
 						</div>
 					
 				</div>

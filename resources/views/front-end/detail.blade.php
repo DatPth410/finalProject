@@ -40,7 +40,8 @@ s0.parentNode.insertBefore(s1,s0);
 
 <script> 
 	$(document).ready(function() { 
-		
+		var sale={{$detail->khuyen_mai}};
+		console.log(sale);
 		var adult_num=2;
 		var adult_price={{$detail->price}};
 		var adult_total=adult_num*adult_price;
@@ -49,7 +50,7 @@ s0.parentNode.insertBefore(s1,s0);
 		var child_price={{$detail->price}};
 		var child_total=child_num*child_price;
 
-		var total = adult_total + child_total;
+		var total = (adult_total + child_total)*(100-sale)/100;
 		
 		$("#minus_adult").click(function(){
 			adult_num--;
@@ -58,8 +59,11 @@ s0.parentNode.insertBefore(s1,s0);
 				adult_num=0;
 				adult_total=0;										
 			}
+			if (child_num==0&&adult_num==0) {
+				$("#order_button").hide();
+			}
 			adult_total=adult_num*adult_price;
-			total = adult_total + child_total;
+			total = (adult_total + child_total)*(100-sale)/100;
 			var output=parseInt(adult_total).toLocaleString()
 			$("#lon").text(adult_num);
 			$("#lon_price").text(output);
@@ -70,9 +74,10 @@ s0.parentNode.insertBefore(s1,s0);
 			$("#sum").text(output1);
 		});
 		$("#plus_adult").click(function(){
+			$("#order_button").show();
 			adult_num++;
 			adult_total=adult_num*adult_price;
-			total = adult_total + child_total;
+			total = (adult_total + child_total)*(100-sale)/100;
 			var output=parseInt(adult_total).toLocaleString()
 			$("#lon").text(adult_num);
 			$("#lon_price").text(output);
@@ -93,8 +98,11 @@ s0.parentNode.insertBefore(s1,s0);
 				child_num=0;
 				child_total=0;										
 			}
+			if (child_num==0&&adult_num==0) {
+				$("#order_button").hide();
+			}
 			child_total=child_num*child_price;
-			total = adult_total + child_total;
+			total = (adult_total + child_total)*(100-sale)/100;
 			var output=parseInt(child_total).toLocaleString()
 			$("#be").text(child_num);
 			$("#be_price").text(output);
@@ -105,9 +113,10 @@ s0.parentNode.insertBefore(s1,s0);
 			$("#sum").text(output1);
 		});
 		$("#plus_child").click(function(){
+			$("#order_button").show();
 			child_num++;
 			child_total=child_num*child_price;
-			total = adult_total + child_total;
+			total = (adult_total + child_total)*(100-sale)/100;
 			var output=parseInt(child_total).toLocaleString()
 			$("#be").text(child_num);
 			$("#be_price").text(output);
@@ -472,13 +481,8 @@ s0.parentNode.insertBefore(s1,s0);
 
 							<span id="be"></span>
 							<span>Trẻ em</span>
-							{{-- <span style="padding-right: 3px;">-@php echo $discount; @endphp%</span> --}}
 							<span style="float:right;font-size: 15px; color: #ffc107;" id="be_price"></span>
 
-							{{-- <span>2</span>
-							<span>Trẻ em</span>
-							<span style="padding-right: 3px;">-15%</span>
-							<span style="float:right;font-size: 15px;">@php echo $detail->price*$adult_number; @endphp</span> --}}
 						</div>
 
 						<div class="col-md-4 margin-top-20px">
@@ -486,6 +490,15 @@ s0.parentNode.insertBefore(s1,s0);
 								<button type="button" id="minus_child" class="btn btn-default minus_plus" onclick="" class="button_minus btn-block"><i class="fa fa-minus"></i></button>
 								<button type="button" id="plus_child" class="btn btn-default minus_plus" onclick="" class="button_plus btn-block"><i class="fa fa-plus"></i></button>
 							</div>
+						</div>	
+
+						<div class="col-md-8 margin-top-20px" style="padding-top: 8px;">
+							<span style="float: left;">Sale</span>
+							<span style="float:right;font-size: 15px; color: #ffc107;" >{{$detail->khuyen_mai}}</span>
+						</div>
+
+						<div class="col-md-4 margin-top-20px">
+							<p style="text-align: center; margin-top: 7px; ">%</p>
 						</div>	
 
 						<div class="col-md-6 margin-top-20px">
@@ -498,7 +511,7 @@ s0.parentNode.insertBefore(s1,s0);
 						</div>		
 
 						<div class="col-md-12">
-							<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#MODALX" style="width: 100%;">Yêu cầu đặt Tour</button>
+							<button type="button" id="order_button" class="btn btn-warning" data-toggle="modal" data-target="#MODALX" style="width: 100%;">Yêu cầu đặt Tour</button>
 							{{-- <a href="{{ route('send-mail') }}"><button>Send mail</button></a> --}}
 							
 						</div>
@@ -611,12 +624,37 @@ s0.parentNode.insertBefore(s1,s0);
 								</div>
 							</div>
 
-							<div class="col-md-8">
+							{{-- <div class="col-md-8">
 								<div class="form-group">
 									<label for="">Số tài khoản (Bắt buộc với thanh toán trực tuyến)<span id="noti_bank" class="noti"></span></label>
 									<input type="text" class="form-control" id="bank" name="bank" placeholder="Bỏ trống sẽ mặc định thanh toán tại chi nhánh" onblur="checkBank();if (this.value=='') {this.focus();}">
 								</div>
+							</div> --}}
+
+							<div class="col-md-8">
+								<div id="1" class="group">
+									<p>Số tài khoản: 1991 0000 7269 79</p>
+									<p>Tên chủ tài khoản: Phạm Thành Đạt</p>
+									<p>Ngân hàng: BIDV</p>
+									<p>Chi nhánh: Đông Dương Hà Nội</p>
+									<p>Khi chuyển tiền vui lòng ghi nội dung: Số điện thoại - Mã Tour</p>
+									
+								</div>
+								<div id="2" class="group">
+									<p>Vui lòng tới văn phòng của chúng tôi tại địa chỉ gần nhất.</p>
+									
+								</div>
 							</div>
+							<script type="text/javascript">
+								$(document).ready(function () {
+									$('.group').hide();
+									$('#1').show();
+									$('#pay').change(function () {
+										$('.group').hide();
+										$('#'+$(this).val()).show();
+									})
+								});
+							</script>
 						</div>
 
 						<div class="form-group">

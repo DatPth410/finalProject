@@ -9,6 +9,7 @@ use Mail;
 class MainController extends Controller
 {
     public function viewHome(){
+        $date = date('Y-m-d', time());
         $data=DB::table('tbl_diemden')
         ->select('ten')->get();
         $data_array=array();
@@ -19,10 +20,12 @@ class MainController extends Controller
 
         $sale_tour=DB::table('tour_trong_nuoc')
         ->orderBy('khuyen_mai','desc')
+        ->whereDate('departure','>',$date)
         ->limit(3)
         ->get();
 
         $six_tours=DB::table('tour_trong_nuoc')
+        ->whereDate('departure','>',$date)
         ->inRandomOrder()
         ->limit(6)
         ->get();
@@ -36,6 +39,7 @@ class MainController extends Controller
     }
 
     public function viewTest(){
+        $date = date('Y-m-d', time());
         $data=DB::table('tbl_diemden')
         ->select('ten')->get();
         $data_array=array();
@@ -45,11 +49,13 @@ class MainController extends Controller
         $data_array1=array();
 
         $sale_tour=DB::table('tour_trong_nuoc')
+        ->whereDate('departure','>',$date)
         ->orderBy('khuyen_mai','desc')
         ->limit(3)
         ->get();
 
         $six_tours=DB::table('tour_trong_nuoc')
+        ->whereDate('departure','>',$date)
         ->inRandomOrder()
         ->limit(6)
         ->get();
@@ -67,9 +73,10 @@ class MainController extends Controller
     //START controller tour trong nuoc
 
     public function viewInland(){
+        $date = date('Y-m-d', time());
         $i=0;
         $j=0;
-        $tour=DB::table('tour_trong_nuoc')->get();
+        $tour=DB::table('tour_trong_nuoc') ->whereDate('departure','>',$date)->get();
         $destination=DB::table('tbl_diemden')->get();
         $destination_id_array=array();
         $destination_name_array=array();
@@ -87,10 +94,11 @@ class MainController extends Controller
     }
 
     public function viewInlandwithDestination($code_diem_den){
+        $date = date('Y-m-d', time());
         $i=0;
         $j=0;
         $k=0;
-        $tour=DB::table('tour_trong_nuoc')->get();
+        $tour=DB::table('tour_trong_nuoc')->whereDate('departure','>',$date)->get();
         $destination=DB::table('tbl_diemden')->get();
         $destination_code_id=$destination_code_name="";
         $tour_code_id=array();
@@ -147,8 +155,9 @@ class MainController extends Controller
         ->inRandomOrder()
         ->limit(3)
         ->get();
-
+        $date = date('Y-m-d', time());
         $tour=DB::table('tour_trong_nuoc')
+        ->whereDate('departure','>',$date)
         ->inRandomOrder()
         ->first();
         return view('front-end.tin_tuc',compact('news','lienquan','tour'));
@@ -158,8 +167,9 @@ class MainController extends Controller
         $detail = DB::table('tour_trong_nuoc')
         ->where('id','=',$id)
         ->first();
-
+        $date = date('Y-m-d', time());
         $random_tour=DB::table('tour_trong_nuoc')
+        ->whereDate('departure','>',$date)
         ->inRandomOrder()
         ->limit(3)
         ->get();

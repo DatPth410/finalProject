@@ -74,7 +74,16 @@
 
 					<div class="form-group">
 						<label>Điểm đến</label><br>
-						<div class="checkbox">
+						@foreach ($diemden as $element=>$option)
+							{{-- expr --}}
+							<div class="checkbox">
+							<label>
+								<input name="diemden[]" type="checkbox" value="{{$option->id}}">
+								{{$option->ten}}
+							</label>
+						</div>
+						@endforeach
+						{{-- <div class="checkbox">
 							<label>
 								<input name="diemden[]" type="checkbox" value="1">
 								Hà Nội
@@ -91,7 +100,7 @@
 								<input name="diemden[]" type="checkbox" value="3">
 								Hồ Chí Minh
 							</label>
-						</div>
+						</div> --}}
 					</div>
 					<!-- <div class="form-group">
 						<label>Miền</label><br>

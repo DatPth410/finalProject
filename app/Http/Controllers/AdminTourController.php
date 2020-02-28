@@ -8,7 +8,9 @@ class AdminTourController extends Controller
 {
     //
 	public function AddTour(){
-		return view('admin.admin-add-tour');
+		$diemden=DB::table('tbl_diemden')
+		->get();
+		return view('admin.admin-add-tour',compact('diemden'));
 	}
 
 	public function SaveTour(Request $request){

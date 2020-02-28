@@ -18,4 +18,8 @@ class DemoController extends Controller
     public function permissionDenied(){
     	return view('nopermission');
     }
+
+    public function userManageTour(){
+        return view('user.user-manage-tour');
+    }
 }

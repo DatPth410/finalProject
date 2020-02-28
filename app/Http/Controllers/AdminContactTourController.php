@@ -13,4 +13,10 @@ class AdminContactTourController extends Controller
     	->get();
     	return view('admin.admin-manage-contact',compact('contacts'));
     }
+
+    public function ManageBooking(){
+    	$bookings=DB::table('tbl_detail_booking')
+    	->get();
+    	return view('admin.admin-manage-booking',compact('bookings'));
+    }
 }

@@ -27,6 +27,8 @@ Route::group(['prefix' => 'du-lich'], function(){
 //Login
 Route::group(['middleware'=>['auth']], function(){
 	Route::get('/user', 'DemoController@userDemo')->name('user');
+	Route::get('/user-manage-tour', 'DemoController@userManageTour')->name('user-manage-tour');
+
 	Route::get('/permission-denied', 'DemoController@permissionDenied')->name('nopermission');
 	Route::group(['middleware'=>['admin']], function(){
 		Route::get('/admin', 'DemoController@adminDemo')->name('admin');
@@ -47,6 +49,9 @@ Route::group(['middleware'=>['auth']], function(){
 
 		//Admin quản lý liên hệ
 		Route::get('admin/manage-contact', 'AdminContactTourController@ManageContact')->name('manage-contact');
+
+		//Admin quản lý booking
+		Route::get('admin/manage-booking', 'AdminContactTourController@ManageBooking')->name('manage-booking');
 	});
 });
 
