@@ -204,14 +204,20 @@ class MainController extends Controller
             $detailBooking['name'] = $request->get('name');
             $detailBooking['phone'] = $request->get('phone');
             $detailBooking['email'] = $request->get('email');
-            $detailBooking['bank'] = $request->get('bank');
             $detailBooking['note'] = $request->get('note');
             $detailBooking['id_tour'] = $request->get('id_tour');
             $detailBooking['pay'] = $request->get('pay');
+            $detailBooking['adult_number'] = $request->get('adult');
+            $detailBooking['child_number'] = $request->get('child');
+            $detailBooking['total_price'] = $request->get('total_price');
             $detailBooking['id_status'] = 1;
-            $detailBooking['id_user'] = 1;
+            if (is_null($request->user()->id)) {
+                $detailBooking['id_user'] = 0;
+            }else{
+                $detailBooking['id_user'] = $request->user()->id;
+            }
             $detailBooking['time'] = $request->get('time');
-            DB::table('tbl_detail_booking')->insert($detailBooking);       
+            DB::table('tbl_detail_booking')->insert($detailBooking);    
         }
         $detail = DB::table('tour_trong_nuoc')
         ->where('id','=',$request->get('id_tour'))
@@ -243,8 +249,10 @@ class MainController extends Controller
             $message->subject('Xác nhận đặt hàng');
         });
         return redirect()->route('trang-chu');
-        //print_r($request->all());
+        
 
         //return redirect()->action("MailController@mailsend", [$request]);
     }
+
+
 }

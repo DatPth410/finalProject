@@ -69,9 +69,12 @@ s0.parentNode.insertBefore(s1,s0);
 			$("#lon_price").text(output);
 			var output1=parseInt(total).toLocaleString();
 			$(".total_price").text(output1);
-			$("#adult").text(adult_num);
-			$("#child").text(child_num);
-			$("#sum").text(output1);
+			$("#adult").val(adult_num);
+			$("#child").val(child_num);
+			$("#sum").val(output1);
+			$("#form_adult").val(adult_num);
+			$("#form_child").val(child_num);
+			$("#form_price").val(total);
 		});
 		$("#plus_adult").click(function(){
 			$("#order_button").show();
@@ -86,6 +89,9 @@ s0.parentNode.insertBefore(s1,s0);
 			$("#adult").text(adult_num);
 			$("#child").text(child_num);
 			$("#sum").text(output1);
+			$("#form_adult").val(adult_num);
+			$("#form_child").val(child_num);
+			$("#form_price").val(total);
 		});
 		var output=parseInt(adult_total).toLocaleString();
 		$("#lon").text(adult_num);
@@ -111,6 +117,9 @@ s0.parentNode.insertBefore(s1,s0);
 			$("#adult").text(adult_num);
 			$("#child").text(child_num);
 			$("#sum").text(output1);
+			$("#form_adult").val(adult_num);
+			$("#form_child").val(child_num);
+			$("#form_price").val(total);
 		});
 		$("#plus_child").click(function(){
 			$("#order_button").show();
@@ -125,6 +134,9 @@ s0.parentNode.insertBefore(s1,s0);
 			$("#adult").text(adult_num);
 			$("#child").text(child_num);
 			$("#sum").text(output1);
+			$("#form_adult").val(adult_num);
+			$("#form_child").val(child_num);
+			$("#form_price").val(total);
 		});
 		var output=parseInt(child_total).toLocaleString();
 		$("#be").text(child_num);
@@ -135,10 +147,10 @@ s0.parentNode.insertBefore(s1,s0);
 		$("#adult").text(adult_num);
 		$("#child").text(child_num);
 		$("#sum").text(output1);
-		
 		$("#form_adult").val(adult_num);
 		$("#form_child").val(child_num);
 		$("#form_price").val(total);
+		
 	}); 
 </script> 
 <script>
@@ -587,9 +599,9 @@ s0.parentNode.insertBefore(s1,s0);
 						@csrf    
 						<input type="hidden" name="id_tour" value="{{$detail->id}}">
 						<input type="hidden" name="time" value="{{$detail->departure}}">
-						<input type="hidden" name="adult" id="form_adult" value="{{$detail->departure}}">
-						<input type="hidden" name="child" id="form_child" value="{{$detail->departure}}">
-						<input type="hidden" name="total_price" id="form_price" value="{{$detail->departure}}">
+						<input type="hidden" name="adult" id="form_adult" value="">
+						<input type="hidden" name="child" id="form_child" value="">
+						<input type="hidden" name="total_price" id="form_price" value="">
 						<div class="row">
 							<div class="col-md-4">
 								<div class="form-group">
