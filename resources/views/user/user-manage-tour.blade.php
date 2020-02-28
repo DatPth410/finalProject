@@ -12,23 +12,23 @@
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5e57c6a0298c395d1cea1e95/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+		s1.async=true;
+		s1.src='https://embed.tawk.to/5e57c6a0298c395d1cea1e95/default';
+		s1.charset='UTF-8';
+		s1.setAttribute('crossorigin','*');
+		s0.parentNode.insertBefore(s1,s0);
+	})();
 </script>
 <!--End of Tawk.to Script-->
 
 <body>
 	
-@extends('master.home')
+	@extends('master.home')
 
-@section('nuoc_ngoai')	
+	@section('nuoc_ngoai')	
 
 	<div id="body">
 		<div id="main_content">
@@ -46,11 +46,11 @@ s0.parentNode.insertBefore(s1,s0);
 		</div>
 		@foreach ($bookings as $element=>$booking)
 		@php
-			$tour=DB::table('tour_trong_nuoc')
-			->where('id','=',$booking->id_tour)
-			->first();
+		$tour=DB::table('tour_trong_nuoc')
+		->where('id','=',$booking->id_tour)
+		->first();
 		@endphp
-			<div class="tour_list">
+		<div class="tour_list">
 			<div class="left_tour_list">
 				<img src="img/test/{{$tour->avatar}}">
 
@@ -71,82 +71,73 @@ s0.parentNode.insertBefore(s1,s0);
 			<div class="right_tour_list">
 				<small style="font-size: 14px;font-weight: normal;">
 					@php
-                                if($booking->pay == 1)
-                                    echo '<td><span class="label label-primary">Tiền mặt</span></td>';
+					if($booking->pay == 1)
+						echo '<td><span class="label label-primary">Tiền mặt</span></td>';
 
-                                if($booking->pay == 2)
-                                    echo '<td><span class="label label-primary">Chuyển khoản</span></td>'
-                            @endphp
+					if($booking->pay == 2)
+						echo '<td><span class="label label-primary">Chuyển khoản</span></td>'
+					@endphp
 				</small>
 				
 				@php
-                                if($booking->id_status == 0)
-                                    echo '<td><span class="label label-default">Hủy</span></td>';
+				if($booking->id_status == 0)
+					echo '<td><span class="label label-default">Hủy</span></td>';
 
-                                if($booking->id_status == 1)
-                                    echo '<td><span class="label label-danger">Chưa cọc</span></td>';
+				if($booking->id_status == 1)
+					echo '<td><span class="label label-danger">Chưa cọc</span></td>';
 
-                                if($booking->id_status == 2)
-                                    echo '<td><span class="label label-warning">Đã cọc</span></td>';
+				if($booking->id_status == 2)
+					echo '<td><span class="label label-warning">Đã cọc</span></td>';
 
-                                if($booking->id_status == 3)
-                                    echo '<td><span class="label label-success">Đã thanh toán</span></td>';
-                            @endphp
-                            
-<script>
+				if($booking->id_status == 3)
+					echo '<td><span class="label label-success">Đã thanh toán</span></td>';
+				@endphp
+
+				<script>
 // Set the date we're counting down to
+				var startLive{{$element}}= new Date( <?php echo strtotime($tour->departure)*1000; ?> );
+		// Update the count down every 1 second
+				var x = setInterval(function() {
+		  // Get today's date and time
+		  		var now = new Date().getTime();
+		  // Find the distance between now and the count down date
+		  		var distance = startLive{{$element}} - now;
+		  // Time calculations for days, hours, minutes and seconds
+		  		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		  // Output the result in an element with id="demo"
+		  		document.getElementById("demo{{$element}}").innerHTML = days + "d " + hours + "h "
+		  			+ minutes + "m " + seconds + "s ";
 
-
-
-var startLive{{$element}}= new Date( <?php echo strtotime($tour->departure)*1000; ?> );
-
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = startLive{{$element}} - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo{{$element}}").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo{{$element}}").innerHTML = "Đã đi";
-  }
-}, 1000);
-</script>
-				<p class="a-book-tour" id="demo{{$element}}"></p>
-				<p id="val{{$element}}"></p>
-			</div>
+		  // If the count down is over, write some text 
+		  		if (distance < 0) {
+		  			clearInterval(x);
+		  			document.getElementById("demo{{$element}}").innerHTML = "Đã đi";
+		  		}
+				}, 1000);
+			</script>
+		<p class="a-book-tour" id="demo{{$element}}"></p>
+		<p id="val{{$element}}"></p>
+		</div>
 		</div>
 		@endforeach
-		
 
 
-		
 
-		<div style="width: 250px;height: 40px;margin-bottom: 50px;margin-left: 450px" class="btn-group">
-				<button type="button" class="btn btn-outline-primary">1</button>
-				<button type="button" class="btn btn-outline-primary">2</button>
-				<button type="button" class="btn btn-outline-primary">3</button>
-				<button type="button" class="btn btn-outline-primary">4</button>
-				<button type="button" class="btn btn-outline-primary">></button>
-				<button type="button" class="btn btn-outline-primary">last</button>
-			</div>
 
-	</div>
+
+<div style="width: 250px;height: 40px;margin-bottom: 50px;margin-left: 450px" class="btn-group">
+	<button type="button" class="btn btn-outline-primary">1</button>
+	<button type="button" class="btn btn-outline-primary">2</button>
+	<button type="button" class="btn btn-outline-primary">3</button>
+	<button type="button" class="btn btn-outline-primary">4</button>
+	<button type="button" class="btn btn-outline-primary">></button>
+	<button type="button" class="btn btn-outline-primary">last</button>
+</div>
+
+</div>
 
 @endsection
 </body>
