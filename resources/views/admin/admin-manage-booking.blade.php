@@ -28,11 +28,14 @@
 					<thead>
 						<tr>
 							<th>ID</th>
+							<th>ID khách hàng</th>
 	                        <th>Tên khách hàng</th>
 	                        <th>ID tour</th>
 	                        <th>SĐT</th>
 	                        <th>Email</th>
 	                        <th>Ngày đặt</th>
+	                        <th>Số người lớn</th>
+	                        <th>Số trẻ em</th>
 	                        <th>Thanh toán</th>
 	                        <th>Tình trạng</th>
 	                        
@@ -43,11 +46,14 @@
 						@foreach($bookings as $stt => $booking)
 						<tr>
 							<td>{{$booking->id}}</td>
+							<td>{{$booking->id_user}}</td>
 							<td>{{$booking->name}}</td>
 							<td>{{$booking->id_tour}}</td>
 							<td>{{$booking->phone}}</td>
 							<td>{{$booking->email}}</td>
 							<td>{{$booking->time}}</td>
+							<td>{{$booking->adult_number}}</td>
+							<td>{{$booking->child_number}}</td>
 							@php
                                 if($booking->pay == 1)
                                     echo '<td><span class="label label-primary">Tiền mặt</span></td>';

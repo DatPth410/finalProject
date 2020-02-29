@@ -216,10 +216,20 @@ class MainController extends Controller
             }else{
                 $detailBooking['id_user'] = 3;
             }
+            // $detailBooking['id_user']=1;
             $detailBooking['time'] = $request->get('time');
-            DB::table('tbl_detail_booking')->insert($detailBooking);
-            echo "thanh cong";   
+            echo "<pre>";
+            print_r($detailBooking); 
+            echo "<pre/>";
+            echo $detailBooking['id_user'];
+            $x= DB::table('tbl_detail_booking')->insertGetId($detailBooking);
+            echo "thanh cong"; 
+            echo $x;  
             //print_r($detailBooking); 
+            $booker=DB::table('tbl_detail_booking')->where('id','=',$x)->first();
+            echo "<pre>";
+            print_r($booker); 
+            echo "<pre/>";
         }
         $detail = DB::table('tour_trong_nuoc')
         ->where('id','=',$request->get('id_tour'))
@@ -246,13 +256,13 @@ class MainController extends Controller
             'departure' => $detail->departure,
 
         );
-        // Mail::send('front-end.mail_content', $details, function ($message) {
-        //     $message->to('datpth0410@gmail.com', 'Dat Pham');
-        //     $message->subject('Xác nhận đặt hàng');
-        // });
+        Mail::send('front-end.mail_content', $details, function ($message) {
+            $message->to('datpth0410@gmail.com', 'Dat Pham');
+            $message->subject('Xác nhận đặt hàng');
+        });
         
 
-        //return redirect()->route('trang-chu');
+        return redirect()->route('trang-chu');
         
 
         //return redirect()->action("MailController@mailsend", [$request]);

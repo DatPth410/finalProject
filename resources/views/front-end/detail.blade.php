@@ -606,7 +606,12 @@ s0.parentNode.insertBefore(s1,s0);
 							<div class="col-md-4">
 								<div class="form-group">
 									<label for="">Họ và tên(*)<span id="noti_name" class="noti"></span></label>
-									<input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" onblur="checkName();if (this.value=='') {this.focus();}">
+									@auth
+						                <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" readonly value="{{Auth::user()->name}}">
+						            @else
+						                <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" onblur="checkName();if (this.value=='') {this.focus();}">
+						            @endauth
+									
 								</div>
 							</div>
 
@@ -620,7 +625,12 @@ s0.parentNode.insertBefore(s1,s0);
 							<div class="col-md-4">
 								<div class="form-group">
 									<label for="">Email(*)<span id="noti_email" class="noti"></span></label>
-									<input type="text" class="form-control" id="email" name="email" placeholder="Email" onblur="checkEmail();if (this.value=='') {this.focus();}">
+									@auth
+						                <input type="text" class="form-control" id="email" name="name" placeholder="Họ và tên" readonly value="{{Auth::user()->email}}">
+						            @else
+						                <input type="text" class="form-control" id="email" name="email" placeholder="Email" onblur="checkEmail();if (this.value=='') {this.focus();}">
+						            @endauth
+									
 								</div>
 							</div>
 						</div>
@@ -670,8 +680,9 @@ s0.parentNode.insertBefore(s1,s0);
 						</div>
 
 						<div class="form-group">
-							<label for="">Yêu cầu khác</label>
-							<input type="text" class="form-control" id="" name="note" placeholder="Yêu cầu khác...">
+							
+							 <label for="">Yêu cầu khác</label>
+							<input type="text" class="form-control" name="note" placeholder="Yêu cầu khác...">
 						</div>
 
 					</div>
