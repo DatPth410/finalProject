@@ -95,7 +95,7 @@ s0.parentNode.insertBefore(s1,s0);
 		</div>
 
 		<!-- START hiển thị tour -->
-		@foreach($tour as $stt=>$tour)
+		@foreach($tours as $stt=>$tour)
 
 		@for($k=0;$k<count($tour_code_id);$k++)
 			@if($tour_code_id[$k] == $tour->id)
@@ -178,6 +178,9 @@ s0.parentNode.insertBefore(s1,s0);
 			@endif
 		@endfor
 		@endforeach
+		<div style="padding-left: 320px;padding-top:50px;padding-bottom: 80px;" class="btn-group">
+			<div class="col-md-4">{{$tours->links()}}</div></div>
+		</div>
 		<!-- END hiển thị tour -->
 </div>
 @endsection

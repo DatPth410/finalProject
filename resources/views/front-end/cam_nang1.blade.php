@@ -102,12 +102,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 			<div style="padding-top: 40px;" class="btn-group">
-				<button type="button" class="btn btn-outline-primary">1</button>
-				<button type="button" class="btn btn-outline-primary">2</button>
-				<button type="button" class="btn btn-outline-primary">3</button>
-				<button type="button" class="btn btn-outline-primary">4</button>
-				<button type="button" class="btn btn-outline-primary">></button>
-				<button type="button" class="btn btn-outline-primary">last</button>
+				{{$exp->links()}}
 			</div>
 
 		</div>

@@ -25,8 +25,7 @@ class DemoController extends Controller
         $id=Auth::id();
         $bookings=DB::table('tbl_detail_booking')
         ->where('id_user','=',$id)
-        ->get();
-
+        ->paginate(5);
         return view('user.user-manage-tour',compact('bookings'));
     }
 }

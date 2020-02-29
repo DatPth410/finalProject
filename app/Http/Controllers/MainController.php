@@ -76,7 +76,7 @@ class MainController extends Controller
         $date = date('Y-m-d', time());
         $i=0;
         $j=0;
-        $tour=DB::table('tour_trong_nuoc') ->whereDate('departure','>',$date)->get();
+        $tours=DB::table('tour_trong_nuoc') ->whereDate('departure','>',$date)->paginate(5); 
         $destination=DB::table('tbl_diemden')->get();
         $destination_id_array=array();
         $destination_name_array=array();
@@ -86,11 +86,11 @@ class MainController extends Controller
             $j++;
         }
         $j=0;
-        foreach ($tour as $key => $tour_value) {
+        foreach ($tours as $key => $tour_value) {
             $tour_code_id[$j]=$tour_value->id;
             $j++;
         }
-        return view('front-end.tour_trong_nuoc', compact('tour','destination_id_array','destination_name_array','tour_code_id'));
+        return view('front-end.tour_trong_nuoc', compact('tours','destination_id_array','destination_name_array','tour_code_id'));
     }
 
     public function viewInlandwithDestination($code_diem_den){
@@ -134,7 +134,7 @@ class MainController extends Controller
     } 
 
     public function viewExp(){
-        $exp = DB::table('tbl_news')->limit(6)->get();
+        $exp = DB::table('tbl_news')->paginate(4);
         //print_r($exp);
         return view('front-end.cam_nang1',compact('exp'));
         //return view('front-end.cam_nang');

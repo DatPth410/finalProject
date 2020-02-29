@@ -90,6 +90,8 @@ s0.parentNode.insertBefore(s1,s0);
 			</div>
 		</div>
 	@endforeach
+
+			<br/>
 	<a class="a-book-tour" href="{{ route('trang-chu') }}">Về trang chủ</a>
 		</div>
 	</div>

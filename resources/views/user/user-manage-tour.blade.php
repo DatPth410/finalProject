@@ -129,13 +129,8 @@
 
 
 
-<div style="width: 250px;height: 40px;margin-bottom: 50px;margin-left: 450px" class="btn-group">
-	<button type="button" class="btn btn-outline-primary">1</button>
-	<button type="button" class="btn btn-outline-primary">2</button>
-	<button type="button" class="btn btn-outline-primary">3</button>
-	<button type="button" class="btn btn-outline-primary">4</button>
-	<button type="button" class="btn btn-outline-primary">></button>
-	<button type="button" class="btn btn-outline-primary">last</button>
+<div style="width: 250px;height: 40px;margin-bottom: 50px;margin-left: 350px" class="btn-group">
+	{{$bookings->links()}}
 </div>
 
 </div>

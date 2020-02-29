@@ -11,7 +11,7 @@ class SaleController extends Controller
     public function viewSale(){
     	$sale_list=DB::table('tour_trong_nuoc')
     	->where('khuyen_mai','!=',0)
-    	->get();
+    	->paginate(5);
     	return view('front-end.sale1',compact('sale_list'));
     }
 }

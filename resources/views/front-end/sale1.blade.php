@@ -94,13 +94,7 @@ s0.parentNode.insertBefore(s1,s0);
 		
 
 		<div style="padding-left: 400px;padding-top:50px;padding-bottom: 80px;" class="btn-group">
-			<button type="button" class="btn btn-default"><a href="#"></a>1</button>
-			<button type="button" class="btn btn-default"><a href="#">2</a></button>
-			<button type="button" class="btn btn-default"><a href="#">3</a></button>
-			<button type="button" class="btn btn-default"><a href="#">4</a></button>
-			<button type="button" class="btn btn-default"><a href="#">5</a></button>
-			<button type="button" class="btn btn-default"><a href="#">></a></button>
-			<button type="button" class="btn btn-default"><a href="#">Last</a></button>
+			<div class="col-md-4">{{$sale_list->links()}}</div></div>
 		</div>
 
 	</div>
