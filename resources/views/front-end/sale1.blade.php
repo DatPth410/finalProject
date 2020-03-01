@@ -84,7 +84,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 				<p class="pricel" style="font-size: 22px;font-family: SF-UI-Text-Semibold; color: #f1d50e; ">{{number_format(intval(($tour->price)*(100-$tour->khuyen_mai)/100))}}</p>
 				<p>/người</p>
-				<a class="a-book-tour" href="#l">Đặt ngay</a>
+				<a class="a-book-tour" href="{{ route('detail',$tour->id) }}">Đặt ngay</a>
 			</div>
 		</div>
 @endforeach

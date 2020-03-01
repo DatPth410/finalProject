@@ -71,6 +71,9 @@ class SearchController extends Controller
     			}
 				$list_tour=DB::table('tour_trong_nuoc')
 				->where('diem_den','like','%'.strval($id_diemden).'%')
+				// ->where('diem_den','like','%'.' '.strval($id_diemden))
+    //             ->orWhere('diem_den','like','%'.' '.strval($id_diemden).' '.'%')
+    //             ->orWhere('diem_den','like',strval($id_diemden).' '.'%')
 				->where('noi_khoi_hanh','like',$name)
 				->where('price','>',$min)
 				->where('price','<',$max)

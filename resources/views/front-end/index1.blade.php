@@ -226,7 +226,7 @@ s0.parentNode.insertBefore(s1,s0);
 		</div>
 
 		<div class="see_all_2">
-			<a href="#"><p><span class="fa fa-chevron-left" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="fa fa-chevron-right" style="font-size: 15px;margin-left:10px;"></span></p></a>
+			<a href="{{ route('trong-nuoc') }}"><p><span class="fa fa-chevron-left" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="fa fa-chevron-right" style="font-size: 15px;margin-left:10px;"></span></p></a>
 		</div>
 	</div>
 	<!-- End tour trong nước -->
@@ -395,13 +395,13 @@ s0.parentNode.insertBefore(s1,s0);
 				@foreach ($four_news as $element=>$news)
 				{{-- expr --}}
 				<div class="col-md-3 col-sm-6">
-					<a href="#">
+					<a href="tin_tuc?id={{$news->id}}">
 						<img src="img/test/{{$news->avatar}}" class="exp_photo">
 					</a>
 				</div>
 
 				<div class="col-md-3 col-sm-6">
-					<a href="#"><p class="exp_title">{{$news->title}}</p></a>
+					<a href="tin_tuc?id={{$news->id}}"><p class="exp_title">{{$news->title}}</p></a>
 					<br>
 					<p class="exp_below_title">{{$news->title}}</p>
 				</div>

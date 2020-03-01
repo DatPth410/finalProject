@@ -32,11 +32,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 <div id="body">
 	<div id="main_content">
-			<div style="padding-top: 20px;" class="navigation">
-				<span><a href="#">Trang chủ</a></span>
-				<span class="glyphicon glyphicon-chevron-right"></span>
-				<span><a href="#">Tour trong nước</a></span>
-			</div>
+			
 
 			<div class="content1">
 				<div class="h1_title">
@@ -44,10 +40,10 @@ s0.parentNode.insertBefore(s1,s0);
 				</div>
 				<div style="text-align: center;" class="info">
 					Các
-					<a href="#">
+					
 						<strong>tour</strong>
 						<strong>Du lịch trong nước</strong>
-					</a>
+					
 					liên tục được mở bán thường xuyên tại
 					<strong>TRAVEL AGENCY</strong>
 					với nhiều điểm đến mới hấp dẫn, đặc biệt với nhiều đợt khuyến mãi đang chờ quý khách :
@@ -95,8 +91,8 @@ s0.parentNode.insertBefore(s1,s0);
 		</div>
 
 		<!-- START hiển thị tour -->
-		@foreach($tours as $stt=>$tour)
-
+		@foreach($tour as $stt=>$tour)
+ 
 		@for($k=0;$k<count($tour_code_id);$k++)
 			@if($tour_code_id[$k] == $tour->id)
 		<div class="tour_list_tn">
@@ -179,7 +175,7 @@ s0.parentNode.insertBefore(s1,s0);
 		@endfor
 		@endforeach
 		<div style="padding-left: 320px;padding-top:50px;padding-bottom: 80px;" class="btn-group">
-			<div class="col-md-4">{{$tours->links()}}</div></div>
+			{{-- <div class="col-md-4">{{$tours->links()}}</div></div> --}}
 		</div>
 		<!-- END hiển thị tour -->
 </div>

@@ -238,9 +238,9 @@ s0.parentNode.insertBefore(s1,s0);
 	
 	<div class="container all">
 		<div  style="padding-top: 30px;" class="head_con">
-			<span class="fa fa-home" style="padding-right: 10px;"><a href="#"> Trang chủ / </a></span>
-			<span style="padding-right: 10px;"><a href="#"> Malaysia /</a></span>
-			<span><a href="#"> Tour {{$detail->name}} {{$detail->length}} ngày {{$detail->length-1}} đêm</a></span>
+			{{-- <span class="fa fa-home" style="padding-right: 10px;"><a href="#"> Trang chủ / </a></span>
+			<span style="padding-right: 10px;"><a href="#"> Malaysia /</a></span> --}}
+			{{-- <span><a href="#"> Tour {{$detail->name}} {{$detail->length}} ngày {{$detail->length-1}} đêm</a></span> --}}
 			<h1 style="color:#003c71;font-weight: bold;">Tour {{$detail->name}} {{$detail->length}} ngày {{$detail->length-1}} đêm</h1>
 		</div>
 		<div style="padding-top: 10px;padding-bottom: 5px;">	
@@ -626,7 +626,7 @@ s0.parentNode.insertBefore(s1,s0);
 								<div class="form-group">
 									<label for="">Email(*)<span id="noti_email" class="noti"></span></label>
 									@auth
-						                <input type="text" class="form-control" id="email" name="name" placeholder="Họ và tên" readonly value="{{Auth::user()->email}}">
+						                <input type="text" class="form-control" id="email" name="email" placeholder="Họ và tên" readonly value="{{Auth::user()->email}}">
 						            @else
 						                <input type="text" class="form-control" id="email" name="email" placeholder="Email" onblur="checkEmail();if (this.value=='') {this.focus();}">
 						            @endauth

@@ -17,6 +17,16 @@
 	<div class="body">
 		@include('admin.header.header')
 		<div class="content" style="width: 100%; min-height: 100px; padding-left: 70px;">
+			{{--Message--}}
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 			<form action="{{route('save-update-news',$params = ['id'=> $news->id])}}" method="POST" enctype="multipart/form-data">
 				<div class="form-body">
 					<div class="col-md-6">

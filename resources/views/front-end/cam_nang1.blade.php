@@ -116,7 +116,7 @@ s0.parentNode.insertBefore(s1,s0);
 				<label class="sr-only" for="">label</label>
 				<input type="text" class="form-control" id="" name="search" placeholder="TÌm kiếm tin tức...">
 			</div>
-			<button type="submit" class="btn btn-danger"><a href="#" style="float: right;"><img src="images/i-search-mini.png"></a></button>
+			<button type="button" class="btn btn-danger"><a href="#" style="float: right;"><img src="images/i-search-mini.png"></a></button>
 		</form>
 	</div>
 
@@ -128,7 +128,7 @@ s0.parentNode.insertBefore(s1,s0);
 			</ul>
 		</div>
 		<div class="list_news">
-			@foreach ($exp as $element=>$news)
+			@foreach ($exp_news as $element=>$news)
 				{{-- expr --}}
 				<div class="news">
 				<div class="img2">

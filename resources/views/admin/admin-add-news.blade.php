@@ -17,6 +17,16 @@
 	<div class="body">
 		@include('admin.header.header')
 		<div class="content1">
+			{{--Message--}}
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 			<div class="form-body">
 				<div class="main-grid">
 					<div class="agile-grids">

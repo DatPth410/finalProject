@@ -103,9 +103,7 @@ s0.parentNode.insertBefore(s1,s0);
 						  	{{-- expr --}}
 						  	 <a href="tin_tuc?id={{$news->id}}">{{$news->title}}</a><br><br>
 						  @endforeach
-						  {{-- <a href="#">2N1Đ ở khách sạn Mercure Vũng Tàu + Xe đưa đón + Tặng voucher ăn uống + Cocktail chỉ 1.450.000 đồng/khách</a><br><br>
-						  <a href="#">Ghim ngay top 5 quán cafe Vũng Tàu decor xinh xắn dịp Tết Âm Lịch</a><br><br>
-						  <a href="#">2N1Đ ở khách sạn ibis Styles Vũng Tàu + xe đưa đón + ăn sáng chỉ 1.099.000 đồng/khách</a> --}}
+						
 					</div>
 					<strong style="font-size: 30px;">***</strong><br><br>
 					<strong >Tham khảo: <a href="#">Cẩm nang du lịch DVP.com</a></strong>
@@ -168,136 +166,22 @@ s0.parentNode.insertBefore(s1,s0);
 				</ul>
 			</div>
 		    <div class="list_news">
-		    	<div class="news">
-		    			<div class="img2">
-		    			  <a href="#">
-		    			  	<img src="images/bia-sex-show-o-thai-lan.jpg" style="padding-top: 20px;" width="80px"; height="100px">
-		    			  </a>
-		    		    </div>
-		    		    <div class="title">
-			    			<a href="#">
-			    				<h5 style="color: #222222;">Sex show Big Eyes ở Thái Lan có gì hay?</h5>
-			    			</a>
-			    			<span style="color: #999999;font-size: 13px;" class="glyphicon glyphicon-calendar"> 12/02/2019 </span>
-		    		    </div>
-		    	</div>
-		    	<div class="news">
-		    			<div class="img2">
-		    			  <a href="#">	    				
-		    			  	<img src="images/191_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
-		    			  </a>
-		    		    </div>
-		    		    <div class="title">
-			    			<a href="#">
-			    				<h5 style="color: #222222;">Bật mí 10 khách sạn uy tín ở Sầm Sơn, đẹp và mới nhất từ 2017 đến 2019</h5>
-			    			</a>
-			    			<span style="color: #999999;font-size: 13px;" class="glyphicon glyphicon-calendar"> 09/02/2019 </span>
-		    		    </div>
-		    	</div>
-		    	<div class="news">
-		    			<div class="img2">
-		    			  <a href="#">	    				
-		    			  	<img src="images/191_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
-		    			  </a>
-		    		    </div>
-		    		    <div class="title">
-			    			<a href="#">
-			    				<h5 style="color: #222222;">Bật mí cho bạn những khách sạn Đà Lạt đẹp gần trung tâm nhất</h5>
-			    			</a>
-			    			<span style="color: #999999;font-size: 13px;" class="glyphicon glyphicon-calendar"> 09/04/2019 </span>
-		    		    </div>
-		    	</div>
-		    	<div class="news">
-		    			<div class="img2">
-		    			  <a href="#">	    				
-		    			  	<img src="images/4_anh-nen.jpg" style="padding-top: 20px;" width="80px"; height="100px">
-		    			  </a>
-		    		    </div>
-		    		    <div class="title">
-			    			<a href="#">
-			    				<h5 style="color: #222222;">Kinh nghiệm du lịch đảo Jeju Hàn Quốc 2019</h5>
-			    			</a>
-			    			<span style="color: #999999;font-size: 13px;" class="glyphicon glyphicon-calendar"> 31/01/2019 </span>
-		    		    </div>
-		    	</div>
-		    	<div class="news">
-		    			<div class="img2">
-		    			  <a href="#">	    				
-		    			  	<img src="images/171_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
-		    			  </a>
-		    		    </div>
-		    		    <div class="title">
-			    			<a href="#">
-			    				<h5 style="color: #222222;">10 gợi ý đi du lịch Phú Yên nên mua gì về làm quà cho người thân tốt nhất</h5>
-			    			</a>
-			    			<span style="color: #999999;font-size: 13px;" class="glyphicon glyphicon-calendar"> 06/03/2019 </span>
-		    		    </div>
-		    	</div>
-		    	<div class="news">
-		    			<div class="img2">
-		    			  <a href="#">	    				
-		    			  	<img src="images/nuoc-ngoai-thang-2.jpg" style="padding-top: 20px;" width="80px"; height="100px">
-		    			  </a>
-		    		    </div>
-		    		    <div class="title">
-			    			<a href="#">
-			    				<h5 style="color: #222222;">Những điểm du lịch nước ngoài Hot nhất tháng 2 năm 2019</h5>
-			    			</a>
-			    			<span style="color: #999999;font-size: 13px;" class="glyphicon glyphicon-calendar"> 03/02/2019 </span>
-		    		    </div>
-		    	</div>
-		    	<div class="news">
-		    			<div class="img2">
-		    			  <a href="#">	    				
-		    			  	<img src="images/1_phuong-hoang-co-tran-mua-dong.jpg" style="padding-top: 20px;" width="80px"; height="100px">
-		    			  </a>
-		    		    </div>
-		    		    <div class="title">
-			    			<a href="#">
-			    				<h5 style="color: #222222;">Phượng Hoàng Cổ Trấn mùa đông có gì đặc biệt?</h5>
-			    			</a>
-			    			<span style="color: #999999;font-size: 13px;" class="glyphicon glyphicon-calendar"> 28/11/2018 </span>
-		    		    </div>
-		    	</div>
-		    	<div class="news">
-		    			<div class="img2">
-		    			  <a href="#">	    				
-		    			  	<img src="images/26_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
-		    			  </a>
-		    		    </div>
-		    		    <div class="title">
-			    			<a href="#">
-			    				<h5 style="color: #222222;">Đi du lịch Phú Quốc nên mặc gì để phù hợp nhất</h5>
-			    			</a>
-			    			<span style="color: #999999;font-size: 13px;" class="glyphicon glyphicon-calendar"> 05/01/2019 </span>
-		    		    </div>
-		    	</div>
-		    	<div class="news">
-		    			<div class="img2">
-		    			  <a href="#">	    				
-		    			  	<img src="images/178_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
-		    			  </a>
-		    		    </div>
-		    		    <div class="title">
-			    			<a href="#">
-			    				<h5 style="color: #222222;">7 khách sạn ở Cửa Lò có bể bơi tốt nhất đẹp nhất và mới nhất</h5>
-			    			</a>
-			    			<span style="color: #999999;font-size: 13px;" class="glyphicon glyphicon-calendar"> 17/03/2019 </span>
-		    		    </div>
-		    	</div>
-		    	<div class="news">
-		    			<div class="img2">
-		    			  <a href="#">	    				
-		    			  	<img src="images/184_0.jpg" style="padding-top: 20px;" width="80px"; height="100px">
-		    			  </a>
-		    		    </div>
-		    		    <div class="title">
-			    			<a href="#">
-			    				<h5 style="color: #222222;">9 khách sạn Cửa Lò gần biển đẹp, chất lượng tuyệt vời và giá tốt nhất 2019</h5>
-			    			</a>
-			    			<span style="color: #999999;font-size: 13px;" class="glyphicon glyphicon-calendar"> 25/03/2019 </span>
-		    		    </div>
-		    	</div>
+		    	@foreach ($exp_news as $element=>$news)
+				{{-- expr --}}
+				<div class="news">
+				<div class="img2">
+					<a href="tin_tuc?id={{$news->id}}">
+						<img src="img/test/{{$news->avatar}}" style="padding-top: 20px;" width="90px" height="105px">
+					</a>
+				</div>
+				<div class="title">
+					<a href="tin_tuc?id={{$news->id}}">
+						<h7 style="color: #222222;">{{$news->title}}</h7>
+					</a>
+					<span style="color: #999999;font-size: 13px;" class="fa fa-calendar"> {{$news->ngay_dang}}</span>
+				</div>
+			</div>
+			@endforeach
 		    	
 		    </div>
 			

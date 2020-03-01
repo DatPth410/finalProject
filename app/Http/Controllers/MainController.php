@@ -76,7 +76,7 @@ class MainController extends Controller
         $date = date('Y-m-d', time());
         $i=0;
         $j=0;
-        $tours=DB::table('tour_trong_nuoc') ->whereDate('departure','>',$date)->paginate(5); 
+        $tour=DB::table('tour_trong_nuoc') ->whereDate('departure','>',$date)->paginate(5); 
         $destination=DB::table('tbl_diemden')->get();
         $destination_id_array=array();
         $destination_name_array=array();
@@ -86,11 +86,12 @@ class MainController extends Controller
             $j++;
         }
         $j=0;
-        foreach ($tours as $key => $tour_value) {
+        foreach ($tour as $key => $tour_value) {
             $tour_code_id[$j]=$tour_value->id;
             $j++;
         }
-        return view('front-end.tour_trong_nuoc', compact('tours','destination_id_array','destination_name_array','tour_code_id'));
+        // print_r($tours);
+        return view('front-end.tour_trong_nuoc', compact('tour','destination_id_array','destination_name_array','tour_code_id'));
     }
 
     public function viewInlandwithDestination($code_diem_den){
@@ -136,7 +137,11 @@ class MainController extends Controller
     public function viewExp(){
         $exp = DB::table('tbl_news')->paginate(4);
         //print_r($exp);
-        return view('front-end.cam_nang1',compact('exp'));
+        $exp_news = DB::table('tbl_news')
+        ->orderBy('ngay_dang','desc')
+        ->limit(6)
+        ->get();
+        return view('front-end.cam_nang1',compact('exp','exp_news'));
         //return view('front-end.cam_nang');
     }
 
@@ -150,7 +155,10 @@ class MainController extends Controller
         $news=DB::table('tbl_news')
         ->where('id',$id)
         ->first();
-
+        $exp_news = DB::table('tbl_news')
+        ->orderBy('ngay_dang','desc')
+        ->limit(6)
+        ->get();
         $lienquan=DB::table('tbl_news')
         ->inRandomOrder()
         ->limit(3)
@@ -160,7 +168,7 @@ class MainController extends Controller
         ->whereDate('departure','>',$date)
         ->inRandomOrder()
         ->first();
-        return view('front-end.tin_tuc',compact('news','lienquan','tour'));
+        return view('front-end.tin_tuc',compact('news','lienquan','tour','exp_news'));
     }
 
     public function tourDetail($id){
@@ -245,8 +253,10 @@ class MainController extends Controller
             'departure' => $detail->departure,
 
         );
+        $_SESSION['mail']=$request->get('email');
+        
         Mail::send('front-end.mail_content', $details, function ($message) {
-            $message->to('datpth0410@gmail.com', 'Dat Pham');
+            $message->to($_SESSION['mail'], 'Dat Pham');
             $message->subject('Xác nhận đặt hàng');
         });
         
