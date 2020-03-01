@@ -65,6 +65,11 @@
 		<!-- End chi_tiet -->
 
 
+		<!-- Start chi_tiet_tin_tuc -->
+	@yield('chi_tiet_tin_tuc')
+		<!-- End chi_tiet_tin_tuc -->
+
+
 
 
 		<!-- Start footer -->

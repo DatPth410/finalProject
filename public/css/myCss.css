@@ -145,7 +145,7 @@ a{
 
 #block_1{
 	width: 100%;
-	height: 500px;
+	height: 600px;
 }
 
 	/*slider*/
@@ -285,6 +285,12 @@ a{
 	color:#0c427a;
 	float:left;
 }
+#block_2ruoi{
+	width: 100%;
+	height: 1050px;
+	margin-top:70px;
+}
+
 
 #block_3{
 	width: 100%;

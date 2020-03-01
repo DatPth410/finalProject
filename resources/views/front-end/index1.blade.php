@@ -108,17 +108,17 @@ s0.parentNode.insertBefore(s1,s0);
         <div class="carousel-inner bg-info" role="listbox">
             <div class="carousel-item active">
                 <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/21.jpg'); background-position: center center;background-size: cover;">
-                    <h1 style="margin-top: -70px; color: white;">ONE</h1>
+                    <h1 style="margin-top: 200px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/10.jpeg'); background-position: center center;background-size: cover;">
-                    <h1 style="margin-top: -70px; color: white;">TWO</h1>
+                    <h1 style="margin-top: 200px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/20.jpeg'); background-position: center center;background-size: cover;">
-                    <h1 style="margin-top: -70px; color: white;">THREE</h1>
+                    <h1 style="margin-top: 200px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
                 </div>
             </div>
         </div>
@@ -172,12 +172,27 @@ s0.parentNode.insertBefore(s1,s0);
 	<!-- End Các Tour đang sale -->
 
 
+	{{-- Start các điểm đến yêu thích --}}
+	<div id="block_2ruoi">
+		<div class="content_2">
+			<div class="content_title">
+				<p class="fa fa-heart"><span class="tour_text">Các điểm đến yêu thích</span></p>
+			</div>
+			<div class="below_content_title">
+				<p>Lên núi xuống biển. Trọn vẹn Việt Nam</p>
+			</div>					
+		</div>
+
+
+	</div>
+	{{-- End các điểm đến yêu thích --}}
+
 	<!-- Start tour trong nước -->
 	<div id="block_3">
 		<div class="content_2">
 			<div class="content_title">
 				<p class="fa fa-paper-plane"><span class="tour_text">Tour trong nước</span></p>
-			</div>
+			</div>	
 		</div>
 
 		<div class="tour_content">
