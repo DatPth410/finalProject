@@ -51,7 +51,7 @@
 			//ajax pass data to controller through route
 			var myJsonData = {rating: ratedIndex, id_tour: id_tour };
 			$.post('user-manage-tour/rating',myJsonData,function(data){
-				//
+				location.reload();
 			})
 			
 		})
