@@ -25,6 +25,18 @@
 			});
 		} );
 	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			<?php
+				if (isset($_GET['success'])) { ?>
+					$("#success_notification").show().delay(3000).fadeOut();
+				
+			<?php }else { ?>
+				$("#success_notification").hide();
+			<?php } ?>
+		})
+	</script>
 </head>
 
 <!--Start of Tawk.to Script-->
@@ -50,8 +62,14 @@ s0.parentNode.insertBefore(s1,s0);
 	{{-- TEST box chat --}}
 
 
+	
+
 	<div id="search">
-		<div class="row" >
+		<div class="row" style="position: relative;">
+			<div class="alert alert-success" id="success_notification" style="width: 235px;height: 55px;text-align: center;position: absolute;margin-top: 65px;margin-left: 840px;">
+  				<div>Đặt tour thành công!</div>	
+  			</div>
+
 			<div class="col-md-offset-2 col-md-10">
 				<p style="color:#fff; margin-top: 120px;font-size: 28px;font-weight:bold;">ĐẶT TOUR DU LỊCH !</p>					
 				<p style="color:#fff; font-size: 22px;">Hơn 300 Tour du lịch hấp dẫn ở Việt Nam và trên thế giới</p>
@@ -140,6 +158,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 	<!-- Start Các Tour đang sale -->
+
 	<div id="block_2">
 		<div class="content">
 			<div class="content_title">
@@ -170,7 +189,9 @@ s0.parentNode.insertBefore(s1,s0);
 		</div>
 	</div>
 	<!-- End Các Tour đang sale -->
-
+	<div class="alert alert-success" id="success_notification" style="width: 235px;height: 55px;text-align: center;position: absolute;margin-top: 5px;margin-right: 10px;">
+  		<div>Đặt tour thành công!</div>	
+  	</div>
 
 	{{-- Start các điểm đến yêu thích --}}
 	<div id="block_2ruoi">

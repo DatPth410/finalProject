@@ -146,10 +146,10 @@
 					<span>Đánh giá:</span>
 					@if(isset($rating))
 						@for($i = 0; $i < $rating->rating; $i++)
-							<i class="fa fa-star fa-2x" data-index="{{$i}}" style="color: yellow;" title="{{$tour->id}}" ></i>
+							<i class="fa fa-star fa-2x symbol-{{$tour->id}}" data-index="{{$i}}" style="color: yellow;" title="{{$tour->id}}" ></i>
 						@endfor
 						@for($j = $rating->rating ;$j < 5; $j++)
-							<i class="fa fa-star fa-2x" data-index="{{$j}}" style="color: black" title="{{$tour->id}}"></i>
+							<i class="fa fa-star fa-2x" data-index="{{$j}}" style="color: grey" title="{{$tour->id}}"></i>
 						@endfor
 					@else
 						<i class="fa fa-star fa-2x" data-index="0" title="{{$tour->id}}" ></i>

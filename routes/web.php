@@ -70,6 +70,7 @@ Route::get('/trong-nuoc/{code_diem_den?}', ['uses' =>'MainController@viewInlandw
 
 //trang chủ 
 Route::get('/trang-chu','MainController@viewHome')->name('trang-chu');
+//Trang chủ khi đặt tour thành công
 Route::get('/test1','MainController@viewTest');
 
 Route::post('/save-search', 'SearchController@saveSearch')->name('save-find');

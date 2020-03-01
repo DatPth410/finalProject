@@ -261,7 +261,7 @@ class MainController extends Controller
         });
         
 
-        return redirect()->route('trang-chu');
+        return redirect('trang-chu?success=1');
         
 
         //return redirect()->action("MailController@mailsend", [$request]);
@@ -277,30 +277,7 @@ class MainController extends Controller
             DB::table('tbl_rating')->insert($ratingInsert);       
         }
         return redirect()->route('user-manage-tour');
-        // $a=3;
-        // $rating = DB::table('tbl_rating')->where('id_user','=',$request->user()->id)
-        // ->where('id_tour','=',$a)
-        // ->orderBy('time','desc')
-        // ->get()
-        // ->first();
-        // print_r($rating);
 
-        // $tour=DB::table('tour_trong_nuoc')
-        // ->where('id','=',4)
-        // ->first();
-        // $id_tour=$tour->id;
-        // $rating = DB::table('tbl_rating')->where('id_user','=',$request->user()->id)
-        // ->where('id_tour','=',$id_tour)
-        // ->orderBy('time','desc')
-        // ->get()
-        // ->first();
-        // print_r($rating);
-
-        // if (isset($rating)) {
-        //     echo "co roi";
-        // }else{
-        //     echo "chua co";
-        // }
     }
 
 }
