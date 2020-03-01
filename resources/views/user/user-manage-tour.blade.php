@@ -108,13 +108,19 @@
 		$tour=DB::table('tour_trong_nuoc')
 		->where('id','=',$booking->id_tour)
 		->first();
+
 		$id_tour=$tour->id;
+
 		$user = auth()->user();
+
 		$rating = DB::table('tbl_rating')->where('id_user','=',$user->id)
         ->where('id_tour','=',$id_tour)
         ->orderBy('time','desc')
         ->get()
         ->first();
+
+        $currentTime = strtotime(date('Y-m-d H:i:s')) ;
+        $tourTime = strtotime($tour->departure);
 
 		@endphp
 		<div class="tour_list">
@@ -136,12 +142,14 @@
 				
 				{{-- START rating stars --}}
 				<div id="rating-stars">
+				@if($tourTime - $currentTime < 0)
+					<span>Đánh giá:</span>
 					@if(isset($rating))
 						@for($i = 0; $i < $rating->rating; $i++)
 							<i class="fa fa-star fa-2x" data-index="{{$i}}" style="color: yellow;" title="{{$tour->id}}" ></i>
 						@endfor
-						@for($j = 4; $j > $rating->rating; $j--)
-							<i class="fa fa-star fa-2x" data-index="{{$j - 1}}" style="color: black" title="{{$tour->id}}"></i>
+						@for($j = $rating->rating ;$j < 5; $j++)
+							<i class="fa fa-star fa-2x" data-index="{{$j}}" style="color: black" title="{{$tour->id}}"></i>
 						@endfor
 					@else
 						<i class="fa fa-star fa-2x" data-index="0" title="{{$tour->id}}" ></i>
@@ -150,6 +158,7 @@
 						<i class="fa fa-star fa-2x" data-index="3" title="{{$tour->id}}" ></i>
 						<i class="fa fa-star fa-2x" data-index="4" title="{{$tour->id}}" ></i>
 					@endif
+				@endif
 				</div>
 				
 				{{-- END rating stars --}}
