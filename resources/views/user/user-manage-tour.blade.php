@@ -4,10 +4,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>Du lịch nước ngoài | Tour nước ngoài</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 
@@ -24,6 +26,62 @@
 	})();
 </script>
 <!--End of Tawk.to Script-->
+
+<script type="text/javascript">
+	$.ajaxSetup({
+    	headers: {
+        	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    	}
+	});
+
+	var ratedIndex = -1;
+
+	$(document).ready(function() { 
+		// resetStarColors();
+
+		// if (localStorage.getItem('ratedIndex') != null) {
+		// 	setStars(parseInt(localStorage.getItem('ratedIndex')));
+		// }
+
+		$(".fa-star").on('click',function(){
+			ratedIndex = parseInt($(this).data('index'));
+			id_tour = parseInt($(this).attr('title'));
+			//localStorage.setItem('ratedIndex',ratedIndex);
+
+			//ajax pass data to controller through route
+			var myJsonData = {rating: ratedIndex, id_tour: id_tour };
+			$.post('user-manage-tour/rating',myJsonData,function(data){
+				//
+			})
+			
+		})
+
+		// $(".fa-star").mouseover(function(){
+		// 	resetStarColors();
+		// 	var currentIndexvalue = parseInt($(this).data('index'));
+		// 	setStars(currentIndexvalue);
+		// })
+
+		// $(".fa-star").mouseleave(function(){
+		// 	resetStarColors();
+
+		// 	if (ratedIndex != -1) {
+		// 		setStars(ratedIndex);
+		// 	}
+		// })
+
+		function resetStarColors(){
+			$(".fa-star").css('color','black');
+		}
+
+		function setStars(max){
+			for (var i = 0; i <= max; i++) {
+				$('.fa-star:eq('+i+')').css('color','yellow');
+			}
+		}
+
+	}); 
+</script> 
 
 <body>
 	
@@ -50,6 +108,14 @@
 		$tour=DB::table('tour_trong_nuoc')
 		->where('id','=',$booking->id_tour)
 		->first();
+		$id_tour=$tour->id;
+		$user = auth()->user();
+		$rating = DB::table('tbl_rating')->where('id_user','=',$user->id)
+        ->where('id_tour','=',$id_tour)
+        ->orderBy('time','desc')
+        ->get()
+        ->first();
+
 		@endphp
 		<div class="tour_list">
 			<div class="left_tour_list">
@@ -68,6 +134,25 @@
 
 				<h3>Thời gian đặt tour: {{$booking->time}}</h3>
 				
+				{{-- START rating stars --}}
+				<div id="rating-stars">
+					@if(isset($rating))
+						@for($i = 0; $i < $rating->rating; $i++)
+							<i class="fa fa-star fa-2x" data-index="{{$i}}" style="color: yellow;" title="{{$tour->id}}" ></i>
+						@endfor
+						@for($j = 4; $j > $rating->rating; $j--)
+							<i class="fa fa-star fa-2x" data-index="{{$j - 1}}" style="color: black" title="{{$tour->id}}"></i>
+						@endfor
+					@else
+						<i class="fa fa-star fa-2x" data-index="0" title="{{$tour->id}}" ></i>
+						<i class="fa fa-star fa-2x" data-index="1" title="{{$tour->id}}" ></i>
+						<i class="fa fa-star fa-2x" data-index="2" title="{{$tour->id}}" ></i>
+						<i class="fa fa-star fa-2x" data-index="3" title="{{$tour->id}}" ></i>
+						<i class="fa fa-star fa-2x" data-index="4" title="{{$tour->id}}" ></i>
+					@endif
+				</div>
+				
+				{{-- END rating stars --}}
 			</div>
 			<div class="right_tour_list">
 				<small style="font-size: 14px;font-weight: normal;">

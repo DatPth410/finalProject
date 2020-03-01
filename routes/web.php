@@ -120,3 +120,10 @@ Route::get('mail', function() {
     //
     return view('front-end.mail_content');
 });
+
+Route::get('getRequest',function(){
+	return "ok";
+});
+
+Route::post('user-manage-tour/rating','MainController@ratingStore');
+

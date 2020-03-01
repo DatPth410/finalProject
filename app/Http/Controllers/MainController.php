@@ -217,19 +217,8 @@ class MainController extends Controller
                 $detailBooking['id_user'] = 3;
             }
             // $detailBooking['id_user']=1;
-            $detailBooking['time'] = $request->get('time');
-            echo "<pre>";
-            print_r($detailBooking); 
-            echo "<pre/>";
-            echo $detailBooking['id_user'];
-            $x= DB::table('tbl_detail_booking')->insertGetId($detailBooking);
-            echo "thanh cong"; 
-            echo $x;  
-            //print_r($detailBooking); 
-            $booker=DB::table('tbl_detail_booking')->where('id','=',$x)->first();
-            echo "<pre>";
-            print_r($booker); 
-            echo "<pre/>";
+            $detailBooking['time'] = date('Y-m-d H:i:s');
+            DB::table('tbl_detail_booking')->insertGetId($detailBooking);
         }
         $detail = DB::table('tour_trong_nuoc')
         ->where('id','=',$request->get('id_tour'))
@@ -268,5 +257,40 @@ class MainController extends Controller
         //return redirect()->action("MailController@mailsend", [$request]);
     }
 
+    public function ratingStore(Request $request){
+        if ($request->isMethod('post')) {
+            $ratingInsert=[];
+            $ratingInsert['rating'] = $request->input('rating')+1;
+            $ratingInsert['time'] = date('Y-m-d H:i:s');
+            $ratingInsert['id_user'] = $request->user()->id;
+            $ratingInsert['id_tour'] = $request->input('id_tour');
+            DB::table('tbl_rating')->insert($ratingInsert);       
+        }
+        return redirect()->route('user-manage-tour');
+        // $a=3;
+        // $rating = DB::table('tbl_rating')->where('id_user','=',$request->user()->id)
+        // ->where('id_tour','=',$a)
+        // ->orderBy('time','desc')
+        // ->get()
+        // ->first();
+        // print_r($rating);
+
+        // $tour=DB::table('tour_trong_nuoc')
+        // ->where('id','=',4)
+        // ->first();
+        // $id_tour=$tour->id;
+        // $rating = DB::table('tbl_rating')->where('id_user','=',$request->user()->id)
+        // ->where('id_tour','=',$id_tour)
+        // ->orderBy('time','desc')
+        // ->get()
+        // ->first();
+        // print_r($rating);
+
+        // if (isset($rating)) {
+        //     echo "co roi";
+        // }else{
+        //     echo "chua co";
+        // }
+    }
 
 }
