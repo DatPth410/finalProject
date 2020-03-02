@@ -82,12 +82,12 @@ s0.parentNode.insertBefore(s1,s0);
 							@csrf
 							<div class="row">
 								<div class="col-md-6 ui-widget" >
-									<label for="tags" style="color: white; font-size: 18px;">Nơi khởi hành: </label>
+									<label for="tags" style="color: #fff; font-size: 18px;">Nơi khởi hành: </label>
 									<input id="tags" name="name" class="form-control">
 								</div>
 
 								<div class="col-md-6 ui-widget" >
-									<label for="tag" style="color: white; font-size: 18px;">Điểm đến: </label>
+									<label for="tag" style="color: #fff; font-size: 18px;">Điểm đến: </label>
 									<input id="tag" name="arrived" class="form-control">
 								</div>
 							</div>
@@ -118,24 +118,24 @@ s0.parentNode.insertBefore(s1,s0);
 	</div>
 	<!-- End search -->
 
-	<!-- Start slider -->
 
+	<!-- Start slider -->
 	<div id="block_1">
         <div class="container-fluid px-0">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner bg-info" role="listbox">
             <div class="carousel-item active">
-                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/21.jpg'); background-position: center center;background-size: cover;">
+                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/21.jpg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
                     <h1 style="margin-top: 200px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/10.jpeg'); background-position: center center;background-size: cover;">
+                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/10.jpeg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
                     <h1 style="margin-top: 200px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/20.jpeg'); background-position: center center;background-size: cover;">
+                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/20.jpeg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
                     <h1 style="margin-top: 200px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
                 </div>
             </div>
@@ -151,9 +151,6 @@ s0.parentNode.insertBefore(s1,s0);
     </div>
 </div>
     </div>
-
-
-	</div>
 	<!-- End slider -->
 
 
@@ -201,10 +198,72 @@ s0.parentNode.insertBefore(s1,s0);
 			</div>
 			<div class="below_content_title">
 				<p>Lên núi xuống biển. Trọn vẹn Việt Nam</p>
-			</div>					
+			</div>			
 		</div>
 
+		<div class="tour_content">
+			<div class="grid-container grid-container-popular">
+				<div class="grid-item item1 rounded" style="background-image: url('img/3.jpg');"><a href="#">
+					<div class="inside_grid">
+						<p class="inside_grid_title">Phú Quốc</p>
+						<p class="inside_grid_ks">19 khách sạn</p>
+					</div>
+				</a>
+				</div>
+				<div class="grid-item item2 rounded" style="background-image: url('img/4.jpg');"><a href="#">
+					<div class="inside_grid2">
+						<p class="inside_grid_title">Ninh Bình</p>
+						<p class="inside_grid_ks">122 khách sạn</p>
+					</div>
+				</a>
+				</div>
+				<div class="grid-item item3 rounded" style="background-image: url('img/21.jpg');"><a href="#">
+					<div class="inside_grid">
+						<p class="inside_grid_title">Đà Nẵng</p>
+						<p class="inside_grid_ks">27 khách sạn</p>
+					</div>
+				</a>
+				</div>  
+				<div class="grid-item item4 rounded" style="background-image: url('img/5.jpg');"><a href="#">
+					<div class="inside_grid">
+						<p class="inside_grid_title">Nha Trang</p>
+						<p class="inside_grid_ks">124 khách sạn</p>
+					</div>
+				</a>
+				</div>
+			</div>
 
+			<div class="grid-container2">
+				<div class="grid-item item5 rounded" style="background-image: url('img/3.jpg');"><a href="#">
+					<div class="inside_grid2">
+						<p class="inside_grid_title">Phú Quốc</p>
+						<p class="inside_grid_ks">19 khách sạn</p>
+					</div>
+				</a>
+				</div>
+				<div class="grid-item item6 rounded" style="background-image: url('img/4.jpg');"><a href="#">
+					<div class="inside_grid">
+						<p class="inside_grid_title">Ninh Bình</p>
+						<p class="inside_grid_ks">122 khách sạn</p>
+					</div>
+				</a>
+				</div>
+				<div class="grid-item item7 rounded" style="background-image: url('img/21.jpg');"><a href="#">
+					<div class="inside_grid">
+						<p class="inside_grid_title">Đà Nẵng</p>
+						<p class="inside_grid_ks">27 khách sạn</p>
+					</div>
+				</a>
+				</div>  
+				<div class="grid-item item8 rounded" style="background-image: url('img/5.jpg');"><a href="#">
+					<div class="inside_grid">
+						<p class="inside_grid_title">Nha Trang</p>
+						<p class="inside_grid_ks">124 khách sạn</p>
+					</div>
+				</a>
+				</div>
+			</div>					
+		</div>
 	</div>
 	{{-- End các điểm đến yêu thích --}}
 
