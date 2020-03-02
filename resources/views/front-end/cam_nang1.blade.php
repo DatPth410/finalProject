@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <!--Start of Tawk.to Script-->
@@ -32,23 +33,25 @@ s0.parentNode.insertBefore(s1,s0);
 
     	<div id="main_content">
 				<div style="margin-bottom: 20px;" class="t_c">
+					<div class="col-sm-12">
 					<span><a href="#">Trang chủ  > </a></span>
 					<span><a href="#"> KINH NGHIỆM DU LỊCH</a></span>
+				    </div>
 				</div>
 
 				<div class="imgs">
 				<div class="row">
-					<div   class="col-md-3 col-sm-12">
+					<div   class="col-lg-3 col-sm-12">
 						<a href="#">
 							<img style="height: 456px;width: 280px;" src="images/tour-trong-nuoc.png">
 						</a>
 					</div>
-					<div  class="col-md-6 col-sm-12">
+					<div  class="col-lg-6 col-sm-12">
 						<a href="#">
 							<img style="height: 456px;width: 565px;text-align: center;" src="images/lich-khoi-hanh-tour-nuoc-ngoai.png">
 						</a>
 					</div>
-					<div class="col-md-3 col-sm-12">
+					<div class="col-lg-3 col-sm-12">
 						<a href="#">
 							<img style="height: 211px;width: 277px;padding-bottom: 12px;" src="images/combo-voucher.jpg">
 						</a>

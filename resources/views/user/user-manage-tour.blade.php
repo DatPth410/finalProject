@@ -213,6 +213,7 @@
 		  		}
 				}, 1000);
 			</script>
+			<p style="margin-top: 8px">Chỉ còn</p>
 		<p class="a-book-tour" id="demo{{$element}}"></p>
 		<p id="val{{$element}}"></p>
 		</div>

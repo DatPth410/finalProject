@@ -41,7 +41,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 			
 
-			<div class="content">
+			<div class="content1">
 
 				<div style="text-align: center;">
 					<h1>Tour Khuyến Mãi</h1>
