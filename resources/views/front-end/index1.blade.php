@@ -14,6 +14,7 @@
 	{{-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> --}}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
 	<script>
 		$( function() {
 			var availableTags = <?php echo json_encode($data_array); ?>;
@@ -74,7 +75,7 @@ s0.parentNode.insertBefore(s1,s0);
   			{{-- END success message --}}
 
 			<div class="col-md-offset-2 col-md-10">
-				<p style="color:#fff; margin-top: 120px;font-size: 28px;font-weight:bold;">ĐẶT TOUR DU LỊCH !</p>					
+				<p style="color:#fff; font-size: 28px;font-weight:bold;">ĐẶT TOUR DU LỊCH !</p>					
 				<p style="color:#fff; font-size: 22px;">Hơn 300 Tour du lịch hấp dẫn ở Việt Nam và trên thế giới</p>
 
 				<div class="row">

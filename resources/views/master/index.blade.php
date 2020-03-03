@@ -5,7 +5,7 @@
 		<div id="search">
 			<div class="row">
 				<div class="col-md-offset-2 col-md-10">
-					<p style="color:#fff; margin-top: 120px;font-size: 34px;font-weight:bold;">ĐẶT TOUR DU LỊCH !</p>					
+					<p style="color:#fff; top: 120px;font-size: 34px;font-weight:bold;">ĐẶT TOUR DU LỊCH !</p>					
 					<p style="color:#fff; font-size: 25px;">Hơn 300 Tour du lịch hấp dẫn ở Việt Nam và trên thế giới</p>
 
 					<div class="row">
