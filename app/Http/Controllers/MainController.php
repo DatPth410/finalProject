@@ -280,36 +280,6 @@ class MainController extends Controller
 
     }
 
-    public function test1(){
-        $date = date('Y-m-d', time());
-        $i=0;
-        $j=1;
-        $num=0;
-        $destination=DB::table('tbl_diemden')->limit(8)->get();
-        $tour=DB::table('tour_trong_nuoc')->whereDate('departure','>',$date)->get();
-        $code_diem_den = "da_nang";
-        $destination_code_id=$destination_code_name="";
-        $tour_code_id=array();
-        $destination_id_array=array();
-        $destination_name_array=array();
-        foreach ($destination as $key => $destination_value) {
-            if ($code_diem_den == $destination_value->code) {
-                $destination_code_id=$destination_value->id;
-            }
-        }
-        foreach ($tour as $key => $tour_value) {
-            $diem_den=(array)$tour_value;
-            $des=explode(" ", $diem_den['diem_den']);
-            for ($i=0; $i < count($des) ; $i++) { 
-                if ($destination_code_id == $des[$i]) {
-                    $num++;
-                }
-            }
-
-        }
-        echo $num;
-            $num =0;
-
-    }
+    
 
 }
