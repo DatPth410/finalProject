@@ -126,17 +126,17 @@ s0.parentNode.insertBefore(s1,s0);
         <div class="carousel-inner bg-info" role="listbox">
             <div class="carousel-item active">
                 <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/21.jpg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
-                    <h1 style="margin-top: 200px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
+                    <h1 style="margin-top: 230px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/10.jpeg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
-                    <h1 style="margin-top: 200px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
+                    <h1 style="margin-top: 230px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/20.jpeg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
-                    <h1 style="margin-top: 200px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
+                    <h1 style="margin-top: 230px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
                 </div>
             </div>
         </div>
