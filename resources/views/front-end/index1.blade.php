@@ -66,9 +66,12 @@ s0.parentNode.insertBefore(s1,s0);
 
 	<div id="search">
 		<div class="row" style="position: relative;">
+
+			{{-- START success message --}}
 			<div class="alert alert-success" id="success_notification" style="width: 235px;height: 55px;text-align: center;position: absolute;margin-top: 65px;margin-left: 840px;">
   				<div>Đặt tour thành công!</div>	
   			</div>
+  			{{-- END success message --}}
 
 			<div class="col-md-offset-2 col-md-10">
 				<p style="color:#fff; margin-top: 120px;font-size: 28px;font-weight:bold;">ĐẶT TOUR DU LỊCH !</p>					
@@ -186,9 +189,7 @@ s0.parentNode.insertBefore(s1,s0);
 		</div>
 	</div>
 	<!-- End Các Tour đang sale -->
-	<div class="alert alert-success" id="success_notification" style="width: 235px;height: 55px;text-align: center;position: absolute;margin-top: 5px;margin-right: 10px;">
-  		<div>Đặt tour thành công!</div>	
-  	</div>
+	
 
 	{{-- Start các điểm đến yêu thích --}}
 	<div id="block_2ruoi">
