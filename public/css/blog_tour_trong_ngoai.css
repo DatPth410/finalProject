@@ -104,8 +104,10 @@ nav ul li {
   list-style-type : none;
   display : inline-block;
   color : #FFF;
-  background-color : #141e28;
+  /*background-color : #141e28;*/
   padding : 10px;
+  padding-top : 25px;
+  padding-bottom : 25px;
   cursor : pointer;
   font-size: 18px;
   text-align: center;

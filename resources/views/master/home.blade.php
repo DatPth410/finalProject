@@ -17,13 +17,14 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>	
 
 	<link rel="stylesheet" type="text/css" href="css/myCss.css">
+
 </head>
 <body>			
 		<!-- Start Header -->
 	@auth
-                @include('master.headerUser')
+                @include('master.headerUserDat')
             @else
-                @include('master.header')
+                @include('master.headerDat')
             @endauth
 
 		<!-- End Header -->
