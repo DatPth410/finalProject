@@ -125,3 +125,4 @@ Route::get('mail', function() {
 
 Route::post('user-manage-tour/rating','MainController@ratingStore');
 
+Route::get('testdiemden','MainController@test1');

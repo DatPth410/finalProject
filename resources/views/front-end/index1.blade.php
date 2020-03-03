@@ -204,65 +204,76 @@ s0.parentNode.insertBefore(s1,s0);
 
 		<div class="tour_content">
 			<div class="grid-container grid-container-popular">
-				<div class="grid-item item1 rounded" style="background-image: url('img/3.jpg');"><a href="#">
+				@php
+					$date = date('Y-m-d', time());
+        			$i=0;
+        			$j=1;
+        			$num=0;
+					$destination=DB::table('tbl_diemden')->limit(8)->get();
+					$tour=DB::table('tour_trong_nuoc')->whereDate('departure','>',$date)->get();
+				@endphp
+
+				@foreach($destination as $key => $destination_value)
+				@if($j<=4)
+				<div class="grid-item <?php echo "item".$j." ";$j++; ?> rounded" style="background-image: url('img/{{$destination_value->img}}');"><a href="trong-nuoc/{{$destination_value->code}}">
 					<div class="inside_grid">
-						<p class="inside_grid_title">Phú Quốc</p>
-						<p class="inside_grid_ks">19 khách sạn</p>
+						<p class="inside_grid_title">{{$destination_value->ten}}</p>
+						<p class="inside_grid_ks">
+							<?php foreach ($tour as $key => $tour_value) {
+            					$diem_den=(array)$tour_value;
+            					$des=explode(" ", $diem_den['diem_den']);
+            					for ($i=0; $i < count($des) ; $i++) { 
+                					if ($destination_value->id == $des[$i]) {
+                    					$num++;
+                					}
+            					}
+            					
+        					}
+        					echo $num;
+            				$num = 0 ; ?> tour </p>
 					</div>
 				</a>
+				
 				</div>
-				<div class="grid-item item2 rounded" style="background-image: url('img/4.jpg');"><a href="#">
-					<div class="inside_grid2">
-						<p class="inside_grid_title">Ninh Bình</p>
-						<p class="inside_grid_ks">122 khách sạn</p>
-					</div>
-				</a>
-				</div>
-				<div class="grid-item item3 rounded" style="background-image: url('img/21.jpg');"><a href="#">
-					<div class="inside_grid">
-						<p class="inside_grid_title">Đà Nẵng</p>
-						<p class="inside_grid_ks">27 khách sạn</p>
-					</div>
-				</a>
-				</div>  
-				<div class="grid-item item4 rounded" style="background-image: url('img/5.jpg');"><a href="#">
-					<div class="inside_grid">
-						<p class="inside_grid_title">Nha Trang</p>
-						<p class="inside_grid_ks">124 khách sạn</p>
-					</div>
-				</a>
-				</div>
+				@endif
+				@endforeach
+
 			</div>
 
 			<div class="grid-container2">
-				<div class="grid-item item5 rounded" style="background-image: url('img/3.jpg');"><a href="#">
-					<div class="inside_grid2">
-						<p class="inside_grid_title">Phú Quốc</p>
-						<p class="inside_grid_ks">19 khách sạn</p>
-					</div>
-				</a>
-				</div>
-				<div class="grid-item item6 rounded" style="background-image: url('img/4.jpg');"><a href="#">
+				@php
+					$j=1;
+
+				@endphp
+
+				@foreach($destination as $key => $destination_value)
+				@if($j > 4)
+				<div class="grid-item <?php echo "item".$j." "; ?> rounded" style="background-image: url('img/{{$destination_value->img}}');"><a href="trong-nuoc/{{$destination_value->code}}">
 					<div class="inside_grid">
-						<p class="inside_grid_title">Ninh Bình</p>
-						<p class="inside_grid_ks">122 khách sạn</p>
+						<p class="inside_grid_title">{{$destination_value->ten}}</p>
+						<p class="inside_grid_ks">
+							<?php foreach ($tour as $key => $tour_value) {
+            					$diem_den=(array)$tour_value;
+            					$des=explode(" ", $diem_den['diem_den']);
+            					for ($i=0; $i < count($des) ; $i++) { 
+                					if ($destination_value->id == $des[$i]) {
+                    					$num++;
+                					}
+            					}
+            				}
+        					echo $num;
+            				$num = 0 ; ?> tour </p>
 					</div>
 				</a>
+				
 				</div>
-				<div class="grid-item item7 rounded" style="background-image: url('img/21.jpg');"><a href="#">
-					<div class="inside_grid">
-						<p class="inside_grid_title">Đà Nẵng</p>
-						<p class="inside_grid_ks">27 khách sạn</p>
-					</div>
-				</a>
-				</div>  
-				<div class="grid-item item8 rounded" style="background-image: url('img/5.jpg');"><a href="#">
-					<div class="inside_grid">
-						<p class="inside_grid_title">Nha Trang</p>
-						<p class="inside_grid_ks">124 khách sạn</p>
-					</div>
-				</a>
-				</div>
+				
+
+				@endif
+
+				<?php $j++; ?> 
+				@endforeach
+				
 			</div>					
 		</div>
 	</div>
