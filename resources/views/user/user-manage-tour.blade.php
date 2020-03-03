@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	<title>Du lịch nước ngoài | Tour nước ngoài</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<title>Quản lý tour của bạn</title>
+	{{-- <link rel="stylesheet" href="css/bootstrap.min.css" /> --}}
 	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -29,9 +29,9 @@
 
 <script type="text/javascript">
 	$.ajaxSetup({
-    	headers: {
-        	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    	}
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
 	});
 
 	var ratedIndex = -1;
@@ -88,148 +88,142 @@
 	@extends('master.home')
 
 	@section('nuoc_ngoai')	
-
-	<div id="body">
-		<div id="main_content">
-			
-
-			
-
-			<div class="content1">
-
-				<div class="h1_title">
-					<h1>Xin chào {{Auth::user()->name}} </h1>
-				</div>
-				<h2>Đây là trang quản lý tour của bạn</h2>
+	<div class="container-fluid padding" style="margin-top: 120px;">
+		<div class="row welcome text-center">
+			<div class="col-12">
+				<h2 class="display-4" style=" color: #e30050;">Xin chào {{Auth::user()->name}}</h2>
+				<h3 class="display-4">Đây là trang quản lý tour của bạn</h3>
 			</div>
 		</div>
-		@foreach ($bookings as $element=>$booking)
-		@php
-		$tour=DB::table('tour_trong_nuoc')
-		->where('id','=',$booking->id_tour)
-		->first();
+	</div>
+	<div class="container-fluid padding">
+		<div class="row padding">
+			
+			@foreach ($bookings as $element=>$booking)
+			@php
+			$tour=DB::table('tour_trong_nuoc')
+			->where('id','=',$booking->id_tour)
+			->first();
 
-		$id_tour=$tour->id;
+			$id_tour=$tour->id;
 
-		$user = auth()->user();
+			$user = auth()->user();
 
-		$rating = DB::table('tbl_rating')->where('id_user','=',$user->id)
-        ->where('id_tour','=',$id_tour)
-        ->orderBy('time','desc')
-        ->get()
-        ->first();
+			$rating = DB::table('tbl_rating')->where('id_user','=',$user->id)
+			->where('id_tour','=',$id_tour)
+			->orderBy('time','desc')
+			->get()
+			->first();
 
-        $currentTime = strtotime(date('Y-m-d H:i:s')) ;
-        $tourTime = strtotime($tour->departure);
+			$currentTime = strtotime(date('Y-m-d H:i:s')) ;
+			$tourTime = strtotime($tour->departure);
 
-		@endphp
-		<div class="tour_list">
-			<div class="left_tour_list">
-				<img src="img/test/{{$tour->avatar}}">
-
-			</div>
-			<div class="mid_tour_list">
-				<a href="#"><h3 class="h3_tour" style="color: #008fea;">{{$tour->name}}</h3>
-				</a>
-				<span class="glyphicon glyphicon-map-marker" style="margin-bottom: 10px;font-size: bold;"> {{$tour->lich_trinh}}</span>
-				<br>
-				<p class="glyphicon glyphicon-time"> Thời lượng: {{$tour->length}} ngày {{$tour->length-1}} đêm</p>
-				<p style="color: #eb004f">{{$tour->vehicle}}</p>
-				
-				<span class="glyphicon glyphicon-calendar">{{$tour->departure}}</span>
-
-				<h3>Thời gian đặt tour: {{$booking->time}}</h3>
-				
-				{{-- START rating stars --}}
-				<div id="rating-stars">
-				@if($tourTime - $currentTime < 0)
-					<span>Đánh giá:</span>
-					@if(isset($rating))
-						@for($i = 0; $i < $rating->rating; $i++)
+			@endphp
+			<div class="col-md-6">
+				<div class="card">
+					<img class="card-img-top" src="img/test/{{$tour->avatar}}" height="400">
+					<div class="card-body">
+						<h4 class="card-title">{{$tour->name}}</h4>
+						<p class="card-text">Thời lượng: {{$tour->length}} ngày {{$tour->length-1}} đêm</p>
+						<p class="card-text">Phương tiện: {{$tour->vehicle}}</p>
+						<p class="card-text">Thời gian khởi hành: {{$tour->departure}}</p>
+						<p class="card-text">Thời gian đặt tour: {{$booking->time}}</p>
+						{{-- START rating stars --}}
+						<div id="rating-stars" class="card-info">
+							@if($tourTime - $currentTime < 0)
+							<span>Đánh giá:</span>
+							@if(isset($rating))
+							@for($i = 0; $i < $rating->rating; $i++)
 							<i class="fa fa-star fa-2x symbol-{{$tour->id}}" data-index="{{$i}}" style="color: yellow;" title="{{$tour->id}}" ></i>
-						@endfor
-						@for($j = $rating->rating ;$j < 5; $j++)
+							@endfor
+							@for($j = $rating->rating ;$j < 5; $j++)
 							<i class="fa fa-star fa-2x" data-index="{{$j}}" style="color: grey" title="{{$tour->id}}"></i>
-						@endfor
-					@else
-						<i class="fa fa-star fa-2x" data-index="0" title="{{$tour->id}}" ></i>
-						<i class="fa fa-star fa-2x" data-index="1" title="{{$tour->id}}" ></i>
-						<i class="fa fa-star fa-2x" data-index="2" title="{{$tour->id}}" ></i>
-						<i class="fa fa-star fa-2x" data-index="3" title="{{$tour->id}}" ></i>
-						<i class="fa fa-star fa-2x" data-index="4" title="{{$tour->id}}" ></i>
-					@endif
-				@endif
+							@endfor
+							@else
+							<i class="fa fa-star fa-2x" data-index="0" title="{{$tour->id}}" ></i>
+							<i class="fa fa-star fa-2x" data-index="1" title="{{$tour->id}}" ></i>
+							<i class="fa fa-star fa-2x" data-index="2" title="{{$tour->id}}" ></i>
+							<i class="fa fa-star fa-2x" data-index="3" title="{{$tour->id}}" ></i>
+							<i class="fa fa-star fa-2x" data-index="4" title="{{$tour->id}}" ></i>
+							@endif
+							@endif
+						</div>
+						
+						{{-- END rating stars --}}
+						<span class="card-info">
+							@php
+							if($booking->pay == 1)
+								echo '<td><span class="badge badge-primary">Tiền mặt</span></td>';
+
+							if($booking->pay == 2)
+								echo '<td><span class="badge badge-primary">Chuyển khoản</span></td>'
+							@endphp
+						</span>
+						<span class="card-info">
+							@php
+							if($booking->id_status == 0)
+								echo '<td><span class="badge badge-default">Hủy</span></td>';
+
+							if($booking->id_status == 1)
+								echo '<td><span class="badge badge-danger">Chưa cọc</span></td>';
+
+							if($booking->id_status == 2)
+								echo '<td><span class="badge badge-warning">Đã cọc</span></td>';
+
+							if($booking->id_status == 3)
+								echo '<td><span class="badge badge-success">Đã thanh toán</span></td>';
+							@endphp
+						</span>
+						<p class="card-info"> Thời gian còn lại đến khi khởi hành:
+							<script>
+								// Set the date we're counting down to
+								var startLive{{$element}}= new Date( <?php echo strtotime($tour->departure)*1000; ?> );
+									// Update the count down every 1 second
+									var x = setInterval(function() {
+									  // Get today's date and time
+									  var now = new Date().getTime();
+									  // Find the distance between now and the count down date
+									  var distance = startLive{{$element}} - now;
+									  // Time calculations for days, hours, minutes and seconds
+									  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+									  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+									  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+									  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+									  // Output the result in an element with id="demo"
+									  document.getElementById("demo{{$element}}").innerHTML = days + "d " + hours + "h "
+									  + minutes + "m " + seconds + "s ";
+
+									  // If the count down is over, write some text 
+									  if (distance < 0) {
+									  	clearInterval(x);
+									  	document.getElementById("demo{{$element}}").innerHTML = "Đã đi";
+									  }
+									}, 1000);
+								</script>
+							</p>
+							<p class="a-book-tour card-info" id="demo{{$element}}"></p>
+							<p class="card-info" id="val{{$element}}"></p>
+							
+						</div>
+					</div>
+				</div>
+				@endforeach
+
+
+
+
+
+				<div style="width: 250px;height: 40px;margin-bottom: 50px;margin-left: 350px" class="btn-group">
+					{{$bookings->links()}}
 				</div>
 				
-				{{-- END rating stars --}}
 			</div>
-			<div class="right_tour_list">
-				<small style="font-size: 14px;font-weight: normal;">
-					@php
-					if($booking->pay == 1)
-						echo '<td><span class="label label-primary">Tiền mặt</span></td>';
-
-					if($booking->pay == 2)
-						echo '<td><span class="label label-primary">Chuyển khoản</span></td>'
-					@endphp
-				</small>
-				
-				@php
-				if($booking->id_status == 0)
-					echo '<td><span class="label label-default">Hủy</span></td>';
-
-				if($booking->id_status == 1)
-					echo '<td><span class="label label-danger">Chưa cọc</span></td>';
-
-				if($booking->id_status == 2)
-					echo '<td><span class="label label-warning">Đã cọc</span></td>';
-
-				if($booking->id_status == 3)
-					echo '<td><span class="label label-success">Đã thanh toán</span></td>';
-				@endphp
-
-				<script>
-// Set the date we're counting down to
-				var startLive{{$element}}= new Date( <?php echo strtotime($tour->departure)*1000; ?> );
-		// Update the count down every 1 second
-				var x = setInterval(function() {
-		  // Get today's date and time
-		  		var now = new Date().getTime();
-		  // Find the distance between now and the count down date
-		  		var distance = startLive{{$element}} - now;
-		  // Time calculations for days, hours, minutes and seconds
-		  		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-		  		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-		  		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-		  		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-		  // Output the result in an element with id="demo"
-		  		document.getElementById("demo{{$element}}").innerHTML = days + "d " + hours + "h "
-		  			+ minutes + "m " + seconds + "s ";
-
-		  // If the count down is over, write some text 
-		  		if (distance < 0) {
-		  			clearInterval(x);
-		  			document.getElementById("demo{{$element}}").innerHTML = "Đã đi";
-		  		}
-				}, 1000);
-			</script>
-			<p style="margin-top: 8px">Chỉ còn</p>
-		<p class="a-book-tour" id="demo{{$element}}"></p>
-		<p id="val{{$element}}"></p>
 		</div>
-		</div>
-		@endforeach
 
 
 
+		
 
-
-<div style="width: 250px;height: 40px;margin-bottom: 50px;margin-left: 350px" class="btn-group">
-	{{$bookings->links()}}
-</div>
-
-</div>
-
-@endsection
-</body>
-</html>
+		@endsection
+	</body>
+	</html>

@@ -76,7 +76,7 @@ class MainController extends Controller
         $date = date('Y-m-d', time());
         $i=0;
         $j=0;
-        $tour=DB::table('tour_trong_nuoc') ->whereDate('departure','>',$date)->paginate(5); 
+        $tour=DB::table('tour_trong_nuoc') ->whereDate('departure','>',$date)->get(); 
         $destination=DB::table('tbl_diemden')->get();
         $destination_id_array=array();
         $destination_name_array=array();
