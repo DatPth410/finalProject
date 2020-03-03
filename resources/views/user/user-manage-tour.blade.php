@@ -10,6 +10,9 @@
 	<link rel="stylesheet" href="css/blog_tour_trong_ngoai.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style type="text/css">
+		.row{margin:0px !important;}
+	</style>
 </head>
 
 
@@ -148,7 +151,7 @@
 							@endif
 							@endif
 						</div>
-						
+
 						{{-- END rating stars --}}
 						<span class="card-info">
 							@php
@@ -216,13 +219,13 @@
 				<div style="width: 250px;height: 40px;margin-bottom: 50px;margin-left: 350px" class="btn-group">
 					{{$bookings->links()}}
 				</div>
-				
+
 			</div>
 		</div>
 
 
 
-		
+
 
 		@endsection
 	</body>
