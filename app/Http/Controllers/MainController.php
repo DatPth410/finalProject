@@ -131,7 +131,7 @@ class MainController extends Controller
     //END controller tour trong nuoc
 
     public function viewAboutUs(){
-    	return view('front-end.aboutus');
+    	return view('front-end.aboutusDat');
     } 
 
     public function viewExp(){

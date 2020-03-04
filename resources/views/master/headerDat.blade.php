@@ -46,11 +46,11 @@
 				
 				
 			</div>
-			<span class="navbar-text fa fa-phone" style="color: #f79321;">0928 0416</span>
+			
 		</li>
 	</ul>
-
+	
 	</div>
-
+	<span class="navbar-text fa fa-phone" style="color: #f79321;">0928 0416</span>
 	
 </nav>

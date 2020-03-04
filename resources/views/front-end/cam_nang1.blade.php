@@ -32,36 +32,45 @@ s0.parentNode.insertBefore(s1,s0);
 	<div class="container">
 
     	<div id="main_content">
+    		<div class="col-md-12 col-sm-12 col-lg-12">
 				<div style="margin-bottom: 20px;" class="t_c">
 					<div class="col-sm-12">
 					<span><a href="#">Trang chủ  > </a></span>
 					<span><a href="#"> KINH NGHIỆM DU LỊCH</a></span>
 				    </div>
 				</div>
-
-				<div class="imgs">
+		
 				<div class="row">
-					<div   class="col-lg-3 col-sm-12">
-						<a href="#">
-							<img style="height: 456px;width: 280px;" src="images/tour-trong-nuoc.png">
-						</a>
-					</div>
-					<div  class="col-lg-6 col-sm-12">
-						<a href="#">
-							<img style="height: 456px;width: 565px;text-align: center;" src="images/lich-khoi-hanh-tour-nuoc-ngoai.png">
-						</a>
-					</div>
-					<div class="col-lg-3 col-sm-12">
-						<a href="#">
-							<img style="height: 211px;width: 277px;padding-bottom: 12px;" src="images/combo-voucher.jpg">
-						</a>
 
-						<a href="#">
-							<img style="height: 242px;width: 277px;" src="images/vechungtoi.jpg">
-						</a>
+					<div class="col-lg-4 col-md-12 mb-3">
+
+						<img src="images/tour-trong-nuoc.png" class="img-fluid z-depth-1" style="width: 100%;height: 545px" 
+						alt="Responsive image">
+
 					</div>
-				</div>
-				</div>
+
+					<div class="col-lg-4 col-md-12 mb-3">
+
+						<img src="images/lich-khoi-hanh-tour-nuoc-ngoai.png" style="height:545px;width: 100%" class="img-fluid z-depth-1"
+						alt="Responsive image">
+
+					</div>
+
+					<div class="col-lg-4 col-md-12 mb-3">
+
+						<img src="images/combo-voucher.jpg" class="img-fluid z-depth-1"
+						alt="Responsive image" style="width: 660px">
+						<img src="images/vechungtoi.jpg" class="img-fluid z-depth-1"
+						alt="Responsive image" style="width: 660px;">
+
+
+					</div>
+					
+
+                </div>
+           
+			
+			</div>
 			</div>
 
 			<div class="row">

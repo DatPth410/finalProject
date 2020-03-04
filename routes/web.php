@@ -122,5 +122,4 @@ Route::get('mail', function() {
     return view('front-end.mail_content');
 });
 
-
 Route::post('user-manage-tour/rating','MainController@ratingStore');
