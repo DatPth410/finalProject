@@ -1,0 +1,472 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+button:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1300px;
+  }
+}
+.box{
+    margin:5rem 0 15rem;
+}
+.heading{
+	color: #0c427a;
+    text-align: center;
+    position: relative;
+    font-size: 3.3rem;
+    font-weight: bold;
+    margin: 3rem 0;
+    
+}
+.box figure {
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  position: relative;
+}
+
+.box figure img {
+  height: 223px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.box figure figcaption {
+  position: absolute;
+  bottom: -50px;
+  left: 8%;
+  right: 8%;
+  background: #fff;
+  color: #000;
+  padding: 20px 15px;
+  -webkit-box-shadow: 0 5px 10px #00000033;
+          box-shadow: 0 5px 10px #00000033;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+}
+
+.box figure figcaption::after {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
+  height: 2px;
+  background: #fc5546;
+  content: '';
+  width: 0;
+  position: absolute;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+}
+
+.box figure figcaption h5 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.box figure figcaption h3 {
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+
+.box figure:hover {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.box figure:hover h5 {
+  color: #fc5546;
+}
+
+.box figure:hover img {
+  -webkit-box-shadow: 0px 0px 6px #0000004f, -10px -10px 1px #f97955;
+          box-shadow: 0px 0px 6px #0000004f, -10px -10px 1px #f97955;
+}
+
+.box2 figure:hover figcaption {
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
+  -webkit-box-shadow: 0 10px 10px #0000004f;
+          box-shadow: 0 10px 10px #0000004f;
+}
+
+.box figure:hover figcaption::after {
+  width: 100%;
+}
+.box h3 {
+  font-size: 3rem;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 4rem;
+}
+
+.box p {
+  font-size: 2rem;
+  font-family: "helveticaregular";
+  color: rgba(255, 255, 255, 0.7);
+}
+
+-------------- End block 2 ----------
+---------------Block 2.5 ---------------
+
+
+.grid figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
+}
+
+.grid figure img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.grid figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+    pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption>a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.grid figure figcaption>a {
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+}
+
+.grid figure h2 {
+    word-spacing: -0.15em;
+    font-weight: 300;
+}
+
+.grid figure h2 span {
+    font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+    margin: 0;
+}
+
+.grid figure p {
+    letter-spacing: 1px;
+    font-size: 68.5%;
+}
+
+
+
+figure.effect-ravi {
+    background: #303fa9;
+    margin: 0;
+}
+
+.grid [class^="col"] {
+    padding: 2px;
+}
+
+figure.effect-ravi h2 {
+    font-size: 158.75%;
+}
+
+figure.effect-ravi h2,
+figure.effect-ravi p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+}
+
+figure.effect-ravi figcaption::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #fff;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
+    transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+}
+
+figure.effect-ravi p {
+    width: 100px;
+    text-transform: none;
+    font-size: 121%;
+    line-height: 2;
+}
+
+figure.effect-ravi p a {
+    color: #fff;
+}
+
+figure.effect-ravi p a:hover,
+figure.effect-ravi p a:focus {
+    opacity: 0.6;
+}
+
+figure.effect-ravi p a i {
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-ravi p a:first-child i {
+    -webkit-transform: translate3d(-60px, -60px, 0);
+    transform: translate3d(-60px, -60px, 0);
+}
+
+figure.effect-ravi p a:nth-child(2) i {
+    -webkit-transform: translate3d(60px, -60px, 0);
+    transform: translate3d(60px, -60px, 0);
+}
+
+figure.effect-ravi p a:nth-child(3) i {
+    -webkit-transform: translate3d(-60px, 60px, 0);
+    transform: translate3d(-60px, 60px, 0);
+}
+
+figure.effect-ravi p a:nth-child(4) i {
+    -webkit-transform: translate3d(60px, 60px, 0);
+    transform: translate3d(60px, 60px, 0);
+}
+
+figure.effect-ravi:hover figcaption::before {
+    opacity: 1;
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
+    transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
+}
+
+figure.effect-ravi:hover h2 {
+    opacity: 0;
+    -webkit-transform: translate3d(-50%, -50%, 0) scale3d(0.8, 0.8, 1);
+    transform: translate3d(-50%, -50%, 0) scale3d(0.8, 0.8, 1);
+}
+
+figure.effect-ravi:hover p i:empty {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* just because it's stronger than nth-child */
+    opacity: 1;
+}
+
+------------End block 2.5 ----------
+
+----------- Block 3 ----------------
+
+
+a:hover{
+   text-decoration: none;
+}
+
+.my-flip-inner-wrapper {
+   perspective: 150rem;
+   -moz-perspective: 150rem;
+   position: relative;   
+}
+.my-flip-side {
+    display: block;
+    height: 420px;
+    margin-bottom: 10px;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);    
+    transition: all .8s ease;    
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;   
+}
+
+.my-flip-back {
+   transform: rotateY(180deg);
+   color: #fff;
+   position: absolute;
+   z-index: -1;
+   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+   padding: 46px;   
+}
+
+.my-flip-back-1 {
+   background: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+.my-flip-back-2 {
+   background: linear-gradient(to right bottom, #000428, #004e92);
+}
+
+
+.my-flip-inner-wrapper:hover .my-flip-front {
+   transform: rotateY(-180deg);
+}
+
+.my-flip-inner-wrapper:hover .my-flip-back {
+   transform: rotateY(0);
+}
+.my-flip-image {
+   height: 250px;
+   background-blend-mode: screen;
+
+}
+.my-flip-image img{
+   width: 100%;
+   height: 100%;
+   background-blend-mode: screen;
+   object-fit: cover;   
+}
+.my-flip-heading {
+    margin: 0 0 15px;
+}
+.my-flip-details {
+	margin-top: 10px;
+   padding: 2rem;
+}
+.my-flip-details h4{
+   font-size: 25px;
+}
+.my-flip-details p {
+   font-size: 15px;
+   margin: 0;
+   line-height: 2;
+   color: #848484;
+}
+.my-flip-back-inner ul {
+   list-style: none;  
+   margin: 0 0 1.5rem;
+   padding: 0;
+}
+.my-flip-back-text h3 {
+   text-align: center;
+   color:#fff;
+   font-size: 40px;
+   padding: 0.8rem 0;
+}
+.my-flip-back-inner ul li:not(:last-child) {
+   border-bottom: 1px solid #ffffff;
+}
+.my-flip-price {
+   color: #fff;
+   text-align: center;
+   margin-bottom: 1rem;
+}
+.my-flip-price h3 {
+    font-size: 20px;
+    font-weight: 300;
+}
+.my-flip-btn-box {
+    text-align: center;
+
+}
+.my-flip-btn{ 
+	margin-top: 100px;
+	width: 120px;
+	height: 60px;
+   text-transform: uppercase;
+   padding: 1rem 1.8rem;
+   font-size: 1rem;
+   background-color: #fff;
+   color: #000;
+   border-radius: 10rem;
+   display: inline-block;
+   transition: all .2s;
+   color: initial;
+   position: relative;
+}
+.my-flip-btn:hover {
+   transform: translateY(-4px);
+   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+   color: #000;
+}
+
+------------ End block 3 -------------
+
+
+
+
+@media (max-width: 767px) {
+  .tour-sale{margin-bottom: 70px;}
+  .tour_content{padding-top: 50px;}
+}
+
+.see_all{
+	padding-top: 80px;
+	float: right;
+}
+
+.see_all p{
+	font-size: 18px;
+	color: red;
+}
+
+.see_all_2{
+	padding-top: 20px;
+	text-align: center;
+}
+
+.see_all_2 p{
+	font-size: 18px;
+	color: red;
+}
+
+.form-control{font-size: 30px;}

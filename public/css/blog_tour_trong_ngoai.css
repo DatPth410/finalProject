@@ -74,7 +74,7 @@
 
 #middle_bottom{
   padding: 20px 0;
- /* margin-top: 15px;*/
+  margin-top: 15px;
   border-top:1px solid #4b4b4b; 
   border-bottom:1px solid #4b4b4b; 
 }
@@ -104,7 +104,6 @@ nav ul li {
   list-style-type : none;
   display : inline-block;
   color : #FFF;
-  /*background-color : #141e28;*/
   padding : 10px;
   padding-top : 25px;
   padding-bottom : 25px;
@@ -145,24 +144,6 @@ a{
   text-decoration: none;
 }
 
-/*#wrap_footer{
-  min-height: 200px;
-  width: 100%;
-  margin-top: 1900px;
-}
-
-#wrap_footer2{
-  min-height: 200px;
-  width: 100%;
-  margin-top: 700px;
-}
-
-#wrap_footer3{
-  min-height: 200px;
-  width: 100%;
-  margin-top: 0px;
-}
-*/
 #main_content{
   margin-top: 120px;
 }
@@ -172,10 +153,12 @@ a{
   height: 88px;
 }
 
+
+
 #body{
    margin: 0px auto;
    min-height: 1190px;
-   width: 1140px;
+   width: 90%;
    font-family:Arial;
     font-size: 16px;
     color: #222222;
@@ -192,10 +175,7 @@ a{
   margin-bottom: 20px;
   position: relative;
   float: left;
-  text-align: justify;
-
-
-  
+  text-align: justify;  
 }
 .content1 h3{
   height: 76px;
@@ -260,6 +240,7 @@ a{
     margin-bottom: 20px;
     font-family: Arial;
     color: #e30050;
+    text-align: center;
 }
 .info a{
   color: #0c427a;
@@ -345,7 +326,6 @@ a{
     border-radius: 2px;
     padding: 2px 5px 3px;
     display: inline-block;
-    margin-left: 40px;
    
 }
 .tour_list_tn{
@@ -635,4 +615,11 @@ a{
 
 .noti{
   color: red;
+}
+
+@media (max-width: 767px) {
+  .transport{display: block;}
+  .tour_list_tn{}
+  .detail{text-align: center;}
+  .right-1{text-align: center;}
 }

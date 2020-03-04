@@ -8,12 +8,13 @@
 	<base href="{{asset('')}}">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	{{-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> --}}
-	<link rel="stylesheet" type="text/css" href="css/myCss.css">
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+{{-- 	<link rel="stylesheet" type="text/css" href="css/myCss.css">
+ --}}	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	{{-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> --}}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Poppins" rel="stylesheet">
 	
 	<script>
 		$( function() {
@@ -75,42 +76,46 @@ s0.parentNode.insertBefore(s1,s0);
   			{{-- END success message --}}
 
 			<div class="col-md-offset-2 col-md-10">
-				<p style="color:#fff; font-size: 28px;font-weight:bold;">ĐẶT TOUR DU LỊCH !</p>					
+				<p style="color:#fff; font-size: 28px;font-weight:bold; margin-top: 200px;">ĐẶT TOUR DU LỊCH !</p>					
 				<p style="color:#fff; font-size: 22px;">Hơn 300 Tour du lịch hấp dẫn ở Việt Nam và trên thế giới</p>
 
 				<div class="row">
 					<div class="col-md-12">
 						
 						{{-- startform --}}
-						<form action="{{route('save-find')}}" method="POST" role="form">
+						<form style="background-color: white; backface-visibility: 2%; padding: 30px;" action="{{route('save-find')}}" method="POST" role="form">
 							@csrf
 							<div class="row">
 								<div class="col-md-6 ui-widget" >
-									<label for="tags" style="color: #fff; font-size: 18px;">Nơi khởi hành: </label>
-									<input id="tags" name="name" class="form-control">
+									<label for="tags" style="color: #0c427a; font-size: 18px;">Nơi khởi hành: </label>
+									<input style="height: 40px;font-size: 20px;" id="tags" name="name" class="form-control">
 								</div>
 
 								<div class="col-md-6 ui-widget" >
-									<label for="tag" style="color: #fff; font-size: 18px;">Điểm đến: </label>
-									<input id="tag" name="arrived" class="form-control">
+									<label for="tag" style="color: #0c427a; font-size: 20px;">Điểm đến: </label>
+									<input style="height: 40px;font-size: 20px;" id="tag" name="arrived" class="form-control">
 								</div>
 							</div>
-							<div class="row no-gutters" style="margin-top: 10px;">
-								<div class="col-md-5">
-									<input type="date" name="date" id="dateinput" class="form-control focus input-lg">
+							<div class="row no-gutters" style="margin-top: 18px;">
+								<div class="col-md-6">
+									<label for="tag" style="color: #0c427a; font-size: 18px;">Ngày khởi hành: </label>
+									<input style="height: 40px;font-size: 20px;" type="date" name="date" id="dateinput" class="form-control focus input-lg">
 								</div>
 
-								<div class="col-md-5" >
-									<select name="price" class="form-control focus input-lg" style="margin-left: 15px;">
+								<div class="col-md-6" >
+									<label for="tag" style="color: #0c427a; font-size: 18px;">Mức giá: </label>
+									<select style="height: 40px;font-size: 20px;" name="price" class="form-control focus input-lg" style="margin-left: 15px;">
 										<option value="0">Chọn mức giá của bạn</option>
 										<option value="1">0đ-5.000.000đ</option>
 										<option value="2">5.000.000đ-15.000.000đ</option>
 										<option value="3">Lớn hơn 15.000.000đ</option>
 									</select>
 								</div>
-
-								<div class="col-md-2">
-									<button type="submit" class="btn btn-warning" style="float: right;">Tìm</button>
+								
+							</div>
+							<div class="row no-gutters">
+								<div class="align-self-end">
+									<button type="submit" class="btn btn-warning" style="width: 100px; height: 50px; margin-top: 20px; font-size: 22px">Tìm</button>
 								</div>
 							</div>
 						</form>
@@ -126,198 +131,189 @@ s0.parentNode.insertBefore(s1,s0);
 	<!-- Start slider -->
 	<div id="block_1">
         <div class="container-fluid px-0">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner bg-info" role="listbox">
-            <div class="carousel-item active">
-                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/21.jpg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
-                    <h1 style="margin-top: 230px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/10.jpeg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
-                    <h1 style="margin-top: 230px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/20.jpeg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
-                    <h1 style="margin-top: 230px; color: white;text-align: center;">Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây Một cái gì đấy rất dài sẽ được viết ở đây</h1>
-                </div>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
+		    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+		        <div class="carousel-inner bg-info" role="listbox">
+		            <div class="carousel-item active">
+		                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/21.jpg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
+		                    <h1 style="margin-top: 230px; color: white;text-align: center;"></h1>
+		                </div>
+		            </div>
+		            <div class="carousel-item">
+		                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/10.jpeg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
+		                    <h1 style="margin-top: 230px; color: white;text-align: center;"></h1>
+		                </div>
+		            </div>
+		            <div class="carousel-item">
+		                <div class="d-flex align-items-center justify-content-center min-vh-100" style="background-image: url('img/20.jpeg'); background-position: center center;background-size: cover;box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.35);">
+		                    <h1 style="margin-top: 230px; color: white;text-align: center;"></h1>
+		                </div>
+		            </div>
+		        </div>
+		        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+		            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		            <span class="sr-only">Previous</span>
+		        </a>
+		        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+		            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		            <span class="sr-only">Next</span>
+		        </a>
+		    </div>
+		</div>
     </div>
 	<!-- End slider -->
 
 
 	<!-- Start Các Tour đang sale -->
-
-	<div id="block_2">
-		<div class="content">
-			<div class="content_title">
-				<p><img src="images/sale-icon.jpg" id="sale-icon">Combo Tour - giảm giá mạnh</p>
-			</div>
-			@foreach ($sale_tour as $element=>$tour)
-				{{-- expr --}}
-			
-			<div class="love">
-
-				<img src="img/test/{{$tour->avatar}}" class="fade_images">
-
-				<a href="{{ route('detail',$tour->id) }}"><div class="middle">
-					<div class="text">Xem thêm</div>
-				</div></a>
-
-				<div class="content_bottom">
-					<div class="sale_box">{{$tour->khuyen_mai}}%</div>
-					<p class="text_bottom" style="padding-left: 35px;">{{$tour->name}}</p>
-				</div>
-			</div>
-			@endforeach
-			
-
-			<div class="see_all">
+	<div id="block_2" class="box">
+        <div class="container">
+            <h2 class="heading">
+            	<img src="images/sale-icon.jpg" id="sale-icon">Combo Tour - giảm giá mạnh
+            </h2>
+            <div class="row">
+	            @foreach ($sale_tour as $element=>$tour)
+					<div class="col-md-4 tour-sale">
+	                    <figure class="text-center">
+	                    	<a href="{{ route('detail',$tour->id) }}">
+	                        	<img src="img/test/{{$tour->avatar}}" alt="{{$tour->name}}">
+	                    	</a>
+	                        <figcaption>
+	                            <h5 style="color: red">- {{$tour->khuyen_mai}}%</h5>
+	                            <a href="{{ route('detail',$tour->id) }}"><h3>{{$tour->name}}</h3></a>
+	                        </figcaption>
+	                    </figure>
+	                </div>
+				@endforeach
+            </div>
+            <div class="see_all">
 				<a href="{{ route('khuyen-mai') }}"><p>Xem tất cả <svg class="bi bi-chevron-right" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd"/></svg></p></a>
 			</div>
-		</div>
-	</div>
+        </div>
+    </div>
 	<!-- End Các Tour đang sale -->
 	
 
 	{{-- Start các điểm đến yêu thích --}}
 	<div id="block_2ruoi">
 		<div class="content_2">
-			<div class="content_title">
-				<p class="fa fa-heart"><span class="tour_text">Các điểm đến yêu thích</span></p>
-			</div>
-			<div class="below_content_title">
-				<p>Lên núi xuống biển. Trọn vẹn Việt Nam</p>
-			</div>			
+			<h2 class="heading">
+	        	<p class="fa fa-heart"> Các điểm đến yêu thích
+	        </h2>		
+	        <h3 style="text-align: center; margin-top: -25px"><p>Lên núi xuống biển. Trọn vẹn Việt Nam</p></h3>
 		</div>
 
 		<div class="tour_content">
-			<div class="grid-container grid-container-popular">
-				@php
-					$date = date('Y-m-d', time());
-        			$i=0;
-        			$j=1;
-        			$num=0;
-					$destination=DB::table('tbl_diemden')->limit(8)->get();
-					$tour=DB::table('tour_trong_nuoc')->whereDate('departure','>',$date)->get();
-				@endphp
+			
+	            <div class="grid">
+	                <div class="row">
+	                    @php
+							$date = date('Y-m-d', time());
+							$i=1;
+		        			$j=1;
+		        			$num=0;
+							$destination=DB::table('tbl_diemden')->limit(9)->get();
+							$tour=DB::table('tour_trong_nuoc')->whereDate('departure','>',$date)->get();
+						@endphp
+						@foreach($destination as $key => $destination_value)
+							@if($j==4 || $j==5)
+							<div class="col-12 col-md-6">
+			                    <figure class="effect-ravi"><a href="trong-nuoc/{{$destination_value->code}}">
+			                        <img style="height: 300px;width: 100%;" src="img/{{$destination_value->img}}" alt="{{$destination_value->ten}}" /></a>
+			                        <figcaption>
+			                            <h2 ><span>{{$destination_value->ten}}</span></h2></figcaption>
+			                            <p>
+			                                <a href="trong-nuoc/{{$destination_value->code}}"><i class="fa fa-search"></i></a>
+			                            </p>
+			                        </figcaption>
+			                    </figure>
+			                </div>
+							
+							@elseif($j==6)
+							
+							<div class="col-12">
+			                    <figure class="effect-ravi"><a href="trong-nuoc/{{$destination_value->code}}">
+			                        <img style="height: 100px;width: 100%;" src="img/{{$destination_value->img}}" alt="{{$destination_value->ten}}" /></a>
+			                        <figcaption>
+			                            <h2 ><span>{{$destination_value->ten}}</span></h2></figcaption>
+			                            <p>
+			                                <a href="trong-nuoc/{{$destination_value->code}}"><i class="fa fa-search"></i></a>
+			                            </p>
+			                        </figcaption>
+			                    </figure>
+			                </div>
 
-				@foreach($destination as $key => $destination_value)
-				@if($j<=4)
-				<div class="grid-item <?php echo "item".$j." ";$j++; ?> rounded" style="background-image: url('img/{{$destination_value->img}}');"><a href="trong-nuoc/{{$destination_value->code}}">
-					<div class="inside_grid">
-						<p class="inside_grid_title">{{$destination_value->ten}}</p>
-						<p class="inside_grid_ks">
-							<?php foreach ($tour as $key => $tour_value) {
-            					$diem_den=(array)$tour_value;
-            					$des=explode(" ", $diem_den['diem_den']);
-            					for ($i=0; $i < count($des) ; $i++) { 
-                					if ($destination_value->id == $des[$i]) {
-                    					$num++;
-                					}
-            					}
-            					
-        					}
-        					echo $num;
-            				$num = 0 ; ?> tour </p>
-					</div>
-				</a>
-				
-				</div>
-				@endif
-				@endforeach
+			                @else
+			                <div class="col-12 col-md-4">
+			                	<figure class="effect-ravi"><a href="trong-nuoc/{{$destination_value->code}}">
+			                        <img style="height: 250px;width: 100%;" src="img/{{$destination_value->img}}" alt="{{$destination_value->ten}}" /></a>
+			                        <figcaption>
+			                            <h2 ><span>{{$destination_value->ten}}</span></h2></figcaption>
+			                            <p>
+			                                <a href="trong-nuoc/{{$destination_value->code}}"><i class="fa fa-search"></i></a>
+			                            </p>
+			                        </figcaption>
+			                    </figure>
+			                </div>
+			                
+							@endif
+							<?php $j++; ?>
+						@endforeach
+	                </div>
+	            </div>
 
-			</div>
-
-			<div class="grid-container2">
-				@php
-					$j=1;
-
-				@endphp
-
-				@foreach($destination as $key => $destination_value)
-				@if($j > 4)
-				<div class="grid-item <?php echo "item".$j." "; ?> rounded" style="background-image: url('img/{{$destination_value->img}}');"><a href="trong-nuoc/{{$destination_value->code}}">
-					<div class="inside_grid">
-						<p class="inside_grid_title">{{$destination_value->ten}}</p>
-						<p class="inside_grid_ks">
-							<?php foreach ($tour as $key => $tour_value) {
-            					$diem_den=(array)$tour_value;
-            					$des=explode(" ", $diem_den['diem_den']);
-            					for ($i=0; $i < count($des) ; $i++) { 
-                					if ($destination_value->id == $des[$i]) {
-                    					$num++;
-                					}
-            					}
-            				}
-        					echo $num;
-            				$num = 0 ; ?> tour </p>
-					</div>
-				</a>
-				
-				</div>
-				
-
-				@endif
-
-				<?php $j++; ?> 
-				@endforeach
-				
-			</div>					
+        	
+					
 		</div>
 	</div>
 	{{-- End các điểm đến yêu thích --}}
 
 	<!-- Start tour trong nước -->
 	<div id="block_3">
-		<div class="content_2">
-			<div class="content_title">
-				<p class="fa fa-paper-plane"><span class="tour_text">Tour trong nước</span></p>
-			</div>	
+		<div class="content_3">
+			<h2 class="heading">
+	        	<p class="fa fa-paper-plane"> Tour trong nước
+	        </h2>		
 		</div>
+		<div class="container">
+		   <section class="section-tours">
+		      <div class="row">
+		      	@foreach ($six_tours as $element=>$tour)
+		         <div class="col-lg-4 col-md-4 mb-4">
+		            <div class="my-flip-container">
+		               <div class="my-flip-inner my-flip-right">
+		                  <div class="my-flip-inner-wrapper">
+		                     <div class="my-flip-side my-flip-front">
+		                        <div class="my-flip-image my-flip-image--1">
+		                           <a href="{{ route('detail',$tour->id) }}"><img src="img/test/{{$tour->avatar}}"></a>                  
+		                        </div>
+		                        <div class="my-flip-details">
+		                           <h4 class="my-flip-heading">{{$tour->name}}</h4>
+		                           <div class="my-flip-text">
+		                             <p class="fa fa-clock-o card-text"><span class="tour_text_tiny"> {{$tour->length}} ngày {{$tour->length-1}} đêm</span></p>
 
-		<div class="tour_content">
-			<div class="row">
-				@foreach ($six_tours as $element=>$tour)
-					{{-- expr --}}
-				
-				<div class="col-sm-6 col-md-4" >
-					<div class="card" style="width: 20rem;height: 26rem;">
-						<a href="{{ route('detail',$tour->id) }}"><img src="img/test/{{$tour->avatar}}" class="img-thumbnail img-fluid card-img-top" style="width: 100%; height: 200px;"></a>
-
-						<div class="card-body">
-							<h5 class="card-title">{{$tour->name}}</h5>
-							<p class="fa fa-clock-o card-text"><span class="tour_text_tiny">{{$tour->length}} ngày {{$tour->length-1}} đêm</span></p>
-
-							<br>
-							<p class="fa fa-calendar card-text"><span class="tour_text_tiny">{{$tour->departure}}</span></p>
-
-							<div class="price_tour card-text">
-								<p>{{number_format($tour->price)}}</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				@endforeach
-
-				
-			</div>
-
-			
+									<br>
+									<p class="fa fa-calendar card-text"><span class="tour_text_tiny"> {{$tour->departure}}</span></p>
+		                           </div>
+		                        </div>
+		                     </div>
+		                     <div class="my-flip-side my-flip-back my-flip-back-1">
+		                        <div class="my-flip-back-inner">
+		                           <div class="my-flip-price">
+		                              <h3>ONLY</h3>
+		                           </div>
+		                           <div class="my-flip-back-text">
+		                              <h3>{{number_format($tour->price)}}</h3>
+		                           </div>
+		                           <div class="my-flip-btn-box"><a href="{{ route('detail',$tour->id) }}" class="my-flip-btn"><h3 style="color: blue">ĐẶT NGAY</<h3></h3>></a></div>
+		                        </div>
+		                     </div>
+		                  </div>
+		               </div>
+		            </div>
+		         </div>
+		        @endforeach
+		      </div>
+		   </section>
 		</div>
-
 		<div class="see_all_2">
 			<a href="{{ route('trong-nuoc') }}"><p><span class="fa fa-chevron-left" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="fa fa-chevron-right" style="font-size: 15px;margin-left:10px;"></span></p></a>
 		</div>
@@ -327,182 +323,90 @@ s0.parentNode.insertBefore(s1,s0);
 
 	<!-- Start tour ngoài nước -->
 	<div id="block_4">
-		<div class="content_2">
-			<div class="content_title">
-				<p class="fa fa-paper-plane"><span class="tour_text">Tour nước ngoài</span></p>
-			</div>
+		<div class="content_4">
+			<h2 class="heading">
+	        	<p class="fa fa-paper-plane"> Tour nước ngoài
+	        </h2>		
 		</div>
+		<div class="container">
+		   <section class="section-tours">
+		      <div class="row">
+		      	@foreach ($six_tours as $element=>$tour)
+		         <div class="col-lg-4 col-md-4 mb-4">
+		            <div class="my-flip-container">
+		               <div class="my-flip-inner my-flip-right">
+		                  <div class="my-flip-inner-wrapper">
+		                     <div class="my-flip-side my-flip-front">
+		                        <div class="my-flip-image my-flip-image--1">
+		                           <a href="{{ route('detail',$tour->id) }}"><img src="img/test/{{$tour->avatar}}"></a>                  
+		                        </div>
+		                        <div class="my-flip-details">
+		                           <h4 class="my-flip-heading">{{$tour->name}}</h4>
+		                           <div class="my-flip-text">
+		                             <p class="fa fa-clock-o card-text"><span class="tour_text_tiny">{{$tour->length}} ngày {{$tour->length-1}} đêm</span></p>
 
-		<div class="tour_content">
-			<div class="row">
-				<div class="col-sm-6 col-md-4">
-					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
-
-						<div class="card-body">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
-
-						<div class="card-body">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
-
-						<div class="card-body">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-6 col-md-4">
-					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
-
-						<div class="card-body">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
-
-						<div class="card-body">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4">
-					<div class="card" style="width: 18rem;">
-						<a href="#"><img src="images/Gold-Coast.jpg" class="card-img-top" alt="..."></a>
-
-						<div class="card-body">
-							<h3>Hà Nội - Hạ Long - Cao Bằng</h3>
-							
-							<p class="fa fa-clock-o"><span class="tour_text_tiny">4 ngày 3 đêm</span></p>
-
-							<br>
-							<p class="fa fa-calendar"><span class="tour_text_tiny">28-08-2020</span></p>
-
-							<div class="price_tour">
-								<p>12.000.000</p>
-							</div>
-						</div>
-
-						
-					</div>
-				</div>
-			</div>
+									<br>
+									<p class="fa fa-calendar card-text"><span class="tour_text_tiny">{{$tour->departure}}</span></p>
+		                           </div>
+		                        </div>
+		                     </div>
+		                     <div class="my-flip-side my-flip-back my-flip-back-2">
+		                        <div class="my-flip-back-inner">
+		                           <div class="my-flip-price">
+		                              <h3>ONLY</h3>
+		                           </div>
+		                           <div class="my-flip-back-text">
+		                              <h3>{{number_format($tour->price)}}</h3>
+		                           </div>
+		                           <div class="my-flip-btn-box"><a href="{{ route('detail',$tour->id) }}" class="my-flip-btn"><h3 style="color: blue">ĐẶT NGAY</<h3></h3>></a></div>
+		                        </div>
+		                     </div>
+		                  </div>
+		               </div>
+		            </div>
+		         </div>
+		        @endforeach
+		      </div>
+		   </section>
 		</div>
-
 		<div class="see_all_2">
-			<a href="#"><p><span class="fa fa-chevron-left" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="fa fa-chevron-right" style="font-size: 15px;margin-left:10px;"></span></p></a>
-		</div>		
+			<a href="{{ route('trong-nuoc') }}"><p><span class="fa fa-chevron-left" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="fa fa-chevron-right" style="font-size: 15px;margin-left:10px;"></span></p></a>
+		</div>
 	</div>
 	<!-- End tour ngoài nước -->
 
 
 	<!-- Start kinh nghiệm du lịch -->
 	<div id="block_5">
-		<div class="content_3">
-			<div class="content_title">
-				<p class="fa fa-book"><span class="tour_text">Kinh nghiệm - cẩm nang du lịch</span></p>
-			</div>
-			<div class="below_content_title">
-				<p>Tin tức - cẩm nang - kinh nghiệm - kí ức - chia sẻ về các chuyến đi</p>
-			</div>
-		</div>	
+		<div class="content_5">
+			<h2 class="heading">
+	        	<p class="fa fa-paper-plane"> Kinh nghiệm - Cẩm nang du lịch
+	        </h2>		
+		</div>
 
 		<div class="exp_content">
 			<div class="row">
 				@foreach ($four_news as $element=>$news)
 				{{-- expr --}}
-				<div class="col-md-3 col-sm-6">
-					<a href="tin_tuc?id={{$news->id}}">
-						<img src="img/test/{{$news->avatar}}" class="exp_photo">
-					</a>
-				</div>
-
-				<div class="col-md-3 col-sm-6">
-					<a href="tin_tuc?id={{$news->id}}"><p class="exp_title">{{$news->title}}</p></a>
-					<br>
-					<p class="exp_below_title">{{$news->title}}</p>
-				</div>
+				<div class="container py-3">
+				    <div class="card">
+				      <div class="row ">
+				        <div class="col-md-4">
+				            <a href="tin_tuc?id={{$news->id}}">
+								<img style="height: 150px" src="img/test/{{$news->avatar}}" class="exp_photo">
+							</a>
+				          </div>
+				          <div class="col-md-8 px-3">
+				            <div class="card-block px-3">
+				              <h4 style="margin-top: 15px;" class="card-title"><a href="tin_tuc?id={{$news->id}}"><p class="exp_title">{{$news->title}}</p></a></h4>
+				              <p class="exp_below_title">{{$news->title}}</p>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+  				</div>
 				@endforeach
-
-
-				
-
 				<div class="see_all_2">
 					<a href="{{ route('cam-nang') }}"><p><span class="fa fa-chevron-left" style="font-size: 15px;margin-right:10px;"></span>Xem tất cả<span class="fa fa-chevron-right" style="font-size: 15px;margin-left:10px;"></span></p></a>
 				</div>
