@@ -3,7 +3,7 @@
 <head>
 	<title>About us</title>
 	<link rel="stylesheet" type="text/css" href="css/aboutus.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	{{-- <link rel="stylesheet" href="css/bootstrap.min.css"/> --}}
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/aboutus.js"></script>
 </head>
@@ -23,13 +23,14 @@ s0.parentNode.insertBefore(s1,s0);
 <body>
 @extends('master.home')
 @section('ve_chung_toi')
-<div class="big_wrapper">
-	<div id="block3">
-		<div class="block3-ava block3-float">
-			<img src="img/logo.png" style="width: 100%;">
+<div class="container-fluid" style="margin-top: 200px">
+	<div class="row">
+		<div class="col-sm-12 col-md-4 col-lg-4" style="text-align: center;
+        display: block;">
+			<img src="img/logo.png" width="60%">
 		</div>
-		<div class="block3-content block3-float">
-			<h1>Chúng tôi là ai?</h1>
+		<div class="col-sm-12 col-md-8 col-lg-8">
+			<h1 class="header_all">Chúng tôi là ai?</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua.</p>
 			<p>Ut enim ad minim veniam,
@@ -42,46 +43,36 @@ s0.parentNode.insertBefore(s1,s0);
 			consequat.</p>
 		</div>
 	</div>
-
-	<div id="block0">
-		<h1>CHÚNG TÔI MANG ĐẾN</h1>
-		<div class="block0-1 block0-float">
-			<div class="block0-sumenh block0-sumenh1">
-				<div class="block0-content">
+</div>
+<div class="container-fluid">
+	<h1 class="header_all">Tại sao nên chọn chúng tôi</h1>
+	<div class="row">
+		<div class="col-sm-12 col-md-4 col-lg-4 image_layout" style="background-image: url('img/4.jpg'); background-size: cover; background-position: center; height: 400px;">
+			<div class="row">
+				<div class="col-sm-4 col-md-4 col-lg-4 box_layout">
 					GIÁ CẢ HỢP LÝ
 				</div>
 			</div>
 		</div>
-		<div class="block0-2 block0-float">
-			<div class="block0-sumenh block0-sumenh2">
-				<div class="block0-content">
+
+		<div class="col-sm-12 col-md-4 col-lg-4 image_layout" style="background-image: url('img/10.jpeg'); background-size: cover; background-position: center; height: 400px;">
+			<div class="row">
+				<div class="col-sm-4 col-md-4 col-lg-4 box_layout">
 					TRẢI NGHIỆM KHÓ QUÊN
 				</div>
 			</div>
 		</div>
-		<div class="block0-3 block0-float">
-			<div class="block0-sumenh block0-sumenh3">
-				<div class="block0-content">
+
+		<div class="col-sm-12 col-md-4 col-lg-4 image_layout" style="background-image: url('img/11.jpeg'); background-size: cover; background-position: center; height: 400px;">
+			<div class="row">
+				<div class="col-sm-4 col-md-4 col-lg-4 box_layout">
 					DỊCH VỤ HOÀN HẢO
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<div style="height: 100px;">
-		
-	</div>
-
-
-	<div id="block1">
-		<div id="block1-content">
-			<h1>Tầm nhìn dài hạn</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua.</p>
-			
-		</div>
-	</div>
-<div id="header-block-3">Các gói du lịch đa dạng</div>
+</div>
+<h1 class="header_all">Cung cấp dịch vụ đa dạng</h1>
 <div class="cont">
 	<div class="app">
 		<div class="app__bgimg">
@@ -115,42 +106,47 @@ s0.parentNode.insertBefore(s1,s0);
 		</ul>
 	</div>
 </div>
-<div id="block2">
-	<h1>ĐỘI NGŨ CỦA CHÚNG TÔI</h1>
-		<div class="block2-1 block2-float">
-			<div class="ava ava1"></div>
-			<hr>
-			<div class="profile">
-				<h4>PHẠM THÀNH ĐẠT</h4>
-				<p>Fullstack Developer</p>
-				<p>Đại học Bách Khoa Hà Nội</p>
+<div class="container-fluid padding">
+	<h1 class="header_all">Thành viên</h1>
+	<div class="row padding">
+		<div class="col-sm-12 col-md-6 col-lg-3" style="margin-bottom: 30px;">
+			<div class="card text-whitex">
+			  <img class="card-img-top" src="img/profile/tuan_1.jpg">
+			  <div class="card-body">
+				<h4 class="card-title">Lê Anh Tuấn</h4>
+				<p class="card-text">Fullstack-Developer</p>
+				<p class="card-text">Đại học Bách Khoa Hà Nội</p>
+			  </div>
 			</div>
 		</div>
-		<div class="block2-2 block2-float">
-			<div class="ava ava2"></div>
-			<hr>
-			<div class="profile">
-				<h4>LÊ ANH TUẤN</h4>
-				<p>Fullstack Developer</p>
-				<p>Đại học Bách Khoa Hà Nội</p>
+		<div class="col-sm-12 col-md-6 col-lg-3" style="margin-bottom: 30px;">
+			<div class="card text-whitex">
+			  <img class="card-img-top" src="img/profile/long_1.jpg">
+			  <div class="card-body">
+				<h4 class="card-title">Đinh Tuấn Long</h4>
+				<p class="card-text">Fullstack-Developer</p>
+				<p class="card-text">Đại học Kinh tế Quốc dân</p>
+			  </div>
 			</div>
 		</div>
-		<div class="block2-3 block2-float">
-			<div class="ava ava3"></div>
-			<hr>
-			<div class="profile">
-				<h4>NGUYỄN TRUNG THÀNH</h4>
-				<p>Fullstack Developer</p>
-				<p>Đại học Kinh tế Quốc dân</p>
+		<div class="col-sm-12 col-md-6 col-lg-3" style="margin-bottom: 30px;">
+			<div class="card text-whitex">
+			  <img class="card-img-top" src="img/profile/thanh2.png">
+			  <div class="card-body">
+				<h4 class="card-title">Nguyễn Trung Thành</h4>
+				<p class="card-text">Fullstack-Developer</p>
+				<p class="card-text">Đại học Kinh tế Quốc dân</p>
+			  </div>
 			</div>
 		</div>
-		<div class="block2-4 block2-float">
-			<div class="ava ava4"></div>
-			<hr>
-			<div class="profile">
-				<h4>ĐINH TUẤN LONG</h4>
-				<p>Fullstack Developer</p>
-				<p>Đại học Kinh tế Quốc dân</p>
+		<div class="col-sm-12 col-md-6 col-lg-3" style="margin-bottom: 30px;">
+			<div class="card text-whitex">
+			  <img class="card-img-top" src="img/profile/IMG_7006_1.jpg">
+			  <div class="card-body">
+				<h4 class="card-title">Phạm Thành Đạt</h4>
+				<p class="card-text">Fullstack-Developer</p>
+				<p class="card-text">Đại học Bách Khoa Hà Nội</p>
+			  </div>
 			</div>
 		</div>
 	</div>
