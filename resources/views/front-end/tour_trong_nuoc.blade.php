@@ -91,6 +91,8 @@ s0.parentNode.insertBefore(s1,s0);
 
 		<!-- START hiển thị tour -->
 		@foreach($tour as $stt=>$tour)
+
+		@if($tour->so_cho > $tour->sochodadat)
  
 		@for($k=0;$k<count($tour_code_id);$k++)
 			@if($tour_code_id[$k] == $tour->id)
@@ -150,6 +152,8 @@ s0.parentNode.insertBefore(s1,s0);
                             </ul>
                             {{-- END check điểm đến --}}
 
+                            <p>Số chỗ còn lại : <?php echo $tour->so_cho - $tour->sochodadat; ?></p>
+
 						</div>
 						<div class="col-12 col-lg-5 col-md-6 right-1">
 							<div class="" style="padding-top: 15px;">
@@ -169,6 +173,8 @@ s0.parentNode.insertBefore(s1,s0);
 		</div>
 			@endif
 		@endfor
+
+		@endif
 		@endforeach
 		<div style="padding-left: 320px;padding-top:50px;padding-bottom: 80px;" class="btn-group">
 			{{-- <div class="col-md-4">{{$tours->links()}}</div></div> --}}
