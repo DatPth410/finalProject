@@ -62,18 +62,23 @@ s0.parentNode.insertBefore(s1,s0);
 	@section('home')
 	<!-- Start search -->
 	{{-- TEST box chat --}}
-
+			{{-- START success message --}}
+			<div class="alert alert-success" id="success_notification" style="width: 235px;height: 50px;text-align: center;position: absolute;margin-top: 100px;margin-left: 1200px; z-index: 3;font-size: 15px;">
+  				<div>Đặt tour thành công!</div>	
+  			</div>
+  			{{-- END success message --}}
 
 	
 
 	<div id="search">
-		<div class="row" style="position: relative;">
 
+		<div class="row" style="">
 			{{-- START success message --}}
-			<div class="alert alert-success" id="success_notification" style="width: 235px;height: 55px;text-align: center;position: absolute;margin-top: 65px;margin-left: 840px;">
+			<div class="alert alert-success" id="success_notification" style="width: 235px;height: 50px;text-align: center;position: absolute;margin-top: 65px;margin-left: 840px; z-index: ;font-size: 15px;">
   				<div>Đặt tour thành công!</div>	
   			</div>
   			{{-- END success message --}}
+			
 
 			<div class="col-md-offset-2 col-md-10">
 				<p style="color:#fff; font-size: 28px;font-weight:bold; margin-top: 200px;">ĐẶT TOUR DU LỊCH !</p>					
@@ -197,6 +202,8 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="content_2">
 			<h2 class="heading">
 	        	<p class="fa fa-heart"> Các điểm đến yêu thích
+
+	        		
 	        </h2>		
 	        <h3 style="text-align: center; margin-top: -25px"><p>Lên núi xuống biển. Trọn vẹn Việt Nam</p></h3>
 		</div>
