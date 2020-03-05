@@ -209,6 +209,9 @@ class MainController extends Controller
     public function storeBookingtour(Request $request){
         if ($request->isMethod('post')) {
             $detailBooking=[];
+            $date = date('Y-m-d', time());
+            $tour=DB::table('tour_trong_nuoc')->where('id','=',$request->get('id_tour') )->first();
+            $people = intval($tour->sochodadat) + intval($request->get('adult')) + intval($request->get('child'));
             $detailBooking['name'] = $request->get('name');
             $detailBooking['phone'] = $request->get('phone');
             $detailBooking['email'] = $request->get('email');
@@ -224,9 +227,9 @@ class MainController extends Controller
             }else{
                 $detailBooking['id_user'] = 3;
             }
-            // $detailBooking['id_user']=1;
             $detailBooking['time'] = date('Y-m-d H:i:s');
             DB::table('tbl_detail_booking')->insertGetId($detailBooking);
+            DB::table('tour_trong_nuoc')->where('id','=',$request->get('id_tour') )->update(['sochodadat' => $people]);;
         }
         $detail = DB::table('tour_trong_nuoc')
         ->where('id','=',$request->get('id_tour'))

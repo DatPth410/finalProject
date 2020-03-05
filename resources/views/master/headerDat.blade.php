@@ -4,7 +4,7 @@
 	<button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<a href="trang-chu" class="navbar-brand"><img src="images/lo-go.png" width="80"></a>
+	<a href="trang-chu" class="navbar-brand"><img src="images/lo-go.png" width="80" style="margin-left: 30px;"></a>
 	<div class="collapse navbar-collapse" id="collapse_target">
 	<ul class="navbar-nav">
 		<li class="nav-item" style="margin: 0;">
@@ -51,6 +51,7 @@
 	</ul>
 	
 	</div>
-	<span class="navbar-text fa fa-phone" style="color: #f79321;">0928 0416</span>
+	<span class="navbar-text fa fa-phone" style="color: #f79321;margin-right: 100px;">0928 0416</span>
+	
 	
 </nav>

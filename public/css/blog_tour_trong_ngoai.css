@@ -2,7 +2,9 @@
   font-family: mons;
   src: url(../fonts/Montserrat-Medium.otf);
 }
-
+body{
+  overflow-x: hidden;
+}
 *{
   margin:0px auto;
   font-family: mons;
@@ -170,7 +172,7 @@ a{
 }
 .new-content{
   height: 450px;
-  width: 408px;
+  width: 405px;
   border-bottom: 2px solid black;
   margin-bottom: 20px;
   position: relative;
@@ -191,7 +193,7 @@ a{
 
 }
 .views p {
-  width: 405px;
+  width: 399px;
   height: 100px;
   font-size: 15px;
   padding-top: 0px;
@@ -256,6 +258,15 @@ a{
     margin-top: 40px;
 
 }
+
+.tour_rist_new{
+  display: table;
+  margin-bottom: 30px;
+  border: 1px solid #dddddd;
+  border-left: 0;
+  position: relative;
+  margin-top: 40px;
+}
 .left_tour_list{
   position: relative;
     width: 350px;
@@ -288,6 +299,17 @@ a{
     top: 20px;
     right: 20px;
 }
+
+.right_tour_list_new{
+  height: 50%;
+  width: 70%;
+  position: absolute;
+  background: #19528f;
+  text-align: center;
+  color: #fff;
+}
+
+
 .a-book-tour{
   display: inline-block;
     background: #fff;

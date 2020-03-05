@@ -44,6 +44,7 @@ class AdminTourController extends Controller
                 'luuy'=>'required',
                 'avatar'=>'required|image',
                 'diem_den'=>'required|max:10',
+
             ];
             $messages = [
                 'name.required' => 'Tên tour không được để trống!',
@@ -73,12 +74,12 @@ class AdminTourController extends Controller
                 'diem_den.required' => 'Điểm đến không được để trống!',
                 'diem_den.max' => 'Điểm đến không được để quá 10 ký tự!',
             ];
-            $resValidator = Validator::make($request->all(), $checkRules,$messages);
-            if ($resValidator->fails()) {
-                return redirect(route('add-tour'))
-                    ->withErrors($resValidator)
-                    ->withInput();
-            }
+            // $resValidator = Validator::make($request->all(), $checkRules,$messages);
+            // if ($resValidator->fails()) {
+            //     return redirect(route('add-tour'))
+            //         ->withErrors($resValidator)
+            //         ->withInput();
+            // }
 
 			$tourInsert=[];
 			$tourInsert['name']=$request->get('name');
@@ -182,12 +183,12 @@ class AdminTourController extends Controller
                 'diem_den.required' => 'Điểm đến không được để trống!',
                 'diem_den.max' => 'Điểm đến không được để quá 10 ký tự!',
             ];
-            $resValidator = Validator::make($request->all(), $checkRules,$messages);
-            if ($resValidator->fails()) {
-                return redirect(route('update-tour',$id))
-                    ->withErrors($resValidator)
-                    ->withInput();
-            }
+            // $resValidator = Validator::make($request->all(), $checkRules,$messages);
+            // if ($resValidator->fails()) {
+            //     return redirect(route('update-tour',$id))
+            //         ->withErrors($resValidator)
+            //         ->withInput();
+            // }
 
 			$tourInsert=[];
 			$tourInsert['name']=$request->get('name');
