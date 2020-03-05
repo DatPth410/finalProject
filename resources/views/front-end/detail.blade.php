@@ -256,7 +256,7 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="row">
 			<div class="col-md-8 col-sm-12">
 				<div class="ima">
-					<img style="width: 700px;height: 390px;" src="img/test/{{$detail->avatar}}">
+					<img style="width: 100%;height: 100%;" src="img/test/{{$detail->avatar}}">
 					<br>
 					<br>
 					<span  style="margin-right: 30px;padding-top: 20px;"><i class="glyphicon glyphicon-map-marker"></i> Hồ Chí Minh</span>
