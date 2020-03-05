@@ -33,17 +33,17 @@ class AdminTourController extends Controller
 			$checkRules = [
                 'name'=>'required|max:50',
                 'gia'=>'required|numeric',
-                'km'=>'required|integer|max:2',
+                'km'=>'required|integer|max:99',
                 'code'=>'required|max:10',
                 'lichtrinh'=>'required',
-                'songay'=>'required|integer|max:2',
+                'songay'=>'required|integer|max:99',
                 'ngaykhoihanh'=>'required',
                 'noikhoihanh'=>'required|max:50',
                 'phuongtien'=>'required|max:15',
-                'socho'=>'required|integer|max:2',
+                'socho'=>'required|integer|max:99',
                 'luuy'=>'required',
                 'avatar'=>'required|image',
-                'diemden'=>'required|max:10',
+                'diem_den'=>'required|max:10',
             ];
             $messages = [
                 'name.required' => 'Tên tour không được để trống!',
@@ -70,8 +70,8 @@ class AdminTourController extends Controller
                 'luuy.required' => 'Lưu ý không được để trống!',
                 'avatar.required' => 'Avatar không được để trống!',
                 'avatar.image' => 'Avatar phải là file ảnh!',
-                'diemden.required' => 'Điểm đến không được để trống!',
-                'diemden.max' => 'Điểm đến không được để quá 10 ký tự!',
+                'diem_den.required' => 'Điểm đến không được để trống!',
+                'diem_den.max' => 'Điểm đến không được để quá 10 ký tự!',
             ];
             $resValidator = Validator::make($request->all(), $checkRules,$messages);
             if ($resValidator->fails()) {
@@ -91,12 +91,14 @@ class AdminTourController extends Controller
 			$tourInsert['noi_khoi_hanh']=$request->get('noikhoihanh');
 			$tourInsert['vehicle']=$request->get('phuongtien');
 			$tourInsert['so_cho']=$request->get('socho');
-			$tourInsert['avatar']=$new_name;
+			if (isset($new_name)) {
+                $updateInsert['avatar'] = $new_name;
+            }
 			$tourInsert['sochodadat'] = 0;
 
 
 			$tourInsert['luu_y']=$request->get('luuy');
-			$diemden =  implode(' ', $request->get('diemden'));
+			$diemden =  implode(' ', $request->get('diem_den'));
 			$tourInsert['diem_den']=$diemden;
 			echo "\n";
 			echo $diemden;
@@ -140,46 +142,45 @@ class AdminTourController extends Controller
 
             $checkRules = [
                 'name'=>'required|max:50',
-                'price'=>'required|numeric',
-                'khuyen_mai'=>'required|integer|max:2',
+                'gia'=>'required|numeric',
+                'km'=>'required|integer|max:99',
                 'code'=>'required|max:10',
-                'lich_trinh'=>'required',
-                'length'=>'required|integer|max:2',
-                'departure'=>'required',
-                'noi_khoi_hanh'=>'required|max:50',
-                'vehicle'=>'required|max:15',
-                'so_cho'=>'required|integer|max:2',
-                'luu_y'=>'required',
-                'avatar'=>'required|image',
-                'diemden'=>'required|max:10',
+                'lichtrinh'=>'required',
+                'songay'=>'required|integer|max:99',
+                'ngaykhoihanh'=>'required',
+                'noikhoihanh'=>'required|max:50',
+                'phuongtien'=>'required|max:15',
+                'socho'=>'required|integer|max:99',
+                'luuy'=>'required',
+                'avatar'=>'image',
+                'diem_den'=>'required|max:10',
             ];
             $messages = [
                 'name.required' => 'Tên tour không được để trống!',
                 'name.max' => 'Tên tour không được quá 50 ký tự!',
-                'price.required' => 'Giá tour không được để trống!',
-                'khuyen_mai.required' => 'Khuyến mãi không được để trống!',
-                'khuyen_mai.integer' => 'Khuyến mãi phải là số nguyên!',
+                'gia.required' => 'Giá tour không được để trống!',
+                'km.required' => 'Khuyến mãi không được để trống!',
+                'km.integer' => 'Khuyến mãi phải là số nguyên!',
                 'khuyen_mai.max' => 'Khuyến mãi không được quá 99!',
                 'code.required' => 'Mã không được để trống!',
                 'code.max' => 'Mã không được quá 10 số!',
                 'luuy.required' => 'Lưu ý không được để trống!',
-                'lich_trinh.required' => 'Lịch trình không được để trống!',
-                'length.required' => 'Số ngày không được để trống!',
-                'length.integer' => 'Số ngày phải là số nguyên!',
-                'length.max' => 'Số ngày không được quá 99!',
-                'departure.required' => 'Ngày khởi hành không được để trống!',
-                'noi_khoi_hanh.required' => 'Nơi khởi hành không được để trống!',
-                'noi_khoi_hanh.max' => 'Nơi khởi hành không được quá 50 ký tự!',
-                'vehicle.required' => 'Phương tiện không được để trống!',
-				'vehicle.max' => 'Phương tiện không được quá 15 ký tự!',
-                'so_cho.required' => 'Số chỗ không được để trống!',
-                'so_cho.integer' => 'Số chỗ phải là số nguyên!',
-                'so_cho.max' => 'Số chỗ không được quá 99!',
-                'luu_y.required' => 'Lưu ý không được để trống!',
-                'avatar.required' => 'Avatar không được để trống!',
+                'lichtrinh.required' => 'Lịch trình không được để trống!',
+                'songay.required' => 'Số ngày không được để trống!',
+                'songay.integer' => 'Số ngày phải là số nguyên!',
+                'songay.max' => 'Số ngày không được quá 99!',
+                'ngaykhoihanh.required' => 'Ngày khởi hành không được để trống!',
+                'noikhoihanh.required' => 'Nơi khởi hành không được để trống!',
+                'noikhoihanh.max' => 'Nơi khởi hành không được quá 50 ký tự!',
+                'phuongtien.required' => 'Phương tiện không được để trống!',
+                'phuongtien.max' => 'Phương tiện không được quá 15 ký tự!',
+                'socho.required' => 'Số chỗ không được để trống!',
+                'socho.integer' => 'Số chỗ phải là số nguyên!',
+                'socho.max' => 'Số chỗ không được quá 99!',
+                'luuy.required' => 'Lưu ý không được để trống!',
                 'avatar.image' => 'Avatar phải là file ảnh!',
-                'diemden.required' => 'Điểm đến không được để trống!',
-                'diemden.max' => 'Điểm đến không được để quá 10 ký tự!',
+                'diem_den.required' => 'Điểm đến không được để trống!',
+                'diem_den.max' => 'Điểm đến không được để quá 10 ký tự!',
             ];
             $resValidator = Validator::make($request->all(), $checkRules,$messages);
             if ($resValidator->fails()) {
@@ -199,7 +200,9 @@ class AdminTourController extends Controller
 			$tourInsert['noi_khoi_hanh']=$request->get('noikhoihanh');
 			$tourInsert['vehicle']=$request->get('phuongtien');
 			$tourInsert['so_cho']=$request->get('socho');
-			$tourInsert['avatar']=$new_name;
+			if (isset($new_name)) {
+                $updateInsert['avatar'] = $new_name;
+            }
 			$tourInsert['sochodadat'] = 0;
 
 

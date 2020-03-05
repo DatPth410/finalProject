@@ -53,7 +53,9 @@ class AdminNewsController extends Controller
             $newsInsert['title'] = $request->get('tieude');
             $newsInsert['tom_tat'] = $request->get('tomtat');
             $newsInsert['noi_dung'] = $request->get('noidung');
-            $newsInsert['avatar'] = $new_name;
+            if (isset($new_name)) {
+                $updateInsert['avatar'] = $new_name;
+            }
             $newsInsert['ngay_dang'] = date("Y-m-d H:i:s");
 
             DB::table('tbl_news')->insert(
