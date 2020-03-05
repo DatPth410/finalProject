@@ -98,7 +98,7 @@ class SearchController extends Controller
 				->get();
 			}
 		}
-		return view('front-end.search_result',compact('list_tour','name','arrived','price','id_diemden'));
+		return view('front-end.search_resultDat',compact('list_tour','name','arrived','price','id_diemden'));
 	}
 }
 

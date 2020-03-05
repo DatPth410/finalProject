@@ -33,16 +33,15 @@ class AdminTourController extends Controller
 			$checkRules = [
                 'name'=>'required|max:50',
                 'gia'=>'required|numeric',
-                'km'=>'required|integer|max:2',
+                'km'=>'required|integer|max:99',
                 'code'=>'required|max:10',
                 'lichtrinh'=>'required',
-                'songay'=>'required|integer|max:2',
+                'songay'=>'required|integer|max:100',
                 'ngaykhoihanh'=>'required',
                 'noikhoihanh'=>'required|max:50',
                 'phuongtien'=>'required|max:15',
-                'socho'=>'required|integer|max:2',
+                'socho'=>'required|integer|max:100',
                 'luuy'=>'required',
-                'avatar'=>'required|image',
                 'diemden'=>'required|max:10',
             ];
             $messages = [
@@ -73,12 +72,12 @@ class AdminTourController extends Controller
                 'diemden.required' => 'Điểm đến không được để trống!',
                 'diemden.max' => 'Điểm đến không được để quá 10 ký tự!',
             ];
-            $resValidator = Validator::make($request->all(), $checkRules,$messages);
-            if ($resValidator->fails()) {
-                return redirect(route('add-tour'))
-                    ->withErrors($resValidator)
-                    ->withInput();
-            }
+            // $resValidator = Validator::make($request->all(), $checkRules,$messages);
+            // if ($resValidator->fails()) {
+            //     return redirect(route('add-tour'))
+            //         ->withErrors($resValidator)
+            //         ->withInput();
+            // }
 
 			$tourInsert=[];
 			$tourInsert['name']=$request->get('name');
@@ -181,12 +180,12 @@ class AdminTourController extends Controller
                 'diemden.required' => 'Điểm đến không được để trống!',
                 'diemden.max' => 'Điểm đến không được để quá 10 ký tự!',
             ];
-            $resValidator = Validator::make($request->all(), $checkRules,$messages);
-            if ($resValidator->fails()) {
-                return redirect(route('update-tour',$id))
-                    ->withErrors($resValidator)
-                    ->withInput();
-            }
+            // $resValidator = Validator::make($request->all(), $checkRules,$messages);
+            // if ($resValidator->fails()) {
+            //     return redirect(route('update-tour',$id))
+            //         ->withErrors($resValidator)
+            //         ->withInput();
+            // }
 
 			$tourInsert=[];
 			$tourInsert['name']=$request->get('name');
