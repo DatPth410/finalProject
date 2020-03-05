@@ -170,7 +170,7 @@ a{
 }
 .new-content{
   height: 450px;
-  width: 408px;
+  width: 405px;
   border-bottom: 2px solid black;
   margin-bottom: 20px;
   position: relative;
@@ -191,7 +191,7 @@ a{
 
 }
 .views p {
-  width: 405px;
+  width: 399px;
   height: 100px;
   font-size: 15px;
   padding-top: 0px;

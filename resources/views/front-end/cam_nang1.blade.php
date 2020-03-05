@@ -87,7 +87,7 @@ s0.parentNode.insertBefore(s1,s0);
 								<div class="new-content">
 									<a href="tin_tuc?id={{$news->id}}">
 										<div class="img">
-											<img src="img/test/{{$news->avatar}}" style="height: 260px;width: 400px">
+											<img src="img/test/{{$news->avatar}}" style="height: 260px;width: 398px">
 										</div>
 
 										<div class="content1">
@@ -128,7 +128,7 @@ s0.parentNode.insertBefore(s1,s0);
 				<label class="sr-only" for="">label</label>
 				<input type="text" class="form-control" id="" name="search" placeholder="TÌm kiếm tin tức...">
 			</div>
-			<button type="button" class="btn btn-danger"><a href="#" style="float: right;"><img src="images/i-search-mini.png"></a></button>
+			<button type="button" class="btn btn-danger"><a href="#";><img src="images/i-search-mini.png"></a></button>
 		</form>
 	</div>
 
