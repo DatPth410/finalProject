@@ -72,12 +72,12 @@ class AdminTourController extends Controller
                 'diemden.required' => 'Điểm đến không được để trống!',
                 'diemden.max' => 'Điểm đến không được để quá 10 ký tự!',
             ];
-            $resValidator = Validator::make($request->all(), $checkRules,$messages);
-            if ($resValidator->fails()) {
-                return redirect(route('add-tour'))
-                    ->withErrors($resValidator)
-                    ->withInput();
-            }
+            // $resValidator = Validator::make($request->all(), $checkRules,$messages);
+            // if ($resValidator->fails()) {
+            //     return redirect(route('add-tour'))
+            //         ->withErrors($resValidator)
+            //         ->withInput();
+            // }
 
 			$tourInsert=[];
 			$tourInsert['name']=$request->get('name');
@@ -180,12 +180,12 @@ class AdminTourController extends Controller
                 'diemden.required' => 'Điểm đến không được để trống!',
                 'diemden.max' => 'Điểm đến không được để quá 10 ký tự!',
             ];
-            $resValidator = Validator::make($request->all(), $checkRules,$messages);
-            if ($resValidator->fails()) {
-                return redirect(route('update-tour',$id))
-                    ->withErrors($resValidator)
-                    ->withInput();
-            }
+            // $resValidator = Validator::make($request->all(), $checkRules,$messages);
+            // if ($resValidator->fails()) {
+            //     return redirect(route('update-tour',$id))
+            //         ->withErrors($resValidator)
+            //         ->withInput();
+            // }
 
 			$tourInsert=[];
 			$tourInsert['name']=$request->get('name');
