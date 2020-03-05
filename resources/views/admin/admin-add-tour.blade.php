@@ -59,10 +59,11 @@
 						<label>Ngày khởi hành</label>
 						<input type="date" name="ngaykhoihanh" class="form-control" placeholder="Ngày khởi hành">
 					</div>
-					<div class="form-group">
+					{{--  <div class="form-group">
 						<label>Nơi khởi hành</label>
 						<input type="text" name="noikhoihanh" class="form-control" placeholder="Nơi khởi hành">
-					</div>
+					</div>  --}}
+					
 					<div class="form-group">
 						<label>Phương tiện</label>
 						<input type="text" name="phuongtien" class="form-control" placeholder="Phương tiện">
@@ -81,7 +82,19 @@
 						<input name="avatar" type="file">
 					</div>
 					
-
+					<div class="form-group">
+						<label>Nơi khởi hành</label><br>
+						@foreach ($diemden as $element=>$option)
+							{{-- expr --}}
+							<div class="checkbox">
+							<label>
+								<input name="noikhoihanh" type="checkbox" value="{{$option->ten}}">
+								{{$option->ten}}
+							</label>
+						</div>
+						@endforeach
+						
+					</div>
 					<div class="form-group">
 						<label>Điểm đến</label><br>
 						@foreach ($diemden as $element=>$option)
@@ -93,24 +106,7 @@
 							</label>
 						</div>
 						@endforeach
-						{{-- <div class="checkbox">
-							<label>
-								<input name="diemden[]" type="checkbox" value="1">
-								Hà Nội
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-								<input name="diemden[]" type="checkbox" value="2">
-								Đà Nẵng
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-								<input name="diemden[]" type="checkbox" value="3">
-								Hồ Chí Minh
-							</label>
-						</div> --}}
+						
 					</div>
 					<!-- <div class="form-group">
 						<label>Miền</label><br>

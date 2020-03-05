@@ -33,16 +33,15 @@ class AdminTourController extends Controller
 			$checkRules = [
                 'name'=>'required|max:50',
                 'gia'=>'required|numeric',
-                'km'=>'required|integer|max:2',
+                'km'=>'required|integer|max:99',
                 'code'=>'required|max:10',
                 'lichtrinh'=>'required',
-                'songay'=>'required|integer|max:2',
+                'songay'=>'required|integer|max:100',
                 'ngaykhoihanh'=>'required',
                 'noikhoihanh'=>'required|max:50',
                 'phuongtien'=>'required|max:15',
-                'socho'=>'required|integer|max:2',
+                'socho'=>'required|integer|max:100',
                 'luuy'=>'required',
-                'avatar'=>'required|image',
                 'diemden'=>'required|max:10',
             ];
             $messages = [
