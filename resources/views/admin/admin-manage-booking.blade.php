@@ -38,7 +38,7 @@
 	                        <th>Số trẻ em</th>
 	                        <th>Thanh toán</th>
 	                        <th>Tình trạng</th>
-	                        
+	                        <th>Chức năng</th>
 							
 						</tr>
 					</thead>
@@ -68,12 +68,13 @@
                                 if($booking->id_status == 1)
                                     echo '<td><span class="label label-danger">Chưa cọc</span></td>';
 
-                                if($booking->id_status == 2)
+                                if($booking->id_status == 3)
                                     echo '<td><span class="label label-warning">Đã cọc</span></td>';
 
-                                if($booking->id_status == 3)
+                                if($booking->id_status == 2)
                                     echo '<td><span class="label label-success">Đã thanh toán</span></td>';
-                            @endphp
+							@endphp
+							<td><a href="{{route('update-booking',$params = ['id'=> $booking->id])}}"><button type="button" class="btn btn-primary">Sửa</button></a></td>
 						</tr>
 						@endforeach
 					</tbody>

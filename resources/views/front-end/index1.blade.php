@@ -63,9 +63,9 @@ s0.parentNode.insertBefore(s1,s0);
 	<!-- Start search -->
 	{{-- TEST box chat --}}
 			{{-- START success message --}}
-			<div class="alert alert-success" id="success_notification" style="width: 235px;height: 50px;text-align: center;position: absolute;margin-top: 100px;margin-left: 1200px; z-index: 3;font-size: 15px;">
+			{{-- <div class="alert alert-success" id="success_notification" style="width: 235px;height: 50px;text-align: center;position: absolute;margin-top: 100px;margin-left: 1200px; z-index: 3;font-size: 15px;">
   				<div>Đặt tour thành công!</div>	
-  			</div>
+  			</div> --}}
   			{{-- END success message --}}
 
 	

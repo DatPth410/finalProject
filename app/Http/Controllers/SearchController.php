@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
 
@@ -41,17 +41,40 @@ class SearchController extends Controller
     			# code...
 				$arrived="%";
 				$id_diemden=null;
-			}else{
-				$arrived=$request->arrived;
-				$list_diemden=DB::table('tbl_diemden')
-			->where('ten','like',$arrived)
-			->get();
-			
-			foreach ($list_diemden as $key => $value) {
-			# code...
-				$id_diemden=$value->id;
-
 			}
+			else{
+				
+				$arrived=$request->arrived;
+				$data=DB::table('tbl_diemden')
+				->select('ten')->get();
+				$countDes=0;
+				foreach ($data as $key => $value) {
+					$data_array[]=$value->ten;
+					if ($arrived==$value->ten) {
+						# code...
+						$countDes++;
+					}
+				}
+				if ($countDes==0) {
+					# code...
+					$id_diemden=0;
+				}else{
+					$list_diemden=DB::table('tbl_diemden')
+					->where('ten','like',$arrived)
+					->get();
+					
+					foreach ($list_diemden as $key => $value) {
+					# code...
+						$id_diemden=$value->id;
+		
+					}
+				}
+
+
+
+				
+
+
 			}
 
 			

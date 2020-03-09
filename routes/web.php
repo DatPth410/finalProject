@@ -52,6 +52,8 @@ Route::group(['middleware'=>['auth']], function(){
 
 		//Admin quản lý booking
 		Route::get('admin/manage-booking', 'AdminContactTourController@ManageBooking')->name('manage-booking');
+		Route::get('admin/update-booking/{id}', 'AdminContactTourController@UpdateBooking')->name('update-booking');
+		Route::post('admin/save-update-booking/{id}', 'AdminContactTourController@SaveUpdateBooking')->name('save-update-booking');
 	});
 });
 
