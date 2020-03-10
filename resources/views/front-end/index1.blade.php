@@ -97,11 +97,11 @@ s0.parentNode.insertBefore(s1,s0);
 								</div>
 
 								<div class="col-md-6 ui-widget" >
-									<label for="tag" style="color: #0c427a; font-size: 20px;">Điểm đến: </label>
+									<label for="tag" style="color: #0c427a; font-size: 18px;">Điểm đến: </label>
 									<input style="height: 40px;font-size: 20px;" id="tag" name="arrived" class="form-control">
 								</div>
 							</div>
-							<div class="row no-gutters" style="margin-top: 18px;">
+							<div class="row " style="margin-top: 18px;">
 								<div class="col-md-6">
 									<label for="tag" style="color: #0c427a; font-size: 18px;">Ngày khởi hành: </label>
 									<input style="height: 40px;font-size: 20px;" type="date" name="date" id="dateinput" class="form-control focus input-lg">
@@ -228,7 +228,7 @@ s0.parentNode.insertBefore(s1,s0);
 			                        <figcaption>
 			                            <h2 ><span>{{$destination_value->ten}}</span></h2></figcaption>
 			                            <p>
-			                                <a href="trong-nuoc/{{$destination_value->code}}"><i class="fa fa-search"></i></a>
+			                                <a href="trong-nuoc/{{$destination_value->code}}"><i class="fa fa-search magnifying"></i></a>
 			                            </p>
 			                        </figcaption>
 			                    </figure>
@@ -238,11 +238,11 @@ s0.parentNode.insertBefore(s1,s0);
 							
 							<div class="col-12">
 			                    <figure class="effect-ravi"><a href="trong-nuoc/{{$destination_value->code}}">
-			                        <img style="height: 100px;width: 100%;" src="img/{{$destination_value->img}}" alt="{{$destination_value->ten}}" /></a>
+			                        <img class="img-fluid" style=" min-width: 100%;" src="img/{{$destination_value->img}}" alt="{{$destination_value->ten}}" /></a>
 			                        <figcaption>
 			                            <h2 ><span>{{$destination_value->ten}}</span></h2></figcaption>
 			                            <p>
-			                                <a href="trong-nuoc/{{$destination_value->code}}"><i class="fa fa-search"></i></a>
+			                                <a href="trong-nuoc/{{$destination_value->code}}"><i class="fa fa-search magnifying"></i></a>
 			                            </p>
 			                        </figcaption>
 			                    </figure>
@@ -255,7 +255,7 @@ s0.parentNode.insertBefore(s1,s0);
 			                        <figcaption>
 			                            <h2 ><span>{{$destination_value->ten}}</span></h2></figcaption>
 			                            <p>
-			                                <a href="trong-nuoc/{{$destination_value->code}}"><i class="fa fa-search"></i></a>
+			                                <a href="trong-nuoc/{{$destination_value->code}}"><i class="fa fa-search magnifying"></i></a>
 			                            </p>
 			                        </figcaption>
 			                    </figure>

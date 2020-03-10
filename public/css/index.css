@@ -207,7 +207,10 @@ img {
     font-size: 68.5%;
 }
 
-
+.magnifying{
+  font-size: 40px;
+  padding-left: 33px;
+}
 
 figure.effect-ravi {
     background: #303fa9;
@@ -371,7 +374,7 @@ a:hover{
 }
 .my-flip-image img{
    width: 100%;
-   height: 100%;
+   height: 250px;
    background-blend-mode: screen;
    object-fit: cover;   
 }
