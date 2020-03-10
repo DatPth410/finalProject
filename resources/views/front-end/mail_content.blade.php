@@ -47,8 +47,10 @@ s0.parentNode.insertBefore(s1,s0);
 			<tr>
 				<th style="text-align: right;">Tên tour:</th>
 				<td style="text-align: left;">{{$tour}}</td>
-			</tr>
-			<tr>
+			</tr><tr>
+				<th style="text-align: right;">Khách hàng:</th>
+				<td style="text-align: left;">{{$name}}</td>
+			</tr><tr>
 				<th style="text-align: right;">Thời gian:</th>
 				<td style="text-align: left;">{{$departure}}</td>
 			</tr><tr>
@@ -63,15 +65,21 @@ s0.parentNode.insertBefore(s1,s0);
 			</tr><tr>
 				<th style="text-align: right;">Tổng giá:</th>
 				<td style="text-align: left;">{{number_format($gia)}} VND</td>
-			</tr><tr>
-				<th style="text-align: right;">Khách hàng:</th>
-				<td style="text-align: left;">{{$name}}</td>
 			</tr>
 
 		</table>
 
 	</div>
 	<div id="footer" style="width: 500px; min-height: 100px;">
+		@if(isset($account))
+			<p>Quý khách có thể truy cập tài khoản sau của quý khách để theo dõi các tour đã đặt và nhận được các thông báo về các khuyến mãi:<br>
+			Tên đăng nhập : {{$account}} <br>
+			Mật khẩu : {{$password}}
+			</p>
+		@endif
+
+		
+
 		<h2>Cảm ơn quý khách hàng đã tin tưởng sử dụng dịch vụ của chúng tôi!</h2>
 	</div>
 </body>

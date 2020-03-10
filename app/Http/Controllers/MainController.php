@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use \App\Mail\SendMail;
 use Mail;
+use App\User;
+use Hash;
 class MainController extends Controller
 {
     public function viewHome(){
@@ -251,7 +253,6 @@ class MainController extends Controller
 
         if ($request->isMethod('post')) {
             $detailBooking=[];
-            $newUser=[];
             $date = date('Y-m-d', time());
             $tour=DB::table('tour_trong_nuoc')->where('id','=',$request->get('id_tour') )->first();
             $people = intval($tour->sochodadat) + intval($request->get('adult')) + intval($request->get('child'));
@@ -268,24 +269,26 @@ class MainController extends Controller
             if (isset($request->user()->id)) {
                 $detailBooking['id_user'] = $request->user()->id;
             }else{
-                $newUser['name']=$request->get('name');
-                $newUser['email']=$request->get('email');
-                $newUser['password']=$my_passwords[0];
-                $newId_user=DB::table('users')->insertGetId($newUser);
-                $detailBooking['id_user'] = $newId_user;
+                User::create([
+                    'name' => $request->get('name'),
+                    'email' => $request->get('email'),
+                    'password' => Hash::make($my_passwords[0]),
+                ]);
+                $newId_user=DB::table('users')->orderBy('created_at','desc')->get()->first();
+                $detailBooking['id_user'] = $newId_user->id;
             }
             $detailBooking['time'] = date('Y-m-d H:i:s');
             DB::table('tbl_detail_booking')->insertGetId($detailBooking);
-            DB::table('tour_trong_nuoc')->where('id','=',$request->get('id_tour') )->update(['sochodadat' => $people]);;
+            DB::table('tour_trong_nuoc')->where('id','=',$request->get('id_tour') )->update(['sochodadat' => $people]);
         }
         $detail = DB::table('tour_trong_nuoc')
         ->where('id','=',$request->get('id_tour'))
         ->first();
-        // $details = [
-        //     'title' => 'Title: Mail from DPV',
-        //     'body' => 'Body: Xác nhận đơn hàng!',
-        //     'gia' => $request->get('total_price')
-        // ];
+        $details = [
+            'title' => 'Title: Mail from DPV',
+            'body' => 'Body: Xác nhận đơn hàng!',
+            'gia' => $request->get('total_price')
+        ];
 
         // \Mail::to('datpth0410@gmail.com')->send(new SendMail($details));
 
@@ -303,6 +306,10 @@ class MainController extends Controller
             'departure' => $detail->departure,
 
         );
+        if(isset($request->user()->id)!=1){
+            $details['account']=$request->get('email');
+            $details['password']= $my_passwords[0];
+        }
         $_SESSION['mail']=$request->get('email');
         
         Mail::send('front-end.mail_content', $details, function ($message) {
