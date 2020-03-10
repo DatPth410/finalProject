@@ -207,8 +207,51 @@ class MainController extends Controller
 
     //Lưu data đặt tour
     public function storeBookingtour(Request $request){
+
+        //START generate password function
+        function randomPassword($length,$count, $characters) {
+ 
+            // $length - the length of the generated password
+            // $count - number of passwords to be generated
+            // $characters - types of characters to be used in the password
+ 
+            // define variables used within the function    
+            $symbols = array();
+            $passwords = array();
+            $used_symbols = '';
+            $pass = '';
+ 
+            // an array of different character types    
+            $symbols["lower_case"] = 'abcdefghijklmnopqrstuvwxyz';
+            $symbols["upper_case"] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $symbols["numbers"] = '1234567890';
+            $symbols["special_symbols"] = '!?~@#-_+<>[]{}';
+ 
+            $characters = explode(",",$characters); // get characters types to be used for the passsword
+            foreach ($characters as $key=>$value) {
+                $used_symbols .= $symbols[$value]; // build a string with all characters
+            }
+                $symbols_length = strlen($used_symbols) - 1; //strlen starts from 0 so to get number of characters deduct 1
+     
+                for ($p = 0; $p < $count; $p++) {
+                $pass = '';
+                for ($i = 0; $i < $length; $i++) {
+                    $n = rand(0, $symbols_length); // get a random character from the string with all characters
+                    $pass .= $used_symbols[$n]; // add the character to the password string
+                }
+                $passwords[] = $pass;
+            }
+     
+            return $passwords; // return the generated password
+        }
+ 
+            $my_passwords = randomPassword(10,1,"lower_case,upper_case,numbers,special_symbols");
+
+        //END generate password function
+
         if ($request->isMethod('post')) {
             $detailBooking=[];
+            $newUser=[];
             $date = date('Y-m-d', time());
             $tour=DB::table('tour_trong_nuoc')->where('id','=',$request->get('id_tour') )->first();
             $people = intval($tour->sochodadat) + intval($request->get('adult')) + intval($request->get('child'));
@@ -225,7 +268,11 @@ class MainController extends Controller
             if (isset($request->user()->id)) {
                 $detailBooking['id_user'] = $request->user()->id;
             }else{
-                $detailBooking['id_user'] = 3;
+                $newUser['name']=$request->get('name');
+                $newUser['email']=$request->get('email');
+                $newUser['password']=$my_passwords[0];
+                $newId_user=DB::table('users')->insertGetId($newUser);
+                $detailBooking['id_user'] = $newId_user;
             }
             $detailBooking['time'] = date('Y-m-d H:i:s');
             DB::table('tbl_detail_booking')->insertGetId($detailBooking);
