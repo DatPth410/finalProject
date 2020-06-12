@@ -91,17 +91,17 @@ s0.parentNode.insertBefore(s1,s0);
 		</div>
 
 		<!-- START hiển thị tour -->
-		@foreach($tour as $stt=>$tour)
+		@foreach($tour as $stt=>$tour_value)
 
-		@if($tour->so_cho > $tour->sochodadat)
+		{{-- @if($tour_value->so_cho > $tour_value->sochodadat) --}}
  
 		@for($k=0;$k<count($tour_code_id);$k++)
-			@if($tour_code_id[$k] == $tour->id)
+			@if($tour_code_id[$k] == $tour_value->id)
 		<div class="tour_list_tn row" style="margin-right: 0px; margin-left: 0px;">
 				
 					<div class="col-12 col-md-4 row" style="position: relative;margin-right: 0px; margin-left: 0px;">
-						<a href="{{ route('detail',$tour->id) }}">
-							<img src="img/test/{{$tour->avatar}}" class="col-12">
+						<a href="{{ route('detail',$tour_value->id) }}">
+							<img src="img/test/{{$tour_value->avatar}}" class="col-12">
 						</a>
 						<span class="ribbon" class="col-3">
 							<p style="color: white;font-size: 14px;padding-left: 10px">Tour bán chạy</p>
@@ -110,7 +110,7 @@ s0.parentNode.insertBefore(s1,s0);
 					<div class="col-12 col-md-8 row" style="margin-right: 0px; margin-left: 0px;">
 						<div class="col-12 col-lg-7 col-md-6 detail">
 							<span style="font-size: 20px;">
-								<a href="{{ route('detail',$tour->id) }}">{{$tour->name}}</a>
+								<a href="{{ route('detail',$tour_value->id) }}">{{$tour_value->name}}</a>
 							</span>
 							<br>
 							<div style="padding-top: 10px;padding-bottom: 5px;">	
@@ -119,17 +119,17 @@ s0.parentNode.insertBefore(s1,s0);
 							<span style="font-size: 14px;">| 7 đánh giá</span>
 						    </div>
 							<span>Mã:
-								<span style="margin-right: 15px;">{{$tour->code}}</span>
+								<span style="margin-right: 15px;">{{$tour_value->code}}</span>
 
 							</span>
-                            <span class="glyphicon glyphicon-time" style="margin-right: 15px;font-size: 18px"> {{$tour->length}} ngày {{$tour->length-1}} đêm</span>
+                            <span class="glyphicon glyphicon-time" style="margin-right: 15px;font-size: 18px"> {{$tour_value->length}} ngày {{$tour_value->length-1}} đêm</span>
    
                             <span class="transport">Phương tiện :
-                            @if ($tour->vehicle=="Máy bay")
+                            @if ($tour_value->vehicle=="Máy bay")
     							<span class="fa fa-plane"></span>
-							@elseif($tour->vehicle=="Ô tô")
+							@elseif($tour_value->vehicle=="Ô tô")
     							<span class="fa fa-car"></span>
-    						@else($tour->vehicle=="Tàu hỏa")
+    						@else($tour_value->vehicle=="Tàu hỏa")
     							<span class="fa fa-train"></span>
 							@endif
                             </span>
@@ -138,7 +138,7 @@ s0.parentNode.insertBefore(s1,s0);
                             {{-- START check điểm đến --}}
                             <ul class="ul_li" style="padding-top: 10px;">
                             		@php
-                            			{{$diem_den=(array)$tour;
+                            			{{$diem_den=(array)$tour_value;
         								$des=explode(" ", $diem_den['diem_den']);
         							}}
         							@endphp
@@ -153,14 +153,14 @@ s0.parentNode.insertBefore(s1,s0);
                             </ul>
                             {{-- END check điểm đến --}}
 
-                            <p>Số chỗ còn lại : <?php echo $tour->so_cho - $tour->sochodadat; ?></p>
+                            <p>Số chỗ còn lại : <?php echo $tour_value->so_cho - $tour_value->sochodadat; ?></p>
 
 						</div>
 						<div class="col-12 col-lg-5 col-md-6 right-1">
 							<div class="" style="padding-top: 15px;">
-								<span class="time">Khởi hành:{{$tour->departure}}</span>
+								<span class="time">Khởi hành:{{$tour_value->departure}}</span>
 								<br>
-								<span class="Price" style="font-size: 26px;color: #00c1de">{{$tour->price}}
+								<span class="Price" style="font-size: 26px;color: #00c1de">{{$tour_value->price}}
 									<span style="font-size: 15px;color: #00c1de">VNĐ</span>
 								</span>
 								<br>
@@ -175,7 +175,7 @@ s0.parentNode.insertBefore(s1,s0);
 			@endif
 		@endfor
 
-		@endif
+		{{-- @endif --}}
 		@endforeach
 		<div style="padding-left: 320px;padding-top:50px;padding-bottom: 80px;" class="btn-group">
 			{{-- <div class="col-md-4">{{$tours->links()}}</div></div> --}}

@@ -92,7 +92,10 @@ class MainController extends Controller
             $tour_code_id[$j]=$tour_value->id;
             $j++;
         }
-        // print_r($tours);
+        // print_r($tour);
+        // print_r($destination_id_array);
+        // print_r($destination_name_array);
+        // print_r($tour_code_id);
         return view('front-end.tour_trong_nuoc', compact('tour','destination_id_array','destination_name_array','tour_code_id'));
     }
 
@@ -126,6 +129,7 @@ class MainController extends Controller
                 }
             }
         }
+        //print_r($tour_code_id);
         return view('front-end.tour_trong_nuoc', compact('tour','destination_id_array','destination_name_array','tour_code_id'));
     }
 
