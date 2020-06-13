@@ -22,6 +22,7 @@ class MainController extends Controller
 
         $sale_tour=DB::table('tour_trong_nuoc')
         ->orderBy('khuyen_mai','desc')
+        ->where('khuyen_mai','!=',0)
         ->whereDate('departure','>',$date)
         ->limit(3)
         ->get();

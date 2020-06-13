@@ -93,14 +93,15 @@ class AdminTourController extends Controller
 			$tourInsert['vehicle']=$request->get('phuongtien');
 			$tourInsert['so_cho']=$request->get('socho');
 			if (isset($new_name)) {
-                $updateInsert['avatar'] = $new_name;
+                $tourInsert['avatar'] = $new_name;
             }
 			$tourInsert['sochodadat'] = 0;
 
 
 			$tourInsert['luu_y']=$request->get('luuy');
-			$diemden =  implode(' ', $request->get('diem_den'));
+			$diemden =  implode(' ', (array)$request->get('diemden'));
 			$tourInsert['diem_den']=$diemden;
+            //$tourInsert['diem_den']=$request->get('diem_den');
 			echo "\n";
 			echo $diemden;
 
@@ -201,8 +202,8 @@ class AdminTourController extends Controller
 			$tourInsert['noi_khoi_hanh']=$request->get('noikhoihanh');
 			$tourInsert['vehicle']=$request->get('phuongtien');
 			$tourInsert['so_cho']=$request->get('socho');
-			if (isset($new_name)) {
-                $updateInsert['avatar'] = $new_name;
+			if (isset($tourInsert)) {
+                $tourInsert['avatar'] = $new_name;
             }
 			$tourInsert['sochodadat'] = 0;
 

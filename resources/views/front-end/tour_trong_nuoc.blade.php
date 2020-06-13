@@ -153,7 +153,7 @@ s0.parentNode.insertBefore(s1,s0);
                             </ul>
                             {{-- END check điểm đến --}}
 
-                            <p>Số chỗ còn lại : <?php echo $tour_value->so_cho - $tour_value->sochodadat; ?></p>
+                           
 
 						</div>
 						<div class="col-12 col-lg-5 col-md-6 right-1">

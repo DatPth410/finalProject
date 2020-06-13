@@ -111,9 +111,6 @@ s0.parentNode.insertBefore(s1,s0);
 							</span>
 							<br>
 		
-							
-		
-							<p>Số chỗ còn lại : <?php echo $tour->so_cho - $tour->sochodadat; ?></p>
 		
 						</div>
 						<div class="col-12 col-lg-5 col-md-6 right-1">

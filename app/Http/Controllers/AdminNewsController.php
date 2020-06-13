@@ -41,20 +41,20 @@ class AdminNewsController extends Controller
                 'avatar.image' => 'Avatar phải là file ảnh!',
                 'avatar.mimes'=>'Ảnh phải có đuôi là jpg,png,gif,bmp',
             ];
-            $resValidator = Validator::make($request->all(), $checkRules,$messages);
+//            $resValidator = Validator::make($request->all(), $checkRules,$messages);
 
-            if ($resValidator->fails()) {
-                return redirect(route('add-news'))
-                    ->withErrors($resValidator)
-                    ->withInput();
-            }
+            // if ($resValidator->fails()) {
+            //     return redirect(route('add-news'))
+            //         ->withErrors($resValidator)
+            //         ->withInput();
+            // }
 
     		$newsInsert = [];
             $newsInsert['title'] = $request->get('tieude');
             $newsInsert['tom_tat'] = $request->get('tomtat');
             $newsInsert['noi_dung'] = $request->get('noidung');
             if (isset($new_name)) {
-                $updateInsert['avatar'] = $new_name;
+                $newsInsert['avatar'] = $new_name;
             }
             $newsInsert['ngay_dang'] = date("Y-m-d H:i:s");
 
